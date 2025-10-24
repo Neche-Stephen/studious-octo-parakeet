@@ -1,114 +1,65 @@
 <?php
-
-
-
-    // Only process POST reqeusts.
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        // Get the form fields and remove MORALspace.
-
-        $name = strip_tags(trim($_POST["name"]));
-
-				$name = str_replace(array("\r","\n"),array(" "," "),$name);
-
-        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-
-        $subject = trim($_POST["subject"]);
-
-        $message = trim($_POST["message"]);
-
-
-
-        // Check that data was sent to the mailer.
-
-        if ( empty($name)or empty($phone) OR empty($subject) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-            // Set a 400 (bad request) response code and exit.
-
-            http_response_code(400);
-
-            echo "Please complete the form and try again.";
-
-            exit;
-
-        }
-
-
-
-        // Set the recipient email address.
-
-        // FIXME: Update this to your desired email address.
-
-        $recipient = "founder@stthemes.com";
-
-
-
-        // Set the email subject.
-
-        $sender = "New contact from $name";
-
-
-
-        //Email Header
-
-        $head = " /// Johanspond \\\ ";
-
-
-
-        // Build the email content.
-
-        $email_content = "$head\n\n\n";
-
-        $email_content .= "Name: $name\n";
-
-        $email_content .= "Email: $email\n\n";
-
-        $email_content .= "Subject: $subject\n\n";
-
-        $email_content .= "Message:\n$message\n";
-
-
-
-        // Build the email headers.
-
-        $email_headers = "From: $name <$email>";
-
-
-
-        // Send the email.
-
-        if (mail($recipient, $sender, $email_content, $email_headers)) {
-
-            // Set a 200 (okay) response code.
-
-            http_response_code(200);
-
-            echo "Thank You! Your message has been sent.";
-
-        } else {
-
-            // Set a 500 (internal server error) response code.
-
-            http_response_code(500);
-
-            echo "Oops! Something went wrong and we couldn't send your message.";
-
-        }
-
-
-
-    } else {
-
-        // Not a POST request, set a 403 (forbidden) response code.
-
-        http_response_code(403);
-
-        echo "There was a problem with your submission, please try again.";
-
-    }
-
-
-
+// assets/mail.php — Pinnacle Health Contact Form Handler
+header('Content-Type: application/json');
+
+// Allow only POST
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    http_response_code(403);
+    echo json_encode(["success" => false, "message" => "Invalid request."]);
+    exit;
+}
+
+// Sanitize input helper
+function clean($data) {
+    return trim(strip_tags(str_replace(array("\r", "\n"), ' ', $data)));
+}
+
+// Collect form data
+$name         = clean($_POST["name"] ?? '');
+$email        = filter_var(trim($_POST["email"] ?? ''), FILTER_VALIDATE_EMAIL);
+$phone        = clean($_POST["phone"] ?? '');
+$organization = clean($_POST["organization"] ?? '');
+$service      = clean($_POST["service"] ?? '');
+$message      = trim($_POST["message"] ?? '');
+
+// Basic validation
+if (!$name || !$email || !$phone || !$service || !$message) {
+    http_response_code(400);
+    echo json_encode(["success" => false, "message" => "Please complete all required fields."]);
+    exit;
+}
+
+// Recipient (your company email)
+$recipient = "Pinnaclehealthenvirons@gmail.com";
+
+// Email subject
+$subject = "New Inquiry from $name via Pinnacle Website";
+
+// Build email body
+$body = "You have received a new inquiry from your website contact form.\n\n";
+$body .= "Name: $name\n";
+$body .= "Email: $email\n";
+$body .= "Phone: $phone\n";
+$body .= "Organization: $organization\n";
+$body .= "Service of Interest: $service\n";
+$body .= "Message:\n$message\n\n";
+$body .= "Time: " . date("Y-m-d H:i:s") . "\n";
+$body .= "IP Address: " . $_SERVER['REMOTE_ADDR'] . "\n";
+
+// Email headers
+$headers  = "From: Pinnacle Website <no-reply@" . ($_SERVER['SERVER_NAME'] ?? 'example.com') . ">\r\n";
+$headers .= "Reply-To: $email\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+// Send email
+if (mail($recipient, $subject, $body, $headers)) {
+    http_response_code(200);
+    echo json_encode(["success" => true, "message" => "Thank you! Your message has been sent successfully."]);
+} else {
+    http_response_code(500);
+    echo json_encode([
+        "success" => false,
+        "message" => "Mail function failed. Please contact Pinnaclehealthenvirons@gmail.com directly."
+    ]);
+}
 ?>
-
