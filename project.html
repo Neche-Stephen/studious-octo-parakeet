@@ -2,648 +2,681 @@
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Renova - Construction Building & Renovation Template</title>
-    <meta name="description" content="Renova - Construction Building & Renovation Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Projects | Pinnacle Health & Environmental Services Ltd</title>
+  <meta name="description" content="Explore Pinnacle Health & Environmental Services Ltd's projects in facility cleaning, waste management, hydrocarbon remediation, and environmental consultancy across Nigeria.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/css/fontello.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/default-icons.css">
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/odometer.css">
+  <link rel="stylesheet" href="assets/css/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/aos.css">
+  <link rel="stylesheet" href="assets/css/tg-cursor.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Real Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/fontello.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/default-icons.css">
-    <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="assets/css/odometer.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/tg-cursor.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Brand Layer (aligned with contact.html) -->
+  <style>
+    :root {
+      --brand-primary: #0d7a4b;     /* Pinnacle green */
+      --brand-primary-600: #0b6e45;
+      --brand-accent: #0b3a53;      /* Deep teal/blue accent */
+      --brand-muted: #e8f5ee;       /* Light green tint */
+      --brand-dark: #0d1b1e;
+      --brand-warning: #f2b705;
+    }
+    .text-brand { color: var(--brand-primary) !important; }
+    .bg-brand { background: var(--brand-primary) !important; color: #fff; }
+    .bg-brand-muted { background: var(--brand-muted) !important; }
+    .btn-brand { background: var(--brand-primary); color: #fff; border: 0; }
+    .btn-brand:hover { background: var(--brand-primary-600); color: #fff; }
+    .btn-outline-brand { border: 1px solid var(--brand-primary); color: var(--brand-primary); background: transparent; }
+    .btn-outline-brand:hover { background: var(--brand-primary); color: #fff; }
+    .section__title .number { color: var(--brand-muted); }
+    .breadcrumb__area .title { color: #fff; }
+    .breadcrumb__area .breadcrumb a { color: #d7ffef; }
+    .features__icon i,
+    .about__list-box .icon i,
+    .counter__icon i { color: var(--brand-primary); }
+    .badge-brand { background: var(--brand-primary); color: #fff; border-radius: 999px; padding: .35rem .75rem; font-size: .875rem; }
+    .cta__area-two .btn i { margin-left: .5rem; }
+    .about__content-two .sub-title,
+    .about__content-three .sub-title { color: var(--brand-primary); }
+    .contact__info-item .icon i { color: var(--brand-primary); }
+    .contact-list a { color: inherit; }
+    .brand__dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: var(--brand-primary); margin-right: .5rem; }
+
+    /* Header Styles (refined from contact.html) */
+    #sticky-header.tg-header__area {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+      backdrop-filter: saturate(120%) blur(6px);
+      transition: background-color .35s ease, box-shadow .35s ease, transform .3s ease;
+    }
+    #sticky-header.tg-header__area.scrolled {
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+      transform: translateY(0);
+    }
+    header .tgmenu__nav .navigation > li > a {
+      color: #111827;
+      font-weight: 500;
+      padding: 25px 0;
+      transition: color .25s ease;
+    }
+    header .tgmenu__nav .navigation > li > a:hover {
+      color: var(--brand-primary);
+    }
+    .tgmenu__action .btn.border-btn {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      font-weight: 500;
+      padding: .5rem 1.5rem;
+      border-radius: 8px;
+    }
+    .tgmenu__action .btn.border-btn:hover {
+      background: var(--brand-primary);
+      color: #fff;
+    }
+    .mobile-nav-toggler i { 
+      color: #111827; 
+      font-size: 1.5rem;
+    }
+    .tgmenu__wrap nav.tgmenu__nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+    }
+    .tgmenu__nav .logo {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+    }
+    .tgmenu__navbar-wrap {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .tgmenu__action {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .tgmenu__nav > * { padding: 0 1rem; }
+    .tgmenu__navbar-wrap ul.navigation > li {
+      margin: 0 16px;
+    }
+    .navigation .menu-item-has-children > a::after { display: none !important; }
+    .tgmenu__nav .logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
+    @media (max-width: 1199.98px) {
+      .tgmenu__navbar-wrap {
+        justify-content: flex-start;
+      }
+      .tgmenu__action {
+        display: none;
+      }
+    }
+    /* Active link styling */
+    .tgmenu__nav .navigation > li.active > a {
+      color: var(--brand-primary);
+      font-weight: 600;
+    }
+    /* Mobile menu refinements */
+    .tgmobile__menu {
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    }
+    .tgmobile__menu-box .close-btn i {
+      font-size: 1.5rem;
+      color: var(--brand-primary);
+    }
+    .tgmobile__menu-outer ul li a {
+      color: #111827;
+      font-size: 1rem;
+      padding: .5rem 0;
+    }
+    .tgmobile__menu-outer ul li a:hover {
+      color: var(--brand-primary);
+    }
+    /* Project-specific styles */
+    .project__menu-nav button {
+      background: var(--brand-muted);
+      color: var(--brand-dark);
+      border: 1px solid var(--brand-primary);
+      border-radius: 8px;
+      padding: .5rem 1rem;
+      margin: 0 .25rem;
+      transition: all .3s ease;
+      font-weight: 500;
+    }
+    .project__menu-nav button.active,
+    .project__menu-nav button:hover {
+      background: var(--brand-primary);
+      color: #fff;
+    }
+    .project__item-two {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .project__item-two:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,.15);
+    }
+    .project__thumb-two img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform .3s ease;
+    }
+    .project__item-two:hover .project__thumb-two img {
+      transform: scale(1.05);
+    }
+    .project__content-two {
+      padding: 1.5rem;
+      background: #fff;
+    }
+    .project__content-two h2.title {
+      font-size: 1.25rem;
+      margin-bottom: .5rem;
+    }
+    .project__content-two span {
+      color: #6b7280;
+      font-size: .875rem;
+    }
+    .project__content-two p {
+      font-size: .9rem;
+      color: #4b5563;
+      margin-top: .5rem;
+      margin-bottom: 0;
+    }
+    .project__icon-two i {
+      background: var(--brand-primary);
+      color: #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      transition: background .3s ease;
+    }
+    .project__icon-two i:hover {
+      background: var(--brand-primary-600);
+    }
+    .cta__area .btn.btn-two {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 
 <body>
-
-    <!--Preloader-->
-    <div id="preloader">
-        <div id="loader" class="loader">
-            <div class="loader-container">
-                <div class="loader-icon"><img src="assets/img/logo/preloader.svg" alt="Preloader"></div>
-            </div>
-        </div>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="loader" class="loader">
+      <div class="loader-container">
+        <div class="loader-icon"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd Preloader" loading="lazy"></div>
+      </div>
     </div>
-    <!--Preloader-end -->
+  </div>
+  <!-- Preloader-end -->
 
-    <!-- Scroll-top -->
-    <button class="scroll__top scroll-to-target" data-target="html">
-        <i class="renova-up-arrow"></i>
-    </button>
-    <!-- Scroll-top-end-->
+  <!-- Scroll-top -->
+  <button class="scroll__top scroll-to-target" data-target="html" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  <!-- Scroll-top-end -->
 
-    <!-- header-area -->
-    <header>
-        <div class="tg-header__top">
-            <div class="container custom-container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4">
-                        <div class="tg-header__top-menu">
-                            <ul class="list-wrap">
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="contact.html">Careers</a></li>
-                                <li><a href="contact.html">Insights</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="tg-header__top-delivery">
-                            <p>Express delivery and free returns within 24 hours</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="tg-header__top-social">
-                            <ul class="list-wrap">
-                                <li><a href="https://www.facebook.com/" target="_blank">FB</a></li>
-                                <li><a href="https://twitter.com/home" target="_blank">TW</a></li>
-                                <li><a href="https://www.linkedin.com/" target="_blank">LI</a></li>
-                                <li><a href="https://www.instagram.com/" target="_blank">IN</a></li>
-                            </ul>
-                        </div>
-                    </div>
+  <!-- header-area -->
+  <header>
+    <div id="header-fixed-height"></div>
+    <div id="sticky-header" class="tg-header__area">
+      <div class="container custom-container">
+        <div class="row">
+          <div class="col-12">
+            <div class="tgmenu__wrap">
+              <nav class="tgmenu__nav" aria-label="Main Navigation">
+                <!-- Mobile toggler -->
+                <div class="mobile-nav-toggler" aria-label="Open mobile menu"><i class="fa-solid fa-bars"></i></div>
+                <!-- Logo -->
+                <div class="logo">
+                  <a href="index.html" aria-label="Pinnacle Health & Environmental Services Ltd">
+                    <img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd">
+                  </a>
                 </div>
+                <!-- Main menu (desktop) -->
+                <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
+                  <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li class="active"><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+                <!-- Actions -->
+                <div class="tgmenu__action">
+                  <ul class="list-wrap">
+                    <li class="header-btn">
+                      <a href="contact.html" class="btn border-btn">Get In Touch</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
             </div>
+          </div>
         </div>
-        <div id="header-fixed-height"></div>
-        <div id="sticky-header" class="tg-header__area">
-            <div class="container custom-container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="tgmenu__wrap">
-                            <nav class="tgmenu__nav">
-                                <div class="offCanvas-toggle">
-                                    <a href="javascript:void(0)" class="menu-tigger">
-                                        <img src="assets/img/icons/bar_icon.svg" alt="" class="injectable">
-                                    </a>
-                                </div>
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.svg" alt="Logo"></a>
-                                </div>
-                                <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
-                                    <ul class="navigation">
-                                        <li class="menu-item-has-children"><a href="#">Home</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="index.html">01. Construction</a></li>
-                                                <li><a href="index-2.html">02. Engineering</a></li>
-                                                <li><a href="index-3.html">03. Building</a></li>
-                                                <li><a href="index-4.html">04. Architecture</a></li>
-                                                <li><a href="index-5.html">05. Renovation</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">Pages</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="services.html">Our Services</a></li>
-                                                <li><a href="services-details.html">Services Details</a></li>
-                                                <li><a href="history.html">Company History</a></li>
-                                                <li><a href="company.html">Company Values</a></li>
-                                                <li><a href="office.html">Our Offices</a></li>
-                                                <li><a href="clients.html">Our clients</a></li>
-                                                <li><a href="faq.html">Faq Page</a></li>
-                                                <li><a href="team.html">Team Page</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="appointment.html">Appointment Page</a></li>
-                                                <li><a href="contact.html">Contact Us</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">Shop</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="shop.html">Shop Page</a></li>
-                                                <li><a href="shop-details.html">Shop Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="active menu-item-has-children"><a href="#">Portfolio</a>
-                                            <ul class="sub-menu">
-                                                <li class="active"><a href="project.html">Portfolio Page</a></li>
-                                                <li><a href="project-details.html">Portfolio Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">Blog</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog.html">Blog Standard</a></li>
-                                                <li><a href="blog-2.html">Blog List</a></li>
-                                                <li><a href="blog-3.html">Blog Grid</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="tgmenu__action">
-                                    <ul class="list-wrap">
-                                        <li class="header-search">
-                                            <a href="javascript:void(0)" class="search-open-btn"><i class="renova-search"></i></a>
-                                        </li>
-                                        <li class="header-cart">
-                                            <a href="shop.html" class="cart-count">
-                                                <i class="renova-cart"></i>
-                                                <span class="mini-cart-count">2</span>
-                                            </a>
-                                        </li>
-                                        <li class="header-btn">
-                                            <a href="contact.html" class="btn border-btn">Get In Touch</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="mobile-nav-toggler"><i class="tg-flaticon-menu-1"></i></div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="tgmobile__menu" aria-hidden="true">
+      <nav class="tgmobile__menu-box" role="navigation">
+        <div class="close-btn" aria-label="Close mobile menu"><i class="fa-solid fa-xmark"></i></div>
+        <div class="nav-logo">
+          <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd"></a>
         </div>
-
-        <!-- Mobile Menu  -->
-        <div class="tgmobile__menu">
-            <nav class="tgmobile__menu-box">
-                <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
-                <div class="nav-logo">
-                    <a href="index.html"><img src="assets/img/logo/logo.svg" alt="Logo"></a>
-                </div>
-                <div class="tgmobile__search">
-                    <form action="#">
-                        <input type="text" placeholder="Search here...">
-                        <button><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-                <div class="tgmobile__menu-outer">
-                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-                </div>
-                <div class="social-links">
-                    <ul class="list-wrap">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                    </ul>
-                </div>
-            </nav>
+        <div class="tgmobile__menu-outer">
+          <!-- Populated by JS from desktop menu -->
         </div>
-        <div class="tgmobile__menu-backdrop"></div>
-        <!-- End Mobile Menu -->
-
-        <!-- header-search -->
-        <div class="search__popup">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="search__wrapper">
-                            <div class="search__close">
-                                <button type="button" class="search-close-btn">
-                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="search__form">
-                                <form action="#">
-                                    <div class="search__input">
-                                        <input class="search-input-field" type="text" placeholder="Type keywords here">
-                                        <span class="search-focus-border"></span>
-                                        <button>
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="social-links">
+          <ul class="list-wrap">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a></li>
+            <li><a href="https://twitter.com/home" target="_blank" rel="noopener"><i class="fab fa-twitter" aria-label="Twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a></li>
+          </ul>
         </div>
-        <div class="search-popup-overlay"></div>
-        <!-- header-search-end -->
+      </nav>
+    </div>
+    <div class="tgmobile__menu-backdrop"></div>
+    <!-- End Mobile Menu -->
+  </header>
+  <!-- header-area-end -->
 
-        <!-- offCanvas-menu -->
-        <div class="offCanvas__info">
-            <div class="offCanvas__close-icon menu-close">
-                <button><i class="far fa-window-close"></i></button>
+  <!-- main-area -->
+  <main class="main-area fix">
+    <!-- breadcrumb-area -->
+    <div class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/breadcrumb_bg.jpg" role="img" aria-label="Pinnacle Projects">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcrumb__content">
+              <h2 class="title">Our Projects</h2>
+              <nav class="breadcrumb" aria-label="Breadcrumb">
+                <span property="itemListElement" typeof="ListItem">
+                  <a href="index.html">Home</a>
+                </span>
+                <span class="breadcrumb-separator">/</span>
+                <span property="itemListElement" typeof="ListItem">Projects</span>
+              </nav>
             </div>
-            <div class="offCanvas__logo mb-30">
-                <a href="index.html"><img src="assets/img/logo/logo.svg" alt="Logo"></a>
-            </div>
-            <div class="offCanvas__side-info mb-30">
-                <div class="contact-list mb-30">
-                    <h4>Office Address</h4>
-                    <p>123/A, Miranda City Likaoli <br> Prikano, Dope</p>
-                </div>
-                <div class="contact-list mb-30">
-                    <h4>Phone Number</h4>
-                    <p>+0989 7876 9865 9</p>
-                    <p>+(090) 8765 86543 85</p>
-                </div>
-                <div class="contact-list mb-30">
-                    <h4>Email Address</h4>
-                    <p>info@example.com</p>
-                    <p>example.mail@hum.com</p>
-                </div>
-            </div>
-            <div class="offCanvas__social-icon mt-30">
-                <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
-                <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
-                <a href="javascript:void(0)"><i class="fab fa-google-plus-g"></i></a>
-                <a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
-            </div>
+          </div>
         </div>
-        <div class="offCanvas__overly"></div>
-        <!-- offCanvas-menu-end -->
+      </div>
+    </div>
+    <!-- breadcrumb-area-end -->
 
-    </header>
-    <!-- header-area-end -->
-
-
-
-    <!-- main-area -->
-    <main class="main-area fix">
-
-        <!-- breadcrumb-area -->
-        <div class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/breadcrumb_bg.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="breadcrumb__content">
-                            <h2 class="title">Our Projects</h2>
-                            <nav class="breadcrumb">
-                                <span property="itemListElement" typeof="ListItem">
-                                    <a href="index.html">Home</a>
-                                </span>
-                                <span class="breadcrumb-separator">/</span>
-                                <span property="itemListElement" typeof="ListItem">Our Projects</span>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+    <!-- project-area -->
+    <section class="project__area-two section-py-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section__title section__title-three mb-40">
+              <span class="sub-title">Our Work</span>
+              <h2 class="title">Transforming Environments Across Nigeria</h2>
+              <p class="mt-2 mb-0">Discover our impactful projects in facility management, waste management, hydrocarbon remediation, and environmental consultancy.</p>
             </div>
+            <div class="project__menu-nav">
+              <button class="active" data-filter="*" aria-label="Show all projects">All Projects</button>
+              <button data-filter=".cat-cleaning" aria-label="Show facility cleaning projects">Facility Cleaning</button>
+              <button data-filter=".cat-waste" aria-label="Show waste management projects">Waste Management</button>
+              <button data-filter=".cat-remediation" aria-label="Show hydrocarbon remediation projects">Hydrocarbon Remediation</button>
+              <button data-filter=".cat-consultancy" aria-label="Show environmental consultancy projects">Environmental Consultancy</button>
+            </div>
+          </div>
         </div>
-        <!-- breadcrumb-area-end -->
-
-        <!-- project-area -->
-        <section class="project__area-two">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="project__menu-nav">
-                            <button class="active" data-filter="*">ALL WORKS</button>
-                            <button class="" data-filter=".cat-one">ALFA PROJECT</button>
-                            <button class="" data-filter=".cat-two">CONSTRUCTION PROJECT</button>
-                            <button class="" data-filter=".cat-three">LORENCE PROJECT</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row gutter-24 project-active-two">
-                    <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-three cat-one">
-                        <div class="project__item-two">
-                            <div class="project__thumb-two">
-                                <a href="project-details.html"><img src="assets/img/project/inner_project01.jpg" alt="img"></a>
-                                <span class="shape"></span>
-                            </div>
-                            <div class="project__content-two">
-                                <h2 class="title"><a href="project-details.html">Service Company Building</a></h2>
-                                <span>December 2023 - March 2024</span>
-                            </div>
-                            <div class="project__icon-two">
-                                <a href="project-details.html"><i class="renova-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-two cat-three">
-                        <div class="project__item-two">
-                            <div class="project__thumb-two">
-                                <a href="project-details.html"><img src="assets/img/project/inner_project02.jpg" alt="img"></a>
-                                <span class="shape"></span>
-                            </div>
-                            <div class="project__content-two">
-                                <h2 class="title"><a href="project-details.html">Service Company Building</a></h2>
-                                <span>December 2023 - March 2024</span>
-                            </div>
-                            <div class="project__icon-two">
-                                <a href="project-details.html"><i class="renova-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-one">
-                        <div class="project__item-two">
-                            <div class="project__thumb-two">
-                                <a href="project-details.html"><img src="assets/img/project/inner_project03.jpg" alt="img"></a>
-                                <span class="shape"></span>
-                            </div>
-                            <div class="project__content-two">
-                                <h2 class="title"><a href="project-details.html">Service Company Building</a></h2>
-                                <span>December 2023 - March 2024</span>
-                            </div>
-                            <div class="project__icon-two">
-                                <a href="project-details.html"><i class="renova-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-two">
-                        <div class="project__item-two">
-                            <div class="project__thumb-two">
-                                <a href="project-details.html"><img src="assets/img/project/inner_project04.jpg" alt="img"></a>
-                                <span class="shape"></span>
-                            </div>
-                            <div class="project__content-two">
-                                <h2 class="title"><a href="project-details.html">Service Company Building</a></h2>
-                                <span>December 2023 - March 2024</span>
-                            </div>
-                            <div class="project__icon-two">
-                                <a href="project-details.html"><i class="renova-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-three">
-                        <div class="project__item-two">
-                            <div class="project__thumb-two">
-                                <a href="project-details.html"><img src="assets/img/project/inner_project05.jpg" alt="img"></a>
-                                <span class="shape"></span>
-                            </div>
-                            <div class="project__content-two">
-                                <h2 class="title"><a href="project-details.html">Service Company Building</a></h2>
-                                <span>December 2023 - March 2024</span>
-                            </div>
-                            <div class="project__icon-two">
-                                <a href="project-details.html"><i class="renova-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-two cat-three cat-one">
-                        <div class="project__item-two">
-                            <div class="project__thumb-two">
-                                <a href="project-details.html"><img src="assets/img/project/inner_project06.jpg" alt="img"></a>
-                                <span class="shape"></span>
-                            </div>
-                            <div class="project__content-two">
-                                <h2 class="title"><a href="project-details.html">Service Company Building</a></h2>
-                                <span>December 2023 - March 2024</span>
-                            </div>
-                            <div class="project__icon-two">
-                                <a href="project-details.html"><i class="renova-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-three">
-                        <div class="project__item-two">
-                            <div class="project__thumb-two">
-                                <a href="project-details.html"><img src="assets/img/project/inner_project07.jpg" alt="img"></a>
-                                <span class="shape"></span>
-                            </div>
-                            <div class="project__content-two">
-                                <h2 class="title"><a href="project-details.html">Service Company Building</a></h2>
-                                <span>December 2023 - March 2024</span>
-                            </div>
-                            <div class="project__icon-two">
-                                <a href="project-details.html"><i class="renova-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-two">
-                        <div class="project__item-two">
-                            <div class="project__thumb-two">
-                                <a href="project-details.html"><img src="assets/img/project/inner_project08.jpg" alt="img"></a>
-                                <span class="shape"></span>
-                            </div>
-                            <div class="project__content-two">
-                                <h2 class="title"><a href="project-details.html">Service Company Building</a></h2>
-                                <span>December 2023 - March 2024</span>
-                            </div>
-                            <div class="project__icon-two">
-                                <a href="project-details.html"><i class="renova-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-one">
-                        <div class="project__item-two">
-                            <div class="project__thumb-two">
-                                <a href="project-details.html"><img src="assets/img/project/inner_project09.jpg" alt="img"></a>
-                                <span class="shape"></span>
-                            </div>
-                            <div class="project__content-two">
-                                <h2 class="title"><a href="project-details.html">Service Company Building</a></h2>
-                                <span>December 2023 - March 2024</span>
-                            </div>
-                            <div class="project__icon-two">
-                                <a href="project-details.html"><i class="renova-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="row gutter-24 project-active-two">
+          <!-- Project 1 -->
+          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-cleaning">
+            <div class="project__item-two">
+              <div class="project__thumb-two">
+                <a href="project-details.html"><img src="assets/img/project/pinnacle_cleaning.jpg" alt="Corporate Office Cleaning in Lagos" loading="lazy"></a>
+                <span class="shape"></span>
+              </div>
+              <div class="project__content-two">
+                <h2 class="title"><a href="project-details.html">Corporate Office Cleaning, Lagos</a></h2>
+                <span>January 2024 - Ongoing</span>
+                <p>Comprehensive cleaning and maintenance for a multinational’s Lagos office, ensuring hygiene and compliance.</p>
+              </div>
+              <div class="project__icon-two">
+                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-        </section>
-        <!-- project-area-end -->
-
-        <!-- cta-area -->
-        <section class="cta__area fix">
-            <div class="cta__bg" data-background="assets/img/bg/cta_bg.jpg"></div>
-            <div class="container">
-                <div class="row align-items-end">
-                    <div class="col-lg-8">
-                        <div class="cta__content">
-                            <h2 class="title">Ready to work with <br> our team?</h2>
-                            <div class="cta__btn">
-                                <a href="contact.html" class="btn btn-two">Let’s build together <img
-                                        src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
-                                <a href="contact.html" class="btn transparent-btn">Contact With Us <img
-                                        src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="cta__content-right" data-aos="fade-up" data-aos-delay="600">
-                            <h4 class="title">Leading Developer Of Commercial & Residential Projects</h4>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-waste">
+            <div class="project__item-two">
+              <div class="project__thumb-two">
+                <a href="project-details.html"><img src="assets/img/project/pinnacle_waste.jpg" alt="Abuja Municipal Waste Management" loading="lazy"></a>
+                <span class="shape"></span>
+              </div>
+              <div class="project__content-two">
+                <h2 class="title"><a href="project-details.html">Abuja Municipal Waste Management</a></h2>
+                <span>June 2023 - December 2024</span>
+                <p>Efficient waste collection and recycling for Abuja communities, reducing landfill impact.</p>
+              </div>
+              <div class="project__icon-two">
+                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-            <div class="cta__shape">
-                <img src="assets/img/images/cta_shape.png" alt="shape" data-aos="fade-down-left" data-aos-delay="400">
+          </div>
+          <!-- Project 3 -->
+          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-remediation">
+            <div class="project__item-two">
+              <div class="project__thumb-two">
+                <a href="project-details.html"><img src="assets/img/project/pinnacle_remediation.jpg" alt="Ogoni Land Remediation Project" loading="lazy"></a>
+                <span class="shape"></span>
+              </div>
+              <div class="project__content-two">
+                <h2 class="title"><a href="project-details.html">Ogoni Land Remediation</a></h2>
+                <span>March 2022 - Present</span>
+                <p>HYPREP-supported cleanup of oil-contaminated sites in Ogoni, restoring ecosystems.</p>
+              </div>
+              <div class="project__icon-two">
+                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-        </section>
-        <!-- cta-area-end -->
-
-    </main>
-    <!-- main-area-end -->
-
-    <!-- footer-area -->
-    <footer class="footer__area">
-        <div class="container">
-            <div class="footer__features">
-                <a href="contact.html">Commercial Building</a>
-                <a href="contact.html">Remodeling Building</a>
-                <a href="contact.html">Residential Development</a>
-                <a href="contact.html">Architectural Development</a>
+          </div>
+          <!-- Project 4 -->
+          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-consultancy">
+            <div class="project__item-two">
+              <div class="project__thumb-two">
+                <a href="project-details.html"><img src="assets/img/project/pinnacle_consultancy.jpg" alt="Environmental Impact Assessment in Port Harcourt" loading="lazy"></a>
+                <span class="shape"></span>
+              </div>
+              <div class="project__content-two">
+                <h2 class="title"><a href="project-details.html">Environmental Impact Assessment, Port Harcourt</a></h2>
+                <span>September 2023 - February 2024</span>
+                <p>Conducted EIA for a major oil and gas facility, ensuring regulatory compliance.</p>
+              </div>
+              <div class="project__icon-two">
+                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-            <div class="footer__top">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                        <div class="footer__widget">
-                            <div class="footer__logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.svg" alt="logo"></a>
-                            </div>
-                            <div class="footer__content">
-                                <p>Sapien luctus lesuada sentus pharetra nisilona quisuea aenean eros mus magnis arcu vehicula nascetur feugiat service.</p>
-                            </div>
-                            <div class="footer__social">
-                                <ul class="list-wrap">
-                                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-3 col-sm-4">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">Useful Links</h4>
-                            <div class="footer__widget-link">
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="about.html"><i class="renova-right-arrow"></i><span>About Us</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html"><i class="renova-right-arrow"></i><span>Our Gallery</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html"><i class="renova-right-arrow"></i><span>Our Services</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="team.html"><i class="renova-right-arrow"></i><span>Our Team</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html"><i class="renova-right-arrow"></i><span>Contact Us</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-3 col-sm-6">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">Our Services</h4>
-                            <div class="footer__widget-link">
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="services.html"><i class="renova-right-arrow"></i><span>Renovation</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html"><i class="renova-right-arrow"></i><span>Construction</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html"><i class="renova-right-arrow"></i><span>Architectural</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html"><i class="renova-right-arrow"></i><span>Development</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html"><i class="renova-right-arrow"></i><span>Building</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">Quick Info</h4>
-                            <div class="footer__widget-link">
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="about.html"><i class="renova-right-arrow"></i><span>Our Story</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="appointment.html"><i class="renova-right-arrow"></i><span>Appointment</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html"><i class="renova-right-arrow"></i><span>Terms & Condition</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html"><i class="renova-right-arrow"></i><span>Get in touch</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="project.html"><i class="renova-right-arrow"></i><span>Project Showcase</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-8">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">Newsletter</h4>
-                            <div class="footer__newsletter">
-                                <p>Aplications prodize before front end ortals visualize front end</p>
-                                <form action="#" class="footer__newsletter-form">
-                                    <input type="email" placeholder="Email Address">
-                                    <button type="submit" class="btn btn-two">Subscribe</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <!-- Project 5 -->
+          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-cleaning cat-waste">
+            <div class="project__item-two">
+              <div class="project__thumb-two">
+                <a href="project-details.html"><img src="assets/img/project/pinnacle_hospital.jpg" alt="Hospital Cleaning and Waste Management in Abuja" loading="lazy"></a>
+                <span class="shape"></span>
+              </div>
+              <div class="project__content-two">
+                <h2 class="title"><a href="project-details.html">Hospital Waste & Cleaning, Abuja</a></h2>
+                <span>April 2024 - Ongoing</span>
+                <p>Medical waste management and sanitation for a leading Abuja hospital.</p>
+              </div>
+              <div class="project__icon-two">
+                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-            <div class="footer__bottom">
-                <div class="row align-items-center">
-                    <div class="col-md-7">
-                        <div class="copyright-text">
-                            <p>© 2024 Renova. All images are for demo purposes.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="footer__bottom-menu">
-                            <ul class="list-wrap">
-                                <li><a href="contact.html">Terms and Conditions</a></li>
-                                <li><a href="contact.html">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <!-- Project 6 -->
+          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-remediation cat-consultancy">
+            <div class="project__item-two">
+              <div class="project__thumb-two">
+                <a href="project-details.html"><img src="assets/img/project/pinnacle_coastal.jpg" alt="Coastal Cleanup Initiative in Lagos" loading="lazy"></a>
+                <span class="shape"></span>
+              </div>
+              <div class="project__content-two">
+                <h2 class="title"><a href="project-details.html">Coastal Cleanup Initiative, Lagos</a></h2>
+                <span>November 2023 - January 2024</span>
+                <p>Community-driven cleanup and consultancy for Lagos coastal areas.</p>
+              </div>
+              <div class="project__icon-two">
+                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
+          </div>
         </div>
-    </footer>
-    <!-- footer-area-end -->
+      </div>
+    </section>
+    <!-- project-area-end -->
 
+    <!-- cta-area -->
+    <section class="cta__area fix">
+      <div class="cta__bg" data-background="assets/img/bg/cta_bg.jpg"></div>
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-8">
+            <div class="cta__content">
+              <h2 class="title">Ready to Transform Your Environment?</h2>
+              <p>Partner with Pinnacle for sustainable, high-impact solutions.</p>
+              <div class="cta__btn">
+                <a href="contact.html" class="btn btn-two btn-brand">
+                  Get In Touch <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="services.html" class="btn transparent-btn btn-outline-brand">
+                  Explore Services <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="cta__content-right" data-aos="fade-up" data-aos-delay="600">
+              <h4 class="title">Trusted by Government & Private Sectors</h4>
+              <span class="badge-brand mt-3"><i class="fa-solid fa-award me-2"></i> HYPREP Contractor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta__shape">
+        <img src="assets/img/images/cta_shape.png" alt="Decorative shape" data-aos="fade-down-left" data-aos-delay="400" loading="lazy">
+      </div>
+    </section>
+    <!-- cta-area-end -->
+  </main>
+  <!-- main-area-end -->
 
+  <!-- footer-area -->
+  <footer class="footer__area">
+    <div class="container">
+      <div class="footer__features">
+        <a href="services.html">Facility Cleaning</a>
+        <a href="services.html">Municipal Waste</a>
+        <a href="services.html">Oil & Gas Remediation</a>
+        <a href="services.html">Environmental Consultancy</a>
+      </div>
+      <div class="footer__top">
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+            <div class="footer__widget">
+              <div class="footer__logo">
+                <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd"></a>
+              </div>
+              <div class="footer__content">
+                <p>Pinnacle delivers facility cleaning, waste management, and environmental consultancy with quality, safety, and sustainability at the core.</p>
+              </div>
+              <div class="footer__social">
+                <ul class="list-wrap">
+                  <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a></li>
+                  <li><a href="https://twitter.com/home" target="_blank" rel="noopener"><i class="fab fa-twitter" aria-label="Twitter"></i></a></li>
+                  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a></li>
+                  <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <span class="badge-brand"><i class="fa-solid fa-award me-2"></i> HYPREP Contractor</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-4 col-md-3 col-sm-4">
+            <div class="footer__widget">
+              <h4 class="footer__widget-title">Useful Links</h4>
+              <div class="footer__widget-link">
+                <ul class="list-wrap">
+                  <li><a href="about.html"><i class="fa-solid fa-arrow-right"></i><span>About Us</span></a></li>
+                  <li><a href="project.html"><i class="fa-solid fa-arrow-right"></i><span>Our Projects</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Our Services</span></a></li>
+                  <li><a href="team.html"><i class="fa-solid fa-arrow-right"></i><span>Our Team</span></a></li>
+                  <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Contact Us</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-4 col-md-3 col-sm-6">
+            <div class="footer__widget">
+              <h4 class="footer__widget-title">Services</h4>
+              <div class="footer__widget-link">
+                <ul class="list-wrap">
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Facility Cleaning</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Municipal Waste</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Oil & Gas Waste</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Environmental Consultancy</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Sustainability Advocacy</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+            <div class="footer__widget">
+              <h4 class="footer__widget-title">Quick Info</h4>
+              <div class="footer__widget-link">
+                <ul class="list-wrap">
+                  <li><a href="about.html"><i class="fa-solid fa-arrow-right"></i><span>Our Story</span></a></li>
+                  <li><a href="appointment.html"><i class="fa-solid fa-arrow-right"></i><span>Book a Call</span></a></li>
+                  <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Terms & Conditions</span></a></li>
+                  <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Privacy Policy</span></a></li>
+                  <li><a href="project.html"><i class="fa-solid fa-arrow-right"></i><span>Project Showcase</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-8">
+            <div class="footer__widget">
+              <h4 class="footer__widget-title">Newsletter</h4>
+              <div class="footer__newsletter">
+                <p>Subscribe for environmental tips, project updates, and sustainability insights.</p>
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="footer__newsletter-form">
+                  <input type="email" name="email" placeholder="Email Address" aria-label="Email address" required>
+                  <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+                  <button type="submit" class="btn btn-two btn-brand">Subscribe</button>
+                </form>
+                <div class="mt-3">
+                  <p class="mb-1"><strong>Address:</strong> Suite 106B, Nawa Complex, Ahmadu Bello Way, Kado District, Abuja</p>
+                  <p class="mb-1"><strong>Phone:</strong> <a href="tel:+2347033436161">+234 703 343 6161</a></p>
+                  <p class="mb-0"><strong>Email:</strong> <a href="mailto:Pinnaclehealthenvirons@gmail.com">Pinnaclehealthenvirons@gmail.com</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <div class="copyright-text">
+              <p>© <span id="currentYear">2025</span> Pinnacle Health & Environmental Services Ltd. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="footer__bottom-menu">
+              <ul class="list-wrap">
+                <li><a href="contact.html">Terms and Conditions</a></li>
+                <li><a href="contact.html">Privacy Policy</a></li>
+                <li><a href="mailto:Pinnaclehealthenvirons@gmail.com">Email Us</a></li>
+                <li><a href="tel:+2347033436161">Call +234 703 343 6161</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer-area-end -->
 
-
-    <!-- JS here -->
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.odometer.min.js"></script>
-    <script src="assets/js/jquery.appear.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/jquery.marquee.min.js"></script>
-    <script src="assets/js/tg-cursor.min.js"></script>
-    <script src="assets/js/ajax-form.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/svg-inject.min.js"></script>
-    <script src="assets/js/tween-max.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        SVGInject(document.querySelectorAll("img.injectable"));
-    </script>
+  <!-- JS here -->
+  <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+  <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/jquery.odometer.min.js"></script>
+  <script src="assets/js/jquery.appear.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/jquery.marquee.min.js"></script>
+  <script src="assets/js/tg-cursor.min.js"></script>
+  <script src="assets/js/ajax-form.js"></script>
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <script src="assets/js/svg-inject.min.js"></script>
+  <script src="assets/js/tween-max.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    SVGInject(document.querySelectorAll("img.injectable"));
+    // Header fade-in script
+    (function() {
+      var header = document.getElementById('sticky-header');
+      var threshold = 60; // px from top
+      function onScroll() {
+        if (window.scrollY > threshold) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // run on load
+    })();
+    // Update footer year
+    (function() {
+      var y = new Date().getFullYear();
+      var el = document.getElementById('currentYear');
+      if (el) el.textContent = y;
+    })();
+    // Initialize Isotope for project filtering
+    (function() {
+      $(window).on('load', function() {
+        var $grid = $('.project-active-two').isotope({
+          itemSelector: '.grid-item',
+          percentPosition: true,
+          masonry: {
+            columnWidth: '.grid-sizer'
+          }
+        });
+        $('.project__menu-nav').on('click', 'button', function() {
+          var filterValue = $(this).attr('data-filter');
+          $grid.isotope({ filter: filterValue });
+          $('.project__menu-nav button').removeClass('active');
+          $(this).addClass('active');
+        });
+      });
+    })();
+  </script>
 </body>
-
 </html>
