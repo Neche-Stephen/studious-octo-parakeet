@@ -35,7 +35,7 @@
   <meta property="og:image" content="assets/img/logo/logo.png" />
   <meta property="og:url" content="https://pinnacle-example-domain.com/" />
 
-  <!-- Header styles -->
+  <!-- Custom Styles -->
   <style>
     #sticky-header.tg-header__area {
       background: rgba(255,255,255,0.98);
@@ -52,14 +52,14 @@
       transition: color .25s ease;
     }
     header .tgmenu__nav .navigation > li > a:hover {
-      color: #0b7a53;
+      color: #102693;
     }
     .tgmenu__action .btn.border-btn {
-      border-color: #0b7a53;
-      color: #0b7a53;
+      border-color: #102693;
+      color: #102693;
     }
     .tgmenu__action .btn.border-btn:hover {
-      background: #0b7a53;
+      background: #102693;
       color: #fff;
     }
     .mobile-nav-toggler i { color: #111827; }
@@ -107,25 +107,277 @@
         justify-content: flex-start;
       }
     }
+
+    /* Dropdown Toggle Styles */
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
+      margin-top: 15px;
+    }
+    .dropdown-content.active {
+      max-height: 500px;
+      opacity: 1;
+    }
+    .dropdown-toggle {
+      cursor: pointer;
+      color: #102693;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+    .dropdown-toggle i {
+      transition: transform 0.3s ease;
+    }
+    .dropdown-toggle.active i {
+      transform: rotate(180deg);
+    }
+
+    /* Services Expand */
+    .services__item {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .services__item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(16, 38, 147, 0.1);
+    }
+    .services__item-hidden {
+      display: none;
+      margin-top: 20px;
+      padding: 25px;
+      background: #f8f9ff;
+      border-radius: 12px;
+      border-left: 4px solid #102693;
+    }
+    .services__item.active .services__item-hidden {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Horizontal Floating Icons (Font Awesome) */
+    .work__icons-horizontal {
+      overflow: hidden;
+      padding: 50px 0;
+      position: relative;
+    }
+    .icons-track {
+      display: flex;
+      gap: 60px;
+      animation: scrollIcons 18s linear infinite;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .work-icon {
+      font-size: 48px;
+      color: #102693;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 6px 12px rgba(16, 38, 147, 0.15));
+    }
+    .work-icon:hover {
+      transform: translateY(-12px) scale(1.1);
+      color: #0a1a6e;
+    }
+    @keyframes scrollIcons {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .work__icons-horizontal:hover .icons-track {
+      animation-play-state: paused;
+    }
+    @media (max-width: 576px) {
+      .icons-track { gap: 30px; animation-duration: 14s; }
+      .work-icon { font-size: 36px; }
+    }
+
+    /* Blog Post Expand */
+    .blog__post-item {
+      cursor: default;
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    }
+    .blog__post-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,.12);
+    }
+    .blog__post-thumb {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+    .blog__post-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .blog__post-item:hover .blog__post-thumb img {
+      transform: scale(1.05);
+    }
+    .blog__post-content {
+      padding: 1.5rem;
+      background: #fff;
+    }
+    .blog__post-meta {
+      font-size: .85rem;
+      color: #6b7280;
+      margin-bottom: .75rem;
+    }
+    .blog__post-content h4.title {
+      font-size: 1.15rem;
+      margin-bottom: .5rem;
+      line-height: 1.4;
+    }
+    .blog__post-icon {
+      font-size: 1.8rem;
+      color: #102693;
+      margin-bottom: .75rem;
+      display: block;
+    }
+    .read-details-btn {
+      background: transparent;
+      border: none;
+      color: #102693;
+      font-weight: 600;
+      font-size: .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: 0;
+      transition: color .25s ease;
+      cursor: pointer;
+    }
+    .read-details-btn:hover {
+      color: #0a1a6e;
+    }
+    .read-details-btn i {
+      transition: transform .25s ease;
+    }
+    .read-details-btn.active i {
+      transform: rotate(180deg);
+    }
+    .blog-details {
+      background: #f8f9ff;
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .blog-details.show {
+      display: block;
+    }
+
+    /* ====================== ULTRA-MODERN FAQ SECTION ====================== */
+    .faq__area {
+      padding: 120px 0 100px;
+      background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    }
+    .faq__wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq__item {
+      margin-bottom: 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 8px 32px rgba(16, 38, 147, 0.08);
+      transition: all 0.4s ease;
+      border: 1px solid transparent;
+    }
+    .faq__item:hover {
+      box-shadow: 0 16px 48px rgba(16, 38, 147, 0.12);
+      border-color: #10269322;
+    }
+    .faq__question {
+      padding: 24px 32px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #102693, #0a1a6e);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    .faq__question:hover {
+      background: linear-gradient(135deg, #0a1a6e, #081252);
+    }
+    .faq__icon {
+      font-size: 1.3rem;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .faq__item.active .faq__icon {
+      transform: rotate(180deg);
+    }
+    .faq__answer {
+      padding: 0 32px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background: #fff;
+    }
+    .faq__answer-inner {
+      padding: 28px 0;
+      color: #4b5563;
+      line-height: 1.7;
+      border-top: 1px solid #e5e7eb;
+    }
+    .faq__item.active .faq__answer {
+      padding: 28px 32px;
+      max-height: 500px;
+    }
+    .faq__item.active .faq__answer-inner {
+      animation: fadeInUp 0.5s ease forwards;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section__title .faq-number {
+      font-size: 8rem;
+      font-weight: 900;
+      color: #10269312;
+      position: absolute;
+      top: -40px;
+      left: -20px;
+      z-index: -1;
+      line-height: 1;
+    }
+    @media (max-width: 768px) {
+      .faq__question {
+        font-size: 1rem;
+        padding: 20px 24px;
+      }
+      .faq__answer {
+        padding: 0 24px;
+      }
+      .faq__item.active .faq__answer {
+        padding: 24px;
+      }
+    }
+    /* ==================================================================== */
   </style>
 </head>
 
 <body>
-  <!--Preloader-->
-  <div id="preloader" aria-hidden="true">
-    <div id="loader" class="loader">
-      <div class="loader-container">
-        <div class="loader-icon"><img src="assets/img/logo/logo.png" alt="Preloader"></div>
-      </div>
-    </div>
-  </div>
-  <!--Preloader-end -->
-
   <!-- Scroll-top -->
   <button class="scroll__top scroll-to-target" data-target="html" aria-label="Scroll to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
-  <!-- Scroll-top-end-->
 
   <!-- header-area -->
   <header>
@@ -136,15 +388,12 @@
           <div class="col-12">
             <div class="tgmenu__wrap">
               <nav class="tgmenu__nav" aria-label="Main Navigation">
-                <!-- Mobile toggler -->
                 <div class="mobile-nav-toggler" aria-label="Open mobile menu"><i class="fa-solid fa-bars"></i></div>
-                <!-- Logo -->
                 <div class="logo">
                   <a href="index.html" aria-label="Pinnacle Health & Environmental Services Ltd">
                     <img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd">
                   </a>
                 </div>
-                <!-- Main menu (desktop) -->
                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                   <ul class="navigation">
                     <li class="active"><a href="index.html">Home</a></li>
@@ -154,7 +403,6 @@
                     <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </div>
-                <!-- Actions -->
                 <div class="tgmenu__action">
                   <ul class="list-wrap">
                     <li class="header-btn">
@@ -168,16 +416,13 @@
         </div>
       </div>
     </div>
-    <!-- Mobile Menu -->
     <div class="tgmobile__menu" aria-hidden="true">
       <nav class="tgmobile__menu-box" role="navigation">
         <div class="close-btn" aria-label="Close mobile menu"><i class="fa-solid fa-xmark"></i></div>
         <div class="nav-logo">
           <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd"></a>
         </div>
-        <div class="tgmobile__menu-outer">
-          <!-- Populated by JS from desktop menu -->
-        </div>
+        <div class="tgmobile__menu-outer"></div>
         <div class="social-links">
           <ul class="list-wrap">
             <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a></li>
@@ -189,7 +434,6 @@
       </nav>
     </div>
     <div class="tgmobile__menu-backdrop"></div>
-    <!-- End Mobile Menu -->
   </header>
   <!-- header-area-end -->
 
@@ -200,7 +444,6 @@
     <section class="slider__area">
       <div class="swiper slider-active">
         <div class="swiper-wrapper">
-          <!-- Slide 1 -->
           <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.jpg">
             <div class="container custom-container-two">
               <div class="row">
@@ -210,7 +453,7 @@
                     <h2 class="title">Facility Cleaning & Integrated Environmental Management</h2>
                     <a href="contact.html" class="btn">Request a Quote <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
                     <div class="mt-3">
-                      <span class="badge bg-success text-white px-3 py-2" style="border-radius:999px;">
+                      <span class="badge text-white px-3 py-2" style="border-radius:999px; background-color: #102693;">
                         Major Contractor to HYPREP – Federal Ministry of Environment, Nigeria
                       </span>
                     </div>
@@ -219,14 +462,13 @@
               </div>
               <div class="row mt-4">
                 <div class="col-xl-10">
-                  <div class="p-3 bg-white" style="border-left:4px solid #16a34a;border-radius:12px">
+                  <div class="p-3 bg-white" style="border-left:4px solid #102693;border-radius:12px">
                     <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Slide 2 -->
           <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg02.jpg">
             <div class="container custom-container-two">
               <div class="row">
@@ -240,7 +482,6 @@
               </div>
             </div>
           </div>
-          <!-- Slide 3 -->
           <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg03.jpg">
             <div class="container custom-container-two">
               <div class="row">
@@ -254,7 +495,7 @@
               </div>
             </div>
           </div>
-        </div><!-- .swiper-wrapper -->
+        </div>
       </div>
     </section>
     <!-- slider-area-end -->
@@ -269,7 +510,13 @@
               <div class="features__content">
                 <h3 class="title">Our Mission</h3>
                 <p>To provide advisory and implementation services in Facility Management, Environmental Management and Environmental Health. Create a culture of consistent service delivery through trainings. Ensure exceptional client satisfaction.</p>
-                <a href="about.html" class="btn">Learn More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                <div class="dropdown-toggle mt-3">
+                  Read Full Mission <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <hr>
+                  <p>Our mission is rooted in transforming environments into safe, clean, and sustainable spaces. We achieve this through expert-led training programs, innovative cleaning protocols, and strict adherence to global hygiene standards. Every project is executed with precision, transparency, and a commitment to long-term client partnerships.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -279,7 +526,13 @@
               <div class="features__content">
                 <h3 class="title">Our Vision</h3>
                 <p>To be Africa’s Best Environment Management Service Provider by creating a sustainable, safe, conducive working environment through cutting edge innovation, technology and quality.</p>
-                <a href="about.html" class="btn">Learn More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                <div class="dropdown-toggle mt-3">
+                  Read Full Vision <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <hr>
+                  <p>We envision a future where every facility in Africa operates at peak environmental efficiency. By integrating IoT monitoring, green chemistry, and data-driven waste systems, we aim to set the benchmark for sustainability and operational excellence across the continent.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -289,7 +542,21 @@
               <div class="features__content">
                 <h3 class="title">Core Values</h3>
                 <p>R.I.T.C.H (Respect, Integrity, Trust, Commitment and Honesty), Team work, Professionalism, Client Satisfaction, Quality In, Quality Out (QIQO).</p>
-                <a href="about.html" class="btn">Learn More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                <div class="dropdown-toggle mt-3">
+                  See All Values <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                  <hr>
+                  <ul>
+                    <li><strong>Respect:</strong> For people, communities, and the environment.</li>
+                    <li><strong>Integrity:</strong> Transparent operations, always.</li>
+                    <li><strong>Trust:</strong> Built through consistent delivery.</li>
+                    <li><strong>Commitment:</strong> To safety, quality, and results.</li>
+                    <li><strong>Honesty:</strong> Open communication at all levels.</li>
+                    <li><strong>Teamwork & Professionalism:</strong> Collaborative excellence.</li>
+                    <li><strong>QIQO:</strong> Quality In, Quality Out — our mantra.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -400,7 +667,7 @@
 
         <div class="row-custom">
           <!-- Service 1 -->
-          <div class="col-custom active">
+          <div class="col-custom">
             <div class="services__item">
               <div class="services__arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
               <div class="services__content">
@@ -410,15 +677,14 @@
             </div>
             <div class="services__item-hidden">
               <div class="services__thumb">
-                <a href="services-details.html">
-                  <img src="assets/img/services/services_img01.jpg" alt="Facility Cleaning & Management" loading="lazy">
-                </a>
+                <img src="assets/img/services/services_img01.jpg" alt="Facility Cleaning & Management" loading="lazy">
               </div>
               <div class="services__content-hidden">
-                <h2 class="title"><a href="services-details.html">Facility Cleaning & Management</a></h2>
+                <h2 class="title">Facility Cleaning & Management</h2>
                 <p>Commercial and industrial cleaning, disinfection, and facility upkeep that meet stringent safety and hygiene standards—tailored for offices, hospitals, plants and public facilities.</p>
+                <p><strong>Key offerings:</strong> Deep cleaning, pest control, HVAC maintenance, janitorial staffing, infection control protocols, and ISO-compliant reporting.</p>
                 <div class="services__btn">
-                  <a href="services-details.html" class="btn">Learn More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                  <a href="contact.html" class="btn">Get a Quote <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
                 </div>
               </div>
             </div>
@@ -435,15 +701,14 @@
             </div>
             <div class="services__item-hidden">
               <div class="services__thumb">
-                <a href="services-details.html">
-                  <img src="assets/img/services/services_img02.webp" alt="Municipal Waste Management" loading="lazy">
-                </a>
+                <img src="assets/img/services/services_img02.webp" alt="Municipal Waste Management" loading="lazy">
               </div>
               <div class="services__content-hidden">
-                <h2 class="title"><a href="services-details.html">Municipal Waste Management</a></h2>
+                <h2 class="title">Municipal Waste Management</h2>
                 <p>City and community waste services: collection & disposal, recycling programs, route optimization and waste audits—keeping public spaces clean and compliant.</p>
+                <p><strong>Includes:</strong> Door-to-door collection, transfer stations, landfill management, public education campaigns, and zero-waste initiatives.</p>
                 <div class="services__btn">
-                  <a href="services-details.html" class="btn">Learn More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                  <a href="contact.html" class="btn">Learn More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
                 </div>
               </div>
             </div>
@@ -460,15 +725,14 @@
             </div>
             <div class="services__item-hidden">
               <div class="services__thumb">
-                <a href="services-details.html">
-                  <img src="assets/img/services/services_img03.jpg" alt="Oil & Gas Waste Management" loading="lazy">
-                </a>
+                <img src="assets/img/images/cleaning (17).png" alt="Oil & Gas Waste Management" loading="lazy">
               </div>
               <div class="services__content-hidden">
-                <h2 class="title"><a href="services-details.html">Oil & Gas Waste Management</a></h2>
+                <h2 class="title">Oil & Gas Waste Management</h2>
                 <p>Specialized handling of petroleum industry waste: oil spill cleanup, hydrocarbon pollution remediation, contaminated site restoration and environmental monitoring.</p>
+                <p><strong>Expertise:</strong> NORM waste, drilling muds, produced water treatment, bioremediation, and emergency response teams.</p>
                 <div class="services__btn">
-                  <a href="services-details.html" class="btn">Learn More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                  <a href="contact.html" class="btn">Request Support <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
                 </div>
               </div>
             </div>
@@ -485,15 +749,14 @@
             </div>
             <div class="services__item-hidden">
               <div class="services__thumb">
-                <a href="services-details.html">
-                  <img src="assets/img/services/services_img04.jpg" alt="Environmental Consultancy" loading="lazy">
-                </a>
+                <img src="assets/img/images//cleaning (6).jpg" alt="Environmental Consultancy" loading="lazy">
               </div>
               <div class="services__content-hidden">
-                <h2 class="title"><a href="services-details.html">Environmental Consultancy</a></h2>
+                <h2 class="title">Environmental Consultancy</h2>
                 <p>Environmental Impact Assessments (EIA), compliance consulting, environmental audits, sustainability training and corporate sustainability programs.</p>
+                <p><strong>Services:</strong> ESG reporting, carbon footprint analysis, regulatory approvals, stakeholder engagement, and green certification support.</p>
                 <div class="services__btn">
-                  <a href="services-details.html" class="btn">Learn More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                  <a href="contact.html" class="btn">Book Consultation <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
                 </div>
               </div>
             </div>
@@ -502,6 +765,170 @@
       </div>
     </section>
     <!-- services-area-end -->
+
+    <!-- blog-post-area -->
+    <section class="blog__post-area section-pt-120 section-pb-90">
+      <div class="container">
+        <div class="row"><div class="col-xl-6 col-lg-8">
+          <div class="section__title mb-70">
+            <h2 class="title">Insights & Sustainability Tips</h2>
+            <h1 class="number">03</h1>
+          </div>
+        </div></div>
+
+        <div class="row justify-content-center gutter-24">
+          <div class="col-lg-4 col-md-6">
+            <div class="blog__post-item shine__animate-item">
+              <div class="blog__post-thumb">
+                <img src="assets/img/images/cleaning (12).jpg" alt="Eco-friendly Facilities" loading="lazy">
+              </div>
+              <div class="blog__post-content">
+                <i class="fa-solid fa-leaf blog__post-icon"></i>
+                <div class="blog__post-meta">
+                  <ul class="list-wrap">
+                    <li>By <a href="#">Pinnacle Team</a></li>
+                    <li>03 January, 2024</li>
+                  </ul>
+                </div>
+                <h4 class="title">Practical Steps to Keep Facilities Healthy & Eco-friendly</h4>
+                <button class="read-details-btn" data-target="blog-1">
+                  Read Details <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+              <div id="blog-1" class="blog-details">
+                <p>Eco-friendly facilities reduce operational costs by up to 30% through energy-efficient lighting, water recycling systems, and green cleaning products. Regular audits identify waste hotspots, while staff training ensures compliance with ISO 14001 standards. Simple changes like motion-sensor lights and biodegradable supplies create healthier workspaces and lower carbon footprints.</p>
+                <p><strong>Key Takeaway:</strong> Start with a facility audit — contact us for a free consultation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="blog__post-item shine__animate-item">
+              <div class="blog__post-thumb">
+                <img src="assets/img/images//cleaning (13).jpg" alt="Waste Audits">
+              </div>
+              <div class="blog__post-content">
+                <i class="fa-solid fa-chart-pie blog__post-icon"></i>
+                <div class="blog__post-meta">
+                  <ul class="list-wrap">
+                    <li>By <a href="#">Pinnacle Team</a></li>
+                    <li>03 January, 2024</li>
+                  </ul>
+                </div>
+                <h4 class="title">Waste Audits 101: Reduce Costs, Improve Sustainability</h4>
+                <button class="read-details-btn" data-target="blog-2">
+                  Read Details <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+              <div id="blog-2" class="blog-details">
+                <p>A waste audit maps your organization's waste stream, identifying recyclable materials and cost-saving opportunities. Businesses using audits cut disposal fees by 25% on average. Steps include data collection, sorting, analysis, and action planning. Pinnacle's audits comply with NESREA and include employee training.</p>
+                <p><strong>Pro Tip:</strong> Schedule quarterly audits to maintain zero-waste goals.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="blog__post-item shine__animate-item">
+              <div class="blog__post-thumb">
+                <img src="assets/img/images//cleaning (18).png" alt="Oil Spill Response">
+              </div>
+              <div class="blog__post-content">
+                <i class="fa-solid fa-oil-can blog__post-icon"></i>
+                <div class="blog__post-meta">
+                  <ul class="list-wrap">
+                    <li>By <a href="#">Pinnacle Team</a></li>
+                    <li>03 January, 2024</li>
+                  </ul>
+                </div>
+                <h4 class="title">Oil Spill Response: What Rapid, Safe Remediation Looks Like</h4>
+                <button class="read-details-btn" data-target="blog-3">
+                  Read Details <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+              <div id="blog-3" class="blog-details">
+                <p>Rapid response within 2 hours minimizes environmental damage. Our HYPREP-certified teams use bioremediation, containment booms, and soil testing to restore sites. Case study: Restored 5 hectares in Ogoniland in 6 months. Compliance with DPR and FMEnv ensures zero fines.</p>
+                <p><strong>Emergency?</strong> Call our 24/7 hotline: 07033436161</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- blog-post-area-end -->
+
+    <!-- ====================== ULTRA-MODERN FAQ SECTION ====================== -->
+    <section class="faq__area">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-8 col-lg-10">
+            <div class="section__title text-center mb-70">
+              <h2 class="title">Frequently Asked Questions</h2>
+              <h1 class="faq-number">FAQ</h1>
+            </div>
+            <div class="faq__wrapper">
+              <div class="faq__item">
+                <div class="faq__question">
+                  <span>What areas do you serve in Nigeria?</span>
+                  <i class="fa-solid fa-chevron-down faq__icon"></i>
+                </div>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    We operate nationwide with headquarters in Abuja and field teams in Port Harcourt, Lagos, and Ogoniland. Our HYPREP contract covers the entire Niger Delta region, and we manage facilities from Kano to Calabar.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq__item">
+                <div class="faq__question">
+                  <span>Are your services certified and compliant?</span>
+                  <i class="fa-solid fa-chevron-down faq__icon"></i>
+                </div>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    Yes. We are ISO 9001 & 14001 certified, NESREA-registered, and a verified HYPREP contractor. All waste handling complies with FMEnv, DPR, and international standards including UNEP guidelines for Ogoniland remediation.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq__item">
+                <div class="faq__question">
+                  <span>How quickly can you respond to an oil spill?</span>
+                  <i class="fa-solid fa-chevron-down faq__icon"></i>
+                </div>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    Our emergency response team mobilizes within <strong>2 hours</strong> in the Niger Delta and <strong>6 hours</strong> nationwide. We maintain 24/7 readiness with pre-positioned equipment and certified spill response crews.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq__item">
+                <div class="faq__question">
+                  <span>Do you offer sustainability training?</span>
+                  <i class="fa-solid fa-chevron-down faq__icon"></i>
+                </div>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    Absolutely. We provide customized ESG workshops, waste segregation training, green cleaning certification, and ISO 14001 implementation programs for corporate and government clients.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq__item">
+                <div class="faq__question">
+                  <span>What is your experience with HYPREP?</span>
+                  <i class="fa-solid fa-chevron-down faq__icon"></i>
+                </div>
+                <div class="faq__answer">
+                  <div class="faq__answer-inner">
+                    We are a <strong>major contractor</strong> to the Hydrocarbon Pollution Remediation Project (HYPREP) under the Federal Ministry of Environment. Since 2018, we've remediated over 50 contaminated sites in Ogoniland as part of the UN-backed cleanup initiative.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- faq-area-end -->
 
     <!-- cta-area -->
     <section class="cta__area fix">
@@ -531,135 +958,54 @@
     <!-- cta-area-end -->
 
     <!-- work-area -->
-    <section class="work__area tg-motion-effects">
+    <section class="work__area tg-motion-effects section-pt-120 section-pb-120">
       <div class="container">
-        <div class="work__wrapper">
-          <div class="row justify-content-center">
-            <div class="col-lg-6">
-              <div class="work__content">
-                <h2 class="title">Ready to work with our team?</h2>
-                <div class="work__btn">
-                  <a href="tel:07033436161" class="btn btn-two">
-                    <i class="fa-solid fa-phone me-2" aria-hidden="true"></i>
-                    Call 07033436161
-                    <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                  </a>
-                  <a href="mailto:Pinnaclehealthenvirons@gmail.com" class="btn btn-three">
-                    <i class="fa-solid fa-envelope me-2" aria-hidden="true"></i>
-                    Email Us
-                    <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                  </a>
-                </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-xl-6">
+            <div class="work__content text-center">
+              <h2 class="title mb-4">Ready to work with our team?</h2>
+              <div class="work__btn d-flex flex-wrap justify-content-center gap-3">
+                <a href="tel:07033436161" class="btn btn-two">
+                  <i class="fa-solid fa-phone-volume me-2" aria-hidden="true"></i>
+                  Call 07033436161
+                  <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                </a>
+                <a href="mailto:Pinnaclehealthenvirons@gmail.com" class="btn btn-three">
+                  <i class="fa-solid fa-envelope-open-text me-2" aria-hidden="true"></i>
+                  Email Us
+                  <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                </a>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="work__img-wrap">
-            <ul class="list-wrap">
-              <li data-aos="zoom-in" data-aos-delay="200">
-                <img src="assets/img/images/work_img01.png" alt="icon" class="tg-motion-effects2">
-              </li>
-              <li data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/images/work_img02.png" alt="icon" class="tg-motion-effects3">
-              </li>
-              <li data-aos="zoom-in" data-aos-delay="400">
-                <img src="assets/img/images/work_img03.png" alt="icon" class="tg-motion-effects3">
-              </li>
-              <li data-aos="zoom-in" data-aos-delay="200">
-                <img src="assets/img/images/work_img04.png" alt="icon" class="tg-motion-effects2">
-              </li>
-              <li data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/images/work_img05.png" alt="icon" class="tg-motion-effects3">
-              </li>
-              <li data-aos="zoom-in" data-aos-delay="400">
-                <img src="assets/img/images/work_img06.png" alt="icon" class="tg-motion-effects3">
-              </li>
-            </ul>
+        <!-- Horizontal Floating Icons (Font Awesome) -->
+        <div class="work__icons-horizontal mt-5">
+          <div class="icons-track">
+            <!-- First Set -->
+            <i class="fas fa-broom work-icon tg-motion-effects2" data-aos="fade-up" data-aos-delay="100"></i>
+            <i class="fas fa-truck work-icon tg-motion-effects3" data-aos="fade-up" data-aos-delay="200"></i>
+            <i class="fas fa-recycle work-icon tg-motion-effects3" data-aos="fade-up" data-aos-delay="300"></i>
+            <i class="fas fa-file-contract work-icon tg-motion-effects2" data-aos="fade-up" data-aos-delay="400"></i>
+            <i class="fas fa-seedling work-icon tg-motion-effects3" data-aos="fade-up" data-aos-delay="500"></i>
+            <i class="fas fa-shield-check work-icon tg-motion-effects3" data-aos="fade-up" data-aos-delay="600"></i>
+
+            <!-- Duplicate Set for Seamless Loop -->
+            <i class="fas fa-broom work-icon tg-motion-effects2"></i>
+            <i class="fas fa-truck work-icon tg-motion-effects3"></i>
+            <i class="fas fa-recycle work-icon tg-motion-effects3"></i>
+            <i class="fas fa-file-contract work-icon tg-motion-effects2"></i>
+            <i class="fas fa-seedling work-icon tg-motion-effects3"></i>
+            <i class="fas fa-shield-check work-icon tg-motion-effects3"></i>
           </div>
-
         </div>
       </div>
     </section>
     <!-- work-area-end -->
 
-    <!-- blog-post-area -->
-    <section class="blog__post-area section-pt-120 section-pb-90">
-      <div class="container">
-        <div class="row"><div class="col-xl-6 col-lg-8">
-          <div class="section__title mb-70">
-            <h2 class="title">Insights & Sustainability Tips</h2>
-            <h1 class="number">05</h1>
-          </div>
-        </div></div>
-
-        <div class="row justify-content-center gutter-24">
-          <div class="col-lg-4 col-md-6">
-            <div class="blog__post-item shine__animate-item">
-              <div class="blog__post-thumb">
-                <a href="blog-details.html" class="shine__animate-link">
-                  <img src="assets/img/blog/blog_img01.jpg" alt="Eco-friendly Facilities">
-                </a>
-              </div>
-              <div class="blog__post-content">
-                <div class="blog__post-meta">
-                  <ul class="list-wrap">
-                    <li>By <a href="blog-details.html">Pinnacle Team</a></li>
-                    <li>03 January, 2024</li>
-                  </ul>
-                </div>
-                <h4 class="title"><a href="blog-details.html">Practical Steps to Keep Facilities Healthy & Eco-friendly</a></h4>
-                <a href="blog-details.html" class="btn">Read Details</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="blog__post-item shine__animate-item">
-              <div class="blog__post-thumb">
-                <a href="blog-details.html" class="shine__animate-link">
-                  <img src="assets/img/blog/blog_img02.jpg" alt="Waste Audits">
-                </a>
-              </div>
-              <div class="blog__post-content">
-                <div class="blog__post-meta">
-                  <ul class="list-wrap">
-                    <li>By <a href="blog-details.html">Pinnacle Team</a></li>
-                    <li>03 January, 2024</li>
-                  </ul>
-                </div>
-                <h4 class="title"><a href="blog-details.html">Waste Audits 101: Reduce Costs, Improve Sustainability</a></h4>
-                <a href="blog-details.html" class="btn">Read Details</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="blog__post-item shine__animate-item">
-              <div class="blog__post-thumb">
-                <a href="blog-details.html" class="shine__animate-link">
-                  <img src="assets/img/blog/blog_img03.jpg" alt="Oil Spill Response">
-                </a>
-              </div>
-              <div class="blog__post-content">
-                <div class="blog__post-meta">
-                  <ul class="list-wrap">
-                    <li>By <a href="blog-details.html">Pinnacle Team</a></li>
-                    <li>03 January, 2024</li>
-                  </ul>
-                </div>
-                <h4 class="title"><a href="blog-details.html">Oil Spill Response: What Rapid, Safe Remediation Looks Like</a></h4>
-                <a href="blog-details.html" class="btn">Read Details</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <!-- blog-post-area-end -->
-
     <!-- brand-area -->
-    <div class="brand__area section-pb-120">
+    <!-- <div class="brand__area section-pb-120">
       <div class="container">
         <div class="swiper brand-active">
           <div class="swiper-wrapper">
@@ -673,7 +1019,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- brand-area-end -->
 
   </main>
@@ -707,7 +1053,7 @@
                 </ul>
               </div>
               <div class="mt-3">
-                <span class="badge bg-success text-white px-3 py-2" style="border-radius: 999px;">
+                <span class="badge text-white px-3 py-2" style="border-radius: 999px; background-color: #102693;">
                   Major Contractor to HYPREP – Federal Ministry of Environment, Nigeria
                 </span>
               </div>
@@ -746,7 +1092,6 @@
               <div class="footer__widget-link">
                 <ul class="list-wrap">
                   <li><a href="about.html"><i class="fa-solid fa-arrow-right"></i><span>Our Story</span></a></li>
-                  <li><a href="appointment.html"><i class="fa-solid fa-arrow-right"></i><span>Book a Call</span></a></li>
                   <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Terms & Conditions</span></a></li>
                   <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Privacy Policy</span></a></li>
                   <li><a href="project.html"><i class="fa-solid fa-arrow-right"></i><span>Project Showcase</span></a></li>
@@ -756,13 +1101,8 @@
           </div>
           <div class="col-xl-3 col-lg-4 col-md-8">
             <div class="footer__widget">
-              <h4 class="footer__widget-title">Newsletter</h4>
+              <h4 class="footer__widget-title">Contact</h4>
               <div class="footer__newsletter">
-                <p>Subscribe for environmental tips, project updates and sustainability insights.</p>
-                <form action="#" class="footer__newsletter-form">
-                  <input type="email" placeholder="Email Address" aria-label="Email address">
-                  <button type="submit" class="btn">Subscribe</button>
-                </form>
                 <div class="mt-3">
                   <p class="mb-1"><strong>Address:</strong> Suite106B, Nawa Complex, Ahmadu Bello Way, Kado District, Abuja</p>
                   <p class="mb-1"><strong>Phone:</strong> <a href="tel:07033436161">07033436161</a></p>
@@ -816,10 +1156,11 @@
   <script src="assets/js/main.js"></script>
   <script>
     SVGInject(document.querySelectorAll("img.injectable"));
-    // Header fade-in (Option A) overrides
+
+    // Header scroll
     (function() {
       var header = document.getElementById('sticky-header');
-      var threshold = 60; // px from top
+      var threshold = 60;
       function onScroll() {
         if (window.scrollY > threshold) {
           header.classList.add('scrolled');
@@ -828,14 +1169,74 @@
         }
       }
       window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll(); // run on load
+      onScroll();
     })();
-    // Update footer year
+
+    // Update year
     (function() {
       var y = new Date().getFullYear();
       var el = document.getElementById('currentYear');
       if (el) el.textContent = y;
     })();
+
+    // Dropdown Toggles (Mission/Vision/Values)
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const isActive = content.classList.contains('active');
+        
+        document.querySelectorAll('.dropdown-content').forEach(c => {
+          c.classList.remove('active');
+          c.previousElementSibling.classList.remove('active');
+        });
+
+        if (!isActive) {
+          content.classList.add('active');
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Services Accordion
+    document.querySelectorAll('.services__item').forEach(item => {
+      item.addEventListener('click', function() {
+        const hidden = this.nextElementSibling;
+        const isActive = this.classList.contains('active');
+
+        document.querySelectorAll('.services__item').forEach(i => i.classList.remove('active'));
+        document.querySelectorAll('.services__item-hidden').forEach(h => h.style.display = 'none');
+
+        if (!isActive) {
+          this.classList.add('active');
+          hidden.style.display = 'block';
+        }
+      });
+    });
+
+    // Blog Read Details Toggle
+    document.querySelectorAll('.read-details-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const target = document.getElementById(this.dataset.target);
+        const isOpen = target.classList.toggle('show');
+        this.classList.toggle('active', isOpen);
+      });
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq__question').forEach(question => {
+      question.addEventListener('click', function() {
+        const item = this.parentElement;
+        const wasActive = item.classList.contains('active');
+        
+        // Close all
+        document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('active'));
+        
+        // Open clicked if not active
+        if (!wasActive) {
+          item.classList.add('active');
+        }
+      });
+    });
   </script>
 </body>
 </html>

@@ -26,13 +26,13 @@
   <!-- Real Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Brand Layer (aligned with services.html, about.html) -->
+  <!-- Brand Layer + Form Styling -->
   <style>
     :root {
-      --brand-primary: #0d7a4b;     /* Pinnacle green */
-      --brand-primary-600: #0b6e45;
-      --brand-accent: #0b3a53;      /* Deep teal/blue accent */
-      --brand-muted: #e8f5ee;       /* Light green tint */
+      --brand-primary: #102693;
+      --brand-primary-600: #102693;
+      --brand-accent: #0b3a53;
+      --brand-muted: #e8f5ee;
       --brand-dark: #0d1b1e;
       --brand-warning: #f2b705;
     }
@@ -57,7 +57,7 @@
     .contact-list a { color: inherit; }
     .brand__dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: var(--brand-primary); margin-right: .5rem; }
 
-    /* Header Styles (copied from index.html, services.html) */
+    /* Header Styles */
     #sticky-header.tg-header__area {
       background: rgba(255,255,255,0.98);
       box-shadow: 0 10px 25px rgba(0,0,0,.06);
@@ -73,14 +73,14 @@
       transition: color .25s ease;
     }
     header .tgmenu__nav .navigation > li > a:hover {
-      color: #0b7a53;
+      color: #102693;
     }
     .tgmenu__action .btn.border-btn {
-      border-color: #0b7a53;
-      color: #0b7a53;
+      border-color: #102693;
+      color: #102693;
     }
     .tgmenu__action .btn.border-btn:hover {
-      background: #0b7a53;
+      background: #102693;
       color: #fff;
     }
     .mobile-nav-toggler i { color: #111827; }
@@ -120,11 +120,63 @@
         justify-content: flex-start;
       }
     }
-    /* Active link styling */
     .tgmenu__nav .navigation > li.active > a {
-      color: #0b7a53;
+      color: #102693;
       font-weight: 600;
     }
+
+    /* === UNIFIED FORM STYLING === */
+    .contact__form .form-grp input,
+    .contact__form .form-grp select,
+    .contact__form .form-grp textarea {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #333;
+      background-color: #fff;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      font-family: inherit;
+    }
+
+    .contact__form .form-grp input:focus,
+    .contact__form .form-grp select:focus,
+    .contact__form .form-grp textarea:focus {
+      outline: none;
+      border-color: var(--brand-primary);
+      box-shadow: 0 0 0 3px rgba(16, 38, 147, 0.15);
+    }
+
+    .contact__form .form-grp input::placeholder,
+    .contact__form .form-grp textarea::placeholder {
+      color: #999;
+      opacity: 1;
+    }
+
+    /* Custom Select Arrow */
+    .contact__form .form-grp select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 16px;
+      padding-right: 48px !important;
+    }
+
+    .contact__form .form-grp select:hover {
+      border-color: #aaa;
+    }
+
+    /* Fix email overflow */
+    .contact__info-content .title a {
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+
     /* Contact-specific styles */
     .contact__form .btn.btn-two {
       display: inline-flex;
@@ -145,41 +197,26 @@
 </head>
 
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div id="loader" class="loader">
-      <div class="loader-container">
-        <div class="loader-icon"><img src="assets/img/logo/logo.png" alt="Preloader"></div>
-      </div>
-    </div>
-  </div>
-  <!-- Preloader-end -->
-
   <!-- Scroll-top -->
   <button class="scroll__top scroll-to-target" data-target="html" aria-label="Scroll to top">
     <i class="renova-up-arrow"></i>
   </button>
-  <!-- Scroll-top-end -->
 
   <!-- header-area -->
   <header>
     <div id="header-fixed-height"></div>
-    <!-- Simple, transparent sticky header (from index.html) -->
     <div id="sticky-header" class="tg-header__area">
       <div class="container custom-container">
         <div class="row">
           <div class="col-12">
             <div class="tgmenu__wrap">
               <nav class="tgmenu__nav" aria-label="Main Navigation">
-                <!-- Mobile toggler -->
                 <div class="mobile-nav-toggler" aria-label="Open mobile menu"><i class="tg-flaticon-menu-1"></i></div>
-                <!-- Logo -->
                 <div class="logo">
                   <a href="index.html" aria-label="Pinnacle Health & Environmental Services Ltd">
                     <img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd">
                   </a>
                 </div>
-                <!-- Main menu (desktop) -->
                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                   <ul class="navigation">
                     <li><a href="index.html">Home</a></li>
@@ -189,7 +226,6 @@
                     <li class="active"><a href="contact.html">Contact</a></li>
                   </ul>
                 </div>
-                <!-- Actions -->
                 <div class="tgmenu__action">
                   <ul class="list-wrap">
                     <li class="header-btn">
@@ -203,16 +239,13 @@
         </div>
       </div>
     </div>
-    <!-- Mobile Menu -->
     <div class="tgmobile__menu" aria-hidden="true">
       <nav class="tgmobile__menu-box" role="navigation">
         <div class="close-btn" aria-label="Close mobile menu"><i class="tg-flaticon-close-1"></i></div>
         <div class="nav-logo">
           <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd"></a>
         </div>
-        <div class="tgmobile__menu-outer">
-          <!-- Populated by JS from desktop menu -->
-        </div>
+        <div class="tgmobile__menu-outer"></div>
         <div class="social-links">
           <ul class="list-wrap">
             <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a></li>
@@ -225,9 +258,7 @@
       </nav>
     </div>
     <div class="tgmobile__menu-backdrop"></div>
-    <!-- End Mobile Menu -->
   </header>
-  <!-- header-area-end -->
 
   <!-- main-area -->
   <main class="main-area fix">
@@ -250,7 +281,6 @@
         </div>
       </div>
     </div>
-    <!-- breadcrumb-area-end -->
 
     <!-- contact-area -->
     <section class="contact__area section-py-120">
@@ -284,7 +314,7 @@
                   </div>
                   <div class="content">
                     <span>Email Us</span>
-                    <h2 class="title"><a href="mailto:Pinnaclehealthenvirons@gmail.com">Pinnaclehealthenvirons@gmail.com</a></h2>
+                    <h2 class="title"><a href="mailto:pinnaclehealthenviron@gmail.com">pinnaclehealthenviron@gmail.com</a></h2>
                   </div>
                 </div>
               </div>
@@ -303,9 +333,15 @@
                   </div>
                 </div>
               </div>
-              <!-- Trust badge -->
-              <div class="mt-3 p-3 bg-brand-muted" style="border-left: 4px solid var(--brand-primary); border-radius: 12px;">
-                <p class="mb-0"><strong>Major Contractor to HYPREP</strong> – Federal Ministry of Environment, Nigeria.</p>
+         
+              <!-- Operating Hours -->
+              <div class="mt-4 p-3" style="border-left: 4px solid var(--brand-primary); border-radius: 12px; background-color: #10269350;">
+                <h5 class="mb-2"><i class="fa-solid fa-clock text-brand me-2"></i> Operating Hours</h5>
+                <p class="mb-1"><strong>Administrative & Facility Cleaning:</strong><br>
+                   8:00 AM – 5:00 PM, Monday to Friday<br>
+                   <em>(Extra work available on Saturdays)</em></p>
+                <p class="mb-0"><strong>Waste Management Services:</strong><br>
+                   6:00 AM – 6:00 PM, Monday to Saturday</p>
               </div>
             </div>
           </div>
@@ -314,7 +350,6 @@
             <div class="contact-map">
               <iframe title="Pinnacle Health Abuja Office Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.951391805374!2d7.417013614793108!3d9.066823693493536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b8c8f1b1f1b%3A0x7b8b1f1b1f1b1f1b!2sNawa%20Complex%2C%20Ahmadu%20Bello%20Way%2C%20Kado%2C%20Abuja!5e0!3m2!1sen!2sng!4v1698765432101!5m2!1sen!2sng" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <!-- contact-map-end -->
 
             <div class="contact__form-wrap">
               <div class="section__title section__title-three mb-40">
@@ -323,7 +358,7 @@
                 <p class="mt-2 mb-0">Tell us about your facility or project—we’ll respond promptly with the right expert.</p>
               </div>
 
-              <!-- Contact Form (AJAX) -->
+              <!-- Contact Form -->
               <form id="contact-form" action="https://formspree.io/f/your-form-id" method="post" class="contact__form" novalidate>
                 <div class="row gutter-20">
                   <div class="col-md-6">
@@ -368,7 +403,6 @@
                 <div class="form-grp">
                   <textarea name="message" id="message" placeholder="Tell us about your needs *" required aria-required="true"></textarea>
                 </div>
-                <!-- Simple honeypot -->
                 <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
                 <button type="submit" class="btn btn-two btn-brand" id="submitBtn">
                   Send Message <i class="fa-solid fa-paper-plane"></i>
@@ -380,101 +414,51 @@
         </div>
       </div>
     </section>
-    <!-- contact-area-end -->
-
   </main>
-  <!-- main-area-end -->
 
   <!-- footer-area -->
   <footer class="footer__area">
     <div class="container">
-      <div class="footer__features">
-        <a href="services.html">Facility Cleaning</a>
-        <a href="services.html">Municipal Waste</a>
-        <a href="services.html">Oil & Gas Remediation</a>
-        <a href="services.html">Environmental Consultancy</a>
-      </div>
       <div class="footer__top">
         <div class="row">
-          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+          <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="footer__widget">
-              <div class="footer__logo">
-                <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd"></a>
+              <div class="footer__logo mb-3">
+                <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle"></a>
               </div>
-              <div class="footer__content">
-                <p>Pinnacle delivers facility cleaning, waste management, and environmental consultancy with quality, safety, and sustainability at the core.</p>
-              </div>
-              <div class="footer__social">
-                <ul class="list-wrap">
-                  <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="https://twitter.com/home" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a></li>
-                  <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-              </div>
-              <div class="mt-3">
-                <span class="badge-brand"><i class="fa-solid fa-award me-2"></i> HYPREP Contractor</span>
-              </div>
+              <p><strong>RC 661920</strong> | Since 2006</p>
+              <p>Suite 106B, Nawa Complex, Ahmadu Bello Way, Kado District, Abuja, FCT</p>
             </div>
           </div>
-          <div class="col-xl-2 col-lg-4 col-md-3 col-sm-4">
+          <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="footer__widget">
-              <h4 class="footer__widget-title">Useful Links</h4>
-              <div class="footer__widget-link">
-                <ul class="list-wrap">
-                  <li><a href="about.html"><i class="renova-right-arrow"></i><span>About Us</span></a></li>
-                  <li><a href="project.html"><i class="renova-right-arrow"></i><span>Our Projects</span></a></li>
-                  <li><a href="services.html"><i class="renova-right-arrow"></i><span>Our Services</span></a></li>
-                  <li><a href="team.html"><i class="renova-right-arrow"></i><span>Our Team</span></a></li>
-                  <li><a href="contact.html"><i class="renova-right-arrow"></i><span>Contact Us</span></a></li>
-                </ul>
-              </div>
+              <h4 class="footer__widget-title">Quick Links</h4>
+              <ul class="list-wrap">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
             </div>
           </div>
-          <div class="col-xl-2 col-lg-4 col-md-3 col-sm-6">
+          <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="footer__widget">
-              <h4 class="footer__widget-title">Services</h4>
-              <div class="footer__widget-link">
-                <ul class="list-wrap">
-                  <li><a href="services.html"><i class="renova-right-arrow"></i><span>Facility Cleaning</span></a></li>
-                  <li><a href="services.html"><i class="renova-right-arrow"></i><span>Municipal Waste</span></a></li>
-                  <li><a href="services.html"><i class="renova-right-arrow"></i><span>Oil & Gas Waste</span></a></li>
-                  <li><a href="services.html"><i class="renova-right-arrow"></i><span>Environmental Consultancy</span></a></li>
-                  <li><a href="services.html"><i class="renova-right-arrow"></i><span>Sustainability Advocacy</span></a></li>
-                </ul>
-              </div>
+              <h4 class="footer__widget-title">Contact</h4>
+              <ul class="list-wrap">
+                <li><a href="tel:07033436161">07033436161</a></li>
+                <li><a href="tel:08035058743">08035058743</a></li>
+                <li><a href="mailto:pinnaclehealthenviron@gmail.com">pinnaclehealthenviron@gmail.com</a></li>
+              </ul>
             </div>
           </div>
-          <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+          <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="footer__widget">
-              <h4 class="footer__widget-title">Quick Info</h4>
-              <div class="footer__widget-link">
-                <ul class="list-wrap">
-                  <li><a href="about.html"><i class="renova-right-arrow"></i><span>Our Story</span></a></li>
-                  <li><a href="appointment.html"><i class="renova-right-arrow"></i><span>Book a Call</span></a></li>
-                  <li><a href="contact.html"><i class="renova-right-arrow"></i><span>Terms & Conditions</span></a></li>
-                  <li><a href="contact.html"><i class="renova-right-arrow"></i><span>Privacy Policy</span></a></li>
-                  <li><a href="project.html"><i class="renova-right-arrow"></i><span>Project Showcase</span></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-md-8">
-            <div class="footer__widget">
-              <h4 class="footer__widget-title">Newsletter</h4>
-              <div class="footer__newsletter">
-                <p>Subscribe for environmental tips, project updates, and sustainability insights.</p>
-                <form action="https://formspree.io/f/your-form-id" method="POST" class="footer__newsletter-form">
-                  <input type="email" name="email" placeholder="Email Address" aria-label="Email address" required>
-                  <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
-                  <button type="submit" class="btn btn-two">Subscribe</button>
-                </form>
-                <div class="mt-3">
-                  <p class="mb-1"><strong>Address:</strong> Suite 106B, Nawa Complex, Ahmadu Bello Way, Kado District, Abuja</p>
-                  <p class="mb-1"><strong>Phone:</strong> <a href="tel:+2347033436161">+234 703 343 6161</a></p>
-                  <p class="mb-0"><strong>Email:</strong> <a href="mailto:Pinnaclehealthenvirons@gmail.com">Pinnaclehealthenvirons@gmail.com</a></p>
-                </div>
-              </div>
+              <h4 class="footer__widget-title">Follow Us</h4>
+              <ul class="list-wrap d-flex gap-3">
+                <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -482,27 +466,20 @@
       <div class="footer__bottom">
         <div class="row align-items-center">
           <div class="col-md-7">
-            <div class="copyright-text">
-              <p>© <span id="currentYear">2025</span> Pinnacle Health & Environmental Services Ltd. All rights reserved.</p>
-            </div>
+            <p>© <span id="currentYear">2025</span> Pinnacle Health & Environmental Services Ltd. All rights reserved.</p>
           </div>
-          <div class="col-md-5">
-            <div class="footer__bottom-menu">
-              <ul class="list-wrap">
-                <li><a href="contact.html">Terms and Conditions</a></li>
-                <li><a href="contact.html">Privacy Policy</a></li>
-                <li><a href="mailto:Pinnaclehealthenvirons@gmail.com">Email Us</a></li>
-                <li><a href="tel:+2347033436161">Call +234 703 343 6161</a></li>
-              </ul>
-            </div>
+          <div class="col-md-5 text-md-end">
+            <ul class="list-wrap">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </footer>
-  <!-- footer-area-end -->
 
-  <!-- Success Modal -->
+  <!-- Modals -->
   <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" style="border-radius:16px">
@@ -521,7 +498,6 @@
     </div>
   </div>
 
-  <!-- Error Modal -->
   <div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" style="border-radius:16px">
@@ -530,7 +506,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>We couldn’t send your message right now. Please try again or email <a href="mailto:Pinnaclehealthenvirons@gmail.com">Pinnaclehealthenvirons@gmail.com</a>.</p>
+          <p>We couldn’t send your message right now. Please try again or email <a href="mailto:pinnaclehealthenviron@gmail.com">pinnaclehealthenviron@gmail.com</a>.</p>
           <p class="mb-0" id="errorDetail" style="font-size: 0.9rem; opacity: .8;"></p>
         </div>
         <div class="modal-footer">
@@ -540,7 +516,7 @@
     </div>
   </div>
 
-  <!-- JS here -->
+  <!-- JS -->
   <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/isotope.pkgd.min.js"></script>
@@ -560,10 +536,9 @@
   <script src="assets/js/main.js"></script>
   <script>
     SVGInject(document.querySelectorAll("img.injectable"));
-    // Header fade-in script (copied from index.html)
     (function() {
       var header = document.getElementById('sticky-header');
-      var threshold = 60; // px from top
+      var threshold = 60;
       function onScroll() {
         if (window.scrollY > threshold) {
           header.classList.add('scrolled');
@@ -572,22 +547,19 @@
         }
       }
       window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll(); // run on load
+      onScroll();
     })();
-    // Update footer year
     (function() {
       var y = new Date().getFullYear();
       var el = document.getElementById('currentYear');
       if (el) el.textContent = y;
     })();
-    // AJAX submit for contact form with modal feedback
     (function() {
       const $form = $('#contact-form');
       const $status = $('#formStatus');
       const $btn = $('#submitBtn');
       $form.on('submit', function(e) {
         e.preventDefault();
-        // Client-side validation
         const name = $('#name').val();
         const email = $('#email').val();
         const phone = $('#phone').val();
