@@ -622,92 +622,182 @@
   <!-- main-area -->
   <main class="main-area fix">
 
-    <!-- slider-area -->
-    <section class="slider__area">
-      <div class="swiper slider-active" >
-        <div class="swiper-wrapper " >
-          <!-- Slide 1 -->
-          <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.png">
-            <div class="container custom-container-two">
-              <div class="row">
-                <div class="col-xl-7 col-lg-8">
-                  <div class="slider__content" style="background-color: #1f2937;">
-                    <span class="">Creating Healthy, Sustainable Environments</span>
-                    <h2 class="title">Facility Cleaning & Integrated Environmental Management</h2>
-                    <a href="contact.html" class="btn">Request a Quote <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
-                    <div class="mt-3">
-                      <span class="badge text-white px-3 py-2" style="border-radius:999px; background-color: #102693;">
-                        Major Contractor to HYPREP <br> Federal Ministry of Environment, Nigeria
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row mt-4">
-                <div class="col-xl-10">
-                  <div class="p-3 bg-white" style="border-left:4px solid #102693;border-radius:12px">
-                    <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
-                  </div>
+    <!-- ============================== HERO SLIDER ============================== -->
+<section class="slider__area">
+  <style>
+    /* ---- kill the red line under headings (theme-safe) ---- */
+    .slider__content .sub-title::after,
+    .slider__content .title::after,
+    .slider__content h2::after {
+      content: none !important;
+    }
+
+    /* ---- uniform button & badge ---- */
+    .slider__content .btn {
+      background:#102693 !important;
+      border-color:#102693 !important;
+      color:#fff !important;
+    }
+    .slider__content .badge {
+      background:#102693 !important;
+      color:#fff !important;
+      border-radius:999px;
+      padding:0.5rem 1rem;
+    }
+    .slider__content .sub-title,
+    .slider__content .title,
+    .slider__content h2,
+    .slider__content span,
+    .slider__content p {
+      color:#fff !important;
+    }
+  </style>
+
+  <div class="swiper slider-active">
+    <div class="swiper-wrapper">
+<!-- ==== NEW SLIDE 0: COMPANY INTRODUCTION (ADDED FIRST) ==== -->
+<div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.png">
+  <div class="container custom-container-two">
+    <div class="row align-items-center" style="min-height: 80vh;">
+      <div class="col-xl-7 col-lg-8">
+        <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
+          
+          <!-- Company Name -->
+          <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
+            Pinnacle Health &<br><span style="color:#102693;">Environmental Services Ltd</span>
+          </h1>
+
+          <!-- Tagline -->
+          <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
+            <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
+          </p>
+
+          <!-- Badges -->
+          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
+              ISO 9001 & 14001 Certified
+            </span>
+            <span class="badge" style="background:#102693; color:#fff;">
+              Major HYPREP Contractor
+            </span>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+            <a href="about.html" class="btn">
+              Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+            </a>
+            <a href="contact.html" class="btn" style="background:transparent; border:2px solid #102693; color:#102693;">
+              Get in Touch
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- ==== SLIDE 1 ==== -->
+      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.png">
+        <div class="container custom-container-two">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8">
+              <div class="slider__content" style="background:#1f2937;">
+                <span class="" style="text-transform: uppercase; font-weight: bold;">Creating Healthy, Sustainable Environments</span>
+                <h2 class="title">Facility Cleaning & Integrated Environmental Management</h2>
+                <a href="contact.html" class="btn">
+                  Request a Quote <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                </a>
+
+                <div class="mt-3">
+                  <span class="badge">
+                    Major Contractor to HYPREP <br> Federal Ministry of Environment, Nigeria
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Slide 2 -->
-          <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg02.png">
-            <div class="container custom-container-two">
-              <div class="row">
-                <div class="col-xl-7 col-lg-8">
-                  <div class="slider__content" style="background-color: #1f2937;">
-                    <span class="">Municipal & Oil & Gas Expertise</span>
-                    <h2 class="title">Waste Management for Cities & Petroleum Operations</h2>
-                    <a href="services.html" class="btn">Explore Services <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
-                  </div>
-                </div>
+          <div class="row mt-4">
+            <div class="col-xl-10">
+              <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
+                <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- Slide 3 -->
-          <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg03.jpg">
-            <div class="container custom-container-two">
-              <div class="row">
-                <div class="col-xl-7 col-lg-8">
-                  <div class="slider__content" style="background-color: #1f2937;">
-                    <span class="">Consultancy & Compliance</span>
-                    <h2 class="title">Environmental Impact Assessments & Remediation</h2>
-                    <a href="contact.html" class="btn">Talk to an Expert <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
-                  </div>
-                </div>
+      <!-- ==== SLIDE 2 ==== -->
+      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg02.png">
+        <div class="container custom-container-two">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8">
+              <div class="slider__content" style="background:#1f2937;">
+                <span class="" style="text-transform: uppercase; font-weight: bold;">Municipal & Oil & Gas Expertise</span>
+                <h2 class="title">Waste Management for Cities & Petroleum Operations</h2>
+                <a href="services.html" class="btn">
+                  Explore Services <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                </a>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- NEW SLIDE WITH #ea3832 -->
-          <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg04.jpg">
-            <div class="container custom-container-two">
-              <div class="row">
-                <div class="col-xl-7 col-lg-8">
-                  <div class="slider__content" style="background-color: #1f2937;">
-                    <span class="" style="color: #ea3832;">Trusted by Government & Industry</span>
-                    <h2 class="title" style="color: #ea3832;">HYPREP Major Contractor Since 2018</h2>
-                    <a href="contact.html" class="btn" style="background: #ea3832; border-color: #ea3832; color: #fff;">
-                      Get Started <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                    </a>
-                    <div class="mt-3">
-                      <span class="badge badge-red px-3 py-2" style="border-radius:999px;">
-                        UN-Backed Ogoniland Cleanup Leader
-                      </span>
-                    </div>
-                  </div>
+      <!-- ==== SLIDE 3 ==== -->
+      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg03.jpg">
+        <div class="container custom-container-two">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8">
+              <div class="slider__content" style="background:#1f2937;">
+                <span class="" style="text-transform: uppercase; font-weight: bold;">Consultancy & Compliance</span>
+                <h2 class="title">Environmental Impact Assessments & Remediation</h2>
+                <a href="contact.html" class="btn">
+                  Talk to an Expert <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== SLIDE 4 (ex-red slide – now uniform) ==== -->
+      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg04.jpg">
+        <div class="container custom-container-two">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8">
+              <div class="slider__content" style="background:#1f2937;">
+                <span class="" style="text-transform: uppercase; font-weight: bold;">Trusted by Government & Industry</span>
+                <h2 class="title">HYPREP Major Contractor Since 2018</h2>
+                <a href="contact.html" class="btn">
+                  Get Started <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                </a>
+
+                <div class="mt-3">
+                  <span class="badge">UN-Backed Ogoniland Cleanup Leader</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- slider-area-end -->
+
+    </div>
+  </div>
+
+  <!-- tiny JS safety-net (removes any line that might be added after Swiper init) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.slider__content .sub-title, .slider__content .title, .slider__content h2')
+        .forEach(el => {
+          el.style.borderBottom = 'none';
+          el.style.backgroundImage = 'none';
+        });
+    });
+  </script>
+</section>
+<!-- ============================== END HERO SLIDER ============================== -->
 
     <!-- intro-area -->
     <section class="intro__area">
