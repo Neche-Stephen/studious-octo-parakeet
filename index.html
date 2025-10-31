@@ -55,20 +55,13 @@
     header .tgmenu__nav .navigation > li > a:hover {
       color: #102693;
     }
-    .tgmenu__action .btn.border-btn {
-      border-color: #102693;
-      color: #102693;
-    }
-    .tgmenu__action .btn.border-btn:hover {
-      background: #102693;
-      color: #fff;
-    }
     .mobile-nav-toggler i { color: #111827; }
     .tgmenu__wrap nav.tgmenu__nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       min-height: 78px;
+      width: 100%;
     }
     .tgmenu__nav .logo {
       flex: 0 0 auto;
@@ -78,15 +71,15 @@
     .tgmenu__navbar-wrap {
       flex: 1;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      margin-left: auto;
     }
-    .tgmenu__action {
-      flex: 0 0 auto;
+    .tgmenu__navbar-wrap ul.navigation {
+      margin: 0;
+      padding: 0;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
     }
-    .tgmenu__nav > * { padding: 0 1rem; }
     .tgmenu__navbar-wrap ul.navigation > li {
       margin: 0 14px;
     }
@@ -94,6 +87,72 @@
     .tgmenu__nav .logo img {
       height: 42px;
       width: auto;
+    }
+    
+    /* Company Name Navigation Styles */
+    .company-name-nav {
+      margin-left: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .company-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #102693;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Mobile responsive for company name */
+    @media (max-width: 1199.98px) {
+      .company-name-nav {
+        margin-left: 10px;
+      }
+      .company-title {
+        font-size: 12px;
+        line-height: 1.1;
+      }
+    }
+    
+    @media (max-width: 991.98px) {
+      .company-name-nav {
+        margin-left: 8px;
+      }
+      .company-title {
+        font-size: 11px;
+        line-height: 1.1;
+      }
+    }
+    
+    @media (max-width: 767.98px) {
+      .company-name-nav {
+        margin-left: 6px;
+      }
+      .company-title {
+        font-size: 10px;
+        line-height: 1.0;
+        letter-spacing: 0.3px;
+      }
+    }
+    
+    @media (max-width: 575.98px) {
+      .company-name-nav {
+        margin-left: 5px;
+      }
+      .company-title {
+        font-size: 9px;
+        line-height: 1.0;
+        letter-spacing: 0.2px;
+      }
+    }
+    
+    /* Ensure logo and company name stay together */
+    .tgmenu__nav .logo {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
     }
 
     /* === 1. REMOVE LINES UNDER SLIDER HEADINGS ON MOBILE === */
@@ -173,7 +232,27 @@
     }
     .slider__content { position: relative; z-index: 1; }
     @media (max-width: 1199.98px) {
-      .tgmenu__navbar-wrap { justify-content: flex-start; }
+      .tgmenu__navbar-wrap { 
+        justify-content: flex-end; 
+        margin-left: auto;
+      }
+    }
+    
+    /* Ensure navigation spans full width and items align right - DESKTOP ONLY */
+    @media (min-width: 1200px) {
+      .tgmenu__navbar-wrap.d-none.d-xl-flex {
+        display: flex !important;
+        justify-content: flex-end;
+        width: auto;
+        margin-left: auto;
+      }
+    }
+    
+    /* Hide desktop navigation on mobile and tablet */
+    @media (max-width: 1199.98px) {
+      .tgmenu__navbar-wrap.d-none.d-xl-flex {
+        display: none !important;
+      }
     }
 
     .tgmenu__nav .navigation > li.active > a {
@@ -537,20 +616,55 @@
     visibility: visible;
   }
 
+  /* Mobile menu styling */
+  .tgmobile__menu-outer {
+    padding: 20px 0;
+  }
+  
+  .tgmobile__menu .navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tgmobile__menu .navigation li {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .tgmobile__menu .navigation li a {
+    display: block;
+    padding: 15px 30px;
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .tgmobile__menu .navigation li a:hover,
+  .tgmobile__menu .navigation li.active a {
+    color: #102693;
+    background: #f8f9ff;
+  }
+  
+  .tgmobile__menu-social {
+    padding: 20px 30px;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .tgmobile__menu-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tgmobile__menu-social a {
+    color: #102693;
+    font-size: 1.2rem;
+  }
+
   /* Optional: Push content when menu opens */
   .tgmobile__menu.open ~ .main-content {
     transform: translateX(280px);
-  }
-}
-/* === HIDE "GET IN TOUCH" BUTTON ON MOBILE === */
-.tgmenu__action {
-  display: none !important;
-}
-
-/* Show only on tablet & desktop (≥768px) */
-@media (min-width: 768px) {
-  .tgmenu__action {
-    display: block !important;
   }
 }
   </style>
@@ -576,6 +690,9 @@
                   <a href="index.html" aria-label="Pinnacle Health & Environmental Services Ltd">
                     <img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd">
                   </a>
+                  <div class="company-name-nav">
+                    <span class="company-title">PINNACLE HEALTH &<br>ENVIRONMENTAL SERVICES LTD</span>
+                  </div>
                 </div>
                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                   <ul class="navigation">
@@ -584,13 +701,6 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="project.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                  </ul>
-                </div>
-                <div class="tgmenu__action">
-                  <ul class="list-wrap">
-                    <li class="header-btn">
-                      <a href="contact.html" class="btn border-btn">Get In Touch</a>
-                    </li>
                   </ul>
                 </div>
               </nav>
@@ -605,12 +715,18 @@
         <div class="nav-logo">
           <a href="index.html"><img src="assets/img/logo/logo.png" style="width: 50px !important;" alt="Pinnacle Health & Environmental Services Ltd"></a>
         </div>
-        <div class="tgmobile__menu-outer"></div>
-        <li style="padding-left: 30px;"><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
-        
-         
-            
-         
+        <div class="tgmobile__menu-outer">
+          <ul class="navigation">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="tgmobile__menu-social">
+          <ul class="list-wrap">
+            <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
           </ul>
         </div>
       </nav>
