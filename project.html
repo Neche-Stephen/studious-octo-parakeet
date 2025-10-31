@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,8 +7,10 @@
   <meta name="description" content="Explore Pinnacle Health & Environmental Services Ltd's projects in facility cleaning, waste management, hydrocarbon remediation, and environmental consultancy across Nigeria.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
-  <!-- Theme CSS -->
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/animate.min.css">
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
@@ -23,16 +24,24 @@
   <link rel="stylesheet" href="assets/css/aos.css">
   <link rel="stylesheet" href="assets/css/tg-cursor.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <!-- Real Font Awesome -->
+
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Brand Layer (aligned with contact.html) -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Projects | Pinnacle Health & Environmental Services Ltd" />
+  <meta property="og:description" content="Facility cleaning, waste management, remediation, and consultancy projects across Nigeria." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/logo/logo.png" />
+  <meta property="og:url" content="https://pinnacle-example-domain.com/project.html" />
+
+  <!-- Custom Styles -->
   <style>
     :root {
-      --brand-primary: #102693;     /* Pinnacle green */
+      --brand-primary: #102693;
       --brand-primary-600: #102693;
-      --brand-accent: #0b3a53;      /* Deep teal/blue accent */
-      --brand-muted: #e8f5ee;       /* Light green tint */
+      --brand-accent: #0b3a53;
+      --brand-muted: #e8f5ee;
       --brand-dark: #0d1b1e;
       --brand-warning: #f2b705;
     }
@@ -57,46 +66,37 @@
     .contact-list a { color: inherit; }
     .brand__dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: var(--brand-primary); margin-right: .5rem; }
 
-    /* Header Styles (refined from contact.html) */
+    /* ================== HEADER STYLES ================== */
     #sticky-header.tg-header__area {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 999;
       background: rgba(255,255,255,0.98);
       box-shadow: 0 10px 25px rgba(0,0,0,.06);
       backdrop-filter: saturate(120%) blur(6px);
-      transition: background-color .35s ease, box-shadow .35s ease, transform .3s ease;
+      transition: background-color .35s ease, box-shadow .35s ease;
     }
     #sticky-header.tg-header__area.scrolled {
       background: rgba(255,255,255,0.98);
       box-shadow: 0 10px 25px rgba(0,0,0,.08);
-      transform: translateY(0);
     }
     header .tgmenu__nav .navigation > li > a {
       color: #111827;
-      font-weight: 500;
-      padding: 25px 0;
       transition: color .25s ease;
+      font-weight: 500;
     }
-    header .tgmenu__nav .navigation > li > a:hover {
-      color: var(--brand-primary);
+    header .tgmenu__nav .navigation > li > a:hover,
+    .tgmenu__nav .navigation > li.active > a {
+      color: #102693;
+      font-weight: 600;
     }
     .tgmenu__action .btn.border-btn {
-      border-color: var(--brand-primary);
-      color: var(--brand-primary);
+      border-color: #102693;
+      color: #102693;
       font-weight: 500;
-      padding: .5rem 1.5rem;
-      border-radius: 8px;
     }
     .tgmenu__action .btn.border-btn:hover {
-      background: var(--brand-primary);
+      background: #102693;
       color: #fff;
     }
-    .mobile-nav-toggler i { 
-      color: #111827; 
-      font-size: 1.5rem;
-    }
+    .mobile-nav-toggler i { color: #111827; }
     .tgmenu__wrap nav.tgmenu__nav {
       display: flex;
       align-items: center;
@@ -121,110 +121,184 @@
     }
     .tgmenu__nav > * { padding: 0 1rem; }
     .tgmenu__navbar-wrap ul.navigation > li {
-      margin: 0 16px;
+      margin: 0 14px;
     }
     .navigation .menu-item-has-children > a::after { display: none !important; }
     .tgmenu__nav .logo img {
       height: 42px;
       width: auto;
-      object-fit: contain;
     }
     @media (max-width: 1199.98px) {
-      .tgmenu__navbar-wrap {
-        justify-content: flex-start;
-      }
-      .tgmenu__action {
-        display: none;
-      }
+      .tgmenu__navbar-wrap { justify-content: flex-start; }
     }
-    /* Active link styling */
     .tgmenu__nav .navigation > li.active > a {
-      color: var(--brand-primary);
+      color: #102693 !important;
       font-weight: 600;
     }
-    /* Mobile menu refinements */
-    .tgmobile__menu {
+
+    /* === HIDE "GET IN TOUCH" ON MOBILE === */
+    .tgmenu__action { display: none !important; }
+    @media (min-width: 768px) {
+      .tgmenu__action { display: block !important; }
+    }
+
+    /* === MOBILE MENU (LEFT SLIDE-IN) === */
+    .tgmobile__menu,
+    .tgmobile__menu-backdrop {
+      display: none !important;
+    }
+    @media (max-width: 991.98px) {
+      .tgmobile__menu,
+      .tgmobile__menu-backdrop {
+        display: block !important;
+      }
+      .tgmobile__menu {
+        position: fixed;
+        top: 0; left: 0;
+        width: 280px; height: 100vh;
+        background: #fff;
+        z-index: 9999;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        transform: translateX(-100%);
+        transition: transform 0.35s ease;
+      }
+      .tgmobile__menu.open { transform: translateX(0); }
+      .tgmobile__menu-backdrop {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 9998;
+        opacity: 0; visibility: hidden;
+        transition: opacity 0.35s ease;
+      }
+      .tgmobile__menu-backdrop.open { opacity: 1; visibility: visible; }
+    }
+
+    /* === PROJECT CARDS — <figure> + <figcaption> (CLASSIC CARD) === */
+    .project__item-two {
       background: #fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,.1);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
-    .tgmobile__menu-box .close-btn i {
-      font-size: 1.5rem;
+    .project__item-two:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .project__item-two figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .project__item-two img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .project__item-two figcaption {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      color: #1f2937;
+    }
+    .project__item-two figcaption h2 {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .project__item-two figcaption h2 a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    .project__item-two figcaption h2 a:hover {
       color: var(--brand-primary);
     }
-    .tgmobile__menu-outer ul li a {
-      color: #111827;
+    .project__item-two figcaption .date {
+      color: #6b7280;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .project__item-two figcaption p {
+      font-size: 0.925rem;
+      color: #4b5563;
+      margin: 0;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+    .project__item-two .view-more {
+      margin-top: 1rem;
+      text-align: right;
+    }
+    .project__item-two .view-more a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background: var(--brand-primary);
+      color: #fff;
+      border-radius: 50%;
       font-size: 1rem;
-      padding: .5rem 0;
+      transition: all 0.3s ease;
     }
-    .tgmobile__menu-outer ul li a:hover {
-      color: var(--brand-primary);
+    .project__item-two .view-more a:hover {
+      background: #0d1f7a;
+      transform: scale(1.1);
     }
-    /* Project-specific styles */
+
+    /* === FILTER BUTTONS === */
+    .project__menu-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem;
+      margin-bottom: 2rem;
+    }
     .project__menu-nav button {
       background: var(--brand-muted);
       color: var(--brand-dark);
       border: 1px solid var(--brand-primary);
       border-radius: 8px;
       padding: .5rem 1rem;
-      margin: 0 .25rem;
-      transition: all .3s ease;
       font-weight: 500;
+      font-size: .9rem;
+      transition: all .3s ease;
     }
     .project__menu-nav button.active,
     .project__menu-nav button:hover {
       background: var(--brand-primary);
       color: #fff;
     }
-    .project__item-two {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,.1);
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
-    .project__item-two:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,.15);
-    }
-    .project__thumb-two img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      transition: transform .3s ease;
-    }
-    .project__item-two:hover .project__thumb-two img {
-      transform: scale(1.05);
-    }
-    .project__content-two {
-      padding: 1.5rem;
-      background: #fff;
-    }
-    .project__content-two h2.title {
-      font-size: 1.25rem;
-      margin-bottom: .5rem;
-    }
-    .project__content-two span {
-      color: #6b7280;
-      font-size: .875rem;
-    }
-    .project__content-two p {
-      font-size: .9rem;
-      color: #4b5563;
-      margin-top: .5rem;
-      margin-bottom: 0;
-    }
-    .project__icon-two i {
-      background: var(--brand-primary);
-      color: #fff;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
+
+    /* === STATS SECTION === */
+    .stats__item {
       text-align: center;
-      transition: background .3s ease;
+      padding: 1.5rem;
     }
-    .project__icon-two i:hover {
-      background: var(--brand-primary-600);
+    .stats__item h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--brand-primary);
     }
+    .stats__item p {
+      margin-top: .5rem;
+      color: #4b5563;
+      font-size: 1rem;
+    }
+
+    /* === CTA === */
     .cta__area .btn.btn-two {
       display: inline-flex;
       align-items: center;
@@ -235,16 +309,13 @@
 </head>
 
 <body>
- 
-
   <!-- Scroll-top -->
   <button class="scroll__top scroll-to-target" data-target="html" aria-label="Scroll to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
-  <!-- Scroll-top-end -->
 
   <!-- header-area -->
-  <header>
+ <header>
     <div id="header-fixed-height"></div>
     <div id="sticky-header" class="tg-header__area">
       <div class="container custom-container">
@@ -252,15 +323,12 @@
           <div class="col-12">
             <div class="tgmenu__wrap">
               <nav class="tgmenu__nav" aria-label="Main Navigation">
-                <!-- Mobile toggler -->
                 <div class="mobile-nav-toggler" aria-label="Open mobile menu"><i class="fa-solid fa-bars"></i></div>
-                <!-- Logo -->
                 <div class="logo">
                   <a href="index.html" aria-label="Pinnacle Health & Environmental Services Ltd">
                     <img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd">
                   </a>
                 </div>
-                <!-- Main menu (desktop) -->
                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                   <ul class="navigation">
                     <li><a href="index.html">Home</a></li>
@@ -270,7 +338,6 @@
                     <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </div>
-                <!-- Actions -->
                 <div class="tgmenu__action">
                   <ul class="list-wrap">
                     <li class="header-btn">
@@ -284,60 +351,60 @@
         </div>
       </div>
     </div>
-    <!-- Mobile Menu -->
     <div class="tgmobile__menu" aria-hidden="true">
       <nav class="tgmobile__menu-box" role="navigation">
         <div class="close-btn" aria-label="Close mobile menu"><i class="fa-solid fa-xmark"></i></div>
         <div class="nav-logo">
-          <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd"></a>
+          <a href="index.html"><img src="assets/img/logo/logo.png" style="width: 50px !important;" alt="Pinnacle Health & Environmental Services Ltd"></a>
         </div>
-        <div class="tgmobile__menu-outer">
-          <!-- Populated by JS from desktop menu -->
-        </div>
-        <div class="social-links">
-          <ul class="list-wrap">
-            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a></li>
-            <li><a href="https://twitter.com/home" target="_blank" rel="noopener"><i class="fab fa-twitter" aria-label="Twitter"></i></a></li>
-            <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
-            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a></li>
+        <div class="tgmobile__menu-outer"></div>
+        <li style="padding-left: 30px;"><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
+        
+         
+            
+         
           </ul>
         </div>
       </nav>
     </div>
     <div class="tgmobile__menu-backdrop"></div>
-    <!-- End Mobile Menu -->
   </header>
   <!-- header-area-end -->
 
   <!-- main-area -->
-  <main class="main-area fix" style="padding-top: 15vh;">
+  <main class="main-area fix">
+
     <!-- breadcrumb-area -->
-    <div class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/project_bg.jpg" style="padding-top: 12vh;" role="img" aria-label="Pinnacle Projects">
+    <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/project_bg.jpg">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-12">
             <div class="breadcrumb__content">
-              <h2 class="title">Our Projects</h2>
-              <nav class="breadcrumb" aria-label="Breadcrumb">
+              <h3 class="title text-black">Our Projects</h3>
+              <nav class="breadcrumb">
                 <span property="itemListElement" typeof="ListItem">
                   <a href="index.html">Home</a>
                 </span>
-                <span class="breadcrumb-separator">/</span>
-                <span style="color: #eb3832; font-weight: bold;">Projects</span>
+                <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
+                <span property="itemListElement" typeof="ListItem">Projects</span>
               </nav>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <div class="breadcrumb__shape-wrap">
+        <img src="assets/img/images/breadcrumb_shape01.png" alt="" data-aos="fade-right" data-aos-delay="300">
+        <img src="assets/img/images/breadcrumb_shape02.png" alt="" data-aos="fade-left" data-aos-delay="300">
+      </div>
+    </section>
     <!-- breadcrumb-area-end -->
 
     <!-- project-area -->
-    <section class="project__area-two section-py-120">
+    <section class="project__area-two section-pt-120 section-pb-90">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="section__title section__title-three mb-40">
+            <div class="section__title mb-40">
               <span class="sub-title">Our Work</span>
               <h2 class="title">Transforming Environments Across Nigeria</h2>
               <p class="mt-2 mb-0">Discover our impactful projects in facility management, waste management, hydrocarbon remediation, and environmental consultancy.</p>
@@ -352,115 +419,116 @@
           </div>
         </div>
         <div class="row gutter-24 project-active-two">
+
           <!-- Project 1 -->
           <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-cleaning">
-            <div class="project__item-two">
-              <div class="project__thumb-two">
-                <a href="project-details.html"><img src="assets/img/images/cleaning (12).jpg" alt="Corporate Office Cleaning in Lagos" loading="lazy"></a>
-                <span class="shape"></span>
-              </div>
-              <div class="project__content-two">
-                <h2 class="title"><a href="project.html">Corporate Office Cleaning, Lagos</a></h2>
-                <span>January 2024 - Ongoing</span>
-                <p>Comprehensive cleaning and maintenance for a multinational’s Lagos office, ensuring hygiene and compliance.</p>
-              </div>
-              <div class="project__icon-two">
-                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+            <article class="project__item-two">
+              <figure>
+                <a href="">
+                  <img src="assets/img/images/cleaning (12).jpg" alt="Corporate Office Cleaning in Lagos" loading="lazy">
+                </a>
+                <figcaption>
+                  <h2><a href="">Corporate Office Cleaning, Lagos</a></h2>
+                  <span class="date">January 2024 - Ongoing</span>
+                  <p>Comprehensive cleaning and maintenance for a multinational’s Lagos office, ensuring hygiene and compliance.</p>
+                  
+                </figcaption>
+              </figure>
+            </article>
           </div>
+
           <!-- Project 2 -->
           <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-waste">
-            <div class="project__item-two">
-              <div class="project__thumb-two">
-                <a href="project.html"><img src="assets/img/images/cleaning (11).jpg" alt="Abuja Municipal Waste Management" loading="lazy"></a>
-                <span class="shape"></span>
-              </div>
-              <div class="project__content-two">
-                <h2 class="title"><a href="project.html">Abuja Municipal Waste Management</a></h2>
-                <span>June 2023 - December 2024</span>
-                <p>Efficient waste collection and recycling for Abuja communities, reducing landfill impact.</p>
-              </div>
-              <div class="project__icon-two">
-                <a href="project.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+            <article class="project__item-two">
+              <figure>
+                <a href="">
+                  <img src="assets/img/images/cleaning (11).jpg" alt="Abuja Municipal Waste Management" loading="lazy">
+                </a>
+                <figcaption>
+                  <h2><a href="">Abuja Municipal Waste Management</a></h2>
+                  <span class="date">June 2023 - December 2024</span>
+                  <p>Efficient waste collection and recycling for Abuja communities, reducing landfill impact.</p>
+                  
+                </figcaption>
+              </figure>
+            </article>
           </div>
+
           <!-- Project 3 -->
           <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-remediation">
-            <div class="project__item-two">
-              <div class="project__thumb-two">
-                <a href="project.html"><img src="assets/img/images/cleaning (17).png" alt="Ogoni Land Remediation Project" loading="lazy"></a>
-                <span class="shape"></span>
-              </div>
-              <div class="project__content-two">
-                <h2 class="title"><a href="project.html">Ogoni Land Remediation</a></h2>
-                <span>March 2022 - Present</span>
-                <p>HYPREP-supported cleanup of oil-contaminated sites in Ogoni, restoring ecosystems.</p>
-              </div>
-              <div class="project__icon-two">
-                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+            <article class="project__item-two">
+              <figure>
+                <a href="">
+                  <img src="assets/img/images/cleaning (17).png" alt="Ogoni Land Remediation Project" loading="lazy">
+                </a>
+                <figcaption>
+                  <h2><a href="">Ogoni Land Remediation</a></h2>
+                  <span class="date">March 2022 - Present</span>
+                  <p>HYPREP-supported cleanup of oil-contaminated sites in Ogoni, restoring ecosystems.</p>
+                  
+                </figcaption>
+              </figure>
+            </article>
           </div>
+
           <!-- Project 4 -->
           <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-consultancy">
-            <div class="project__item-two">
-              <div class="project__thumb-two">
-                <a href="project-details.html"><img src="assets/img/images/cleaning (4).jpg" alt="Environmental Impact Assessment in Port Harcourt" loading="lazy"></a>
-                <span class="shape"></span>
-              </div>
-              <div class="project__content-two">
-                <h2 class="title"><a href="project-details.html">Environmental Impact Assessment, Port Harcourt</a></h2>
-                <span>September 2023 - February 2024</span>
-                <p>Conducted EIA for a major oil and gas facility, ensuring regulatory compliance.</p>
-              </div>
-              <div class="project__icon-two">
-                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+            <article class="project__item-two">
+              <figure>
+                <a href="">
+                  <img src="assets/img/images/cleaning (4).jpg" alt="Environmental Impact Assessment in Port Harcourt" loading="lazy">
+                </a>
+                <figcaption>
+                  <h2><a href="">Environmental Impact Assessment, Port Harcourt</a></h2>
+                  <span class="date">September 2023 - February 2024</span>
+                  <p>Conducted EIA for a major oil and gas facility, ensuring regulatory compliance.</p>
+                  
+                </figcaption>
+              </figure>
+            </article>
           </div>
+
           <!-- Project 5 -->
           <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-cleaning cat-waste">
-            <div class="project__item-two">
-              <div class="project__thumb-two">
-                <a href="project-details.html"><img src="assets/img/images/cleaning (5).jpg" alt="Hospital Cleaning and Waste Management in Abuja" loading="lazy"></a>
-                <span class="shape"></span>
-              </div>
-              <div class="project__content-two">
-                <h2 class="title"><a href="project-details.html">Hospital Waste & Cleaning, Abuja</a></h2>
-                <span>April 2024 - Ongoing</span>
-                <p>Medical waste management and sanitation for a leading Abuja hospital.</p>
-              </div>
-              <div class="project__icon-two">
-                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+            <article class="project__item-two">
+              <figure>
+                <a href="">
+                  <img src="assets/img/images/cleaning (5).jpg" alt="Hospital Cleaning and Waste Management in Abuja" loading="lazy">
+                </a>
+                <figcaption>
+                  <h2><a href="">Hospital Waste & Cleaning, Abuja</a></h2>
+                  <span class="date">April 2024 - Ongoing</span>
+                  <p>Medical waste management and sanitation for a leading Abuja hospital.</p>
+                  
+                </figcaption>
+              </figure>
+            </article>
           </div>
+
           <!-- Project 6 -->
           <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-remediation cat-consultancy">
-            <div class="project__item-two">
-              <div class="project__thumb-two">
-                <a href="project-details.html"><img src="assets/img/images/cleaning (9).jpg" alt="Coastal Cleanup Initiative in Lagos" loading="lazy"></a>
-                <span class="shape"></span>
-              </div>
-              <div class="project__content-two">
-                <h2 class="title"><a href="project-details.html">Coastal Cleanup Initiative, Lagos</a></h2>
-                <span>November 2023 - January 2024</span>
-                <p>Community-driven cleanup and consultancy for Lagos coastal areas.</p>
-              </div>
-              <div class="project__icon-two">
-                <a href="project-details.html" aria-label="View project details"><i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+            <article class="project__item-two">
+              <figure>
+                <a href="">
+                  <img src="assets/img/images/cleaning (9).jpg" alt="Coastal Cleanup Initiative in Lagos" loading="lazy">
+                </a>
+                <figcaption>
+                  <h2><a href="">Coastal Cleanup Initiative, Lagos</a></h2>
+                  <span class="date">November 2023 - January 2024</span>
+                  <p>Community-driven cleanup and consultancy for Lagos coastal areas.</p>
+                  
+                </figcaption>
+              </figure>
+            </article>
           </div>
+
         </div>
       </div>
     </section>
     <!-- project-area-end -->
 
-
-     <section class="stats__area">
+    <!-- stats-area -->
+    <section class="stats__area section-pb-90">
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-3 col-md-6 mb-4">
@@ -490,9 +558,10 @@
         </div>
       </div>
     </section>
+    <!-- stats-area-end -->
 
     <!-- cta-area -->
-    <section class="cta__area fix">
+    <section class="cta__area fix section-pb-120">
       <div class="cta__bg" data-background="assets/img/bg/cta_bg.jpg"></div>
       <div class="container">
         <div class="row align-items-end">
@@ -523,52 +592,93 @@
       </div>
     </section>
     <!-- cta-area-end -->
+
   </main>
   <!-- main-area-end -->
 
   <!-- footer-area -->
   <footer class="footer__area">
     <div class="container">
+      <div class="footer__features">
+        <a href="services.html">Facility Cleaning</a>
+        <a href="services.html">Municipal Waste</a>
+        <a href="services.html">Oil & Gas Waste</a>
+        <a href="services.html">Environmental Consultancy</a>
+      </div>
       <div class="footer__top">
         <div class="row">
-          <div class="col-xl-3 col-lg-4 col-md-6">
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
             <div class="footer__widget">
-              <div class="footer__logo mb-3">
-                <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle"></a>
+              <div class="footer__logo">
+                <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd"></a>
+                <div class="company-name mt-2">
+                  <h5 class="mb-0">Pinnacle Health & Environmental Services Ltd</h5>
+                  <small class="">RC 661920 • Since 2006</small>
+                </div>
               </div>
-              <p><strong>RC 661920</strong> | Since 2006</p>
-              <p>Suite 106B, Nawa Complex, Ahmadu Bello Way, Kado District, Abuja, FCT</p>
+              <div class="footer__content">
+                <p>Pinnacle delivers facility cleaning, waste management and environmental consultancy with quality, safety and sustainability at the core.</p>
+              </div>
+              <div class="footer__social">
+                <ul class="list-wrap">
+                  <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <span class="badge text-white px-3 py-2" style="border-radius: 999px; background-color: #102693;">
+                  Major Contractor to HYPREP – Federal Ministry of Environment, Nigeria
+                </span>
+              </div>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-4 col-md-6">
+          <div class="col-xl-2 col-lg-4 col-md-3 col-sm-4">
             <div class="footer__widget">
-              <h4 class="footer__widget-title">Quick Links</h4>
-              <ul class="list-wrap">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="project.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
+              <h4 class="footer__widget-title">Useful Links</h4>
+              <div class="footer__widget-link">
+                <ul class="list-wrap">
+                  <li><a href="about.html"><i class="fa-solid fa-arrow-right"></i><span>About</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Services</span></a></li>
+                  <li><a href="project.html"><i class="fa-solid fa-arrow-right"></i><span>Projects</span></a></li>
+                  <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Contact</span></a></li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-4 col-md-6">
+          <div class="col-xl-2 col-lg-4 col-md-3 col-sm-6">
+            <div class="footer__widget">
+              <h4 class="footer__widget-title">Services</h4>
+              <div class="footer__widget-link">
+                <ul class="list-wrap">
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Facility Cleaning</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Municipal Waste</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Oil & Gas Waste</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Environmental Consultancy</span></a></li>
+                  <li><a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>Sustainability Advocacy</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+            <div class="footer__widget">
+              <h4 class="footer__widget-title">Quick Info</h4>
+              <div class="footer__widget-link">
+                <ul class="list-wrap">
+                  <li><a href="about.html"><i class="fa-solid fa-arrow-right"></i><span>Our Story</span></a></li>
+                  <li><a href="project.html"><i class="fa-solid fa-arrow-right"></i><span>Project Showcase</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-8">
             <div class="footer__widget">
               <h4 class="footer__widget-title">Contact</h4>
-              <ul class="list-wrap">
-                <li><a href="tel:07033436161">07033436161</a></li>
-                <li><a href="tel:08035058743">08035058743</a></li>
-                <li><a href="mailto:pinnaclehealthenviron@gmail.com">pinnaclehealthenviron@gmail.com</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="footer__widget">
-              <h4 class="footer__widget-title">Follow Us</h4>
-              <ul class="list-wrap d-flex gap-3">
-                <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener">Instagram</a></li>
-                <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-              </ul>
+              <div class="footer__newsletter">
+                <div class="mt-3">
+                  <p class="mb-1"><strong>Address:</strong> Suite106B, Nawa Complex, Ahmadu Bello Way, Kado District, Abuja</p>
+                  <p class="mb-1"><strong>Phone:</strong> <a href="tel:07033436161">07033436161</a></p>
+                  <p class="mb-0"><strong>Email:</strong> <a href="mailto:Pinnaclehealthenvirons@gmail.com">Pinnaclehealthenvirons@gmail.com</a></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -576,13 +686,17 @@
       <div class="footer__bottom">
         <div class="row align-items-center">
           <div class="col-md-7">
-            <p>© <span id="currentYear">2025</span> Pinnacle Health & Environmental Services Ltd. All rights reserved.</p>
+            <div class="copyright-text">
+              <p>© <span id="currentYear">2025</span> Pinnacle Health & Environmental Services Ltd. All rights reserved.</p>
+            </div>
           </div>
-          <div class="col-md-5 text-md-end">
-            <ul class="list-wrap">
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-            </ul>
+          <div class="col-md-5">
+            <div class="footer__bottom-menu">
+              <ul class="list-wrap">
+                <li><a href="mailto:Pinnaclehealthenvirons@gmail.com">Email Us</a></li>
+                <li><a href="tel:07033436161">Call 07033436161</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -590,7 +704,7 @@
   </footer>
   <!-- footer-area-end -->
 
-  <!-- JS here -->
+  <!-- JS -->
   <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/isotope.pkgd.min.js"></script>
@@ -608,46 +722,60 @@
   <script src="assets/js/wow.min.js"></script>
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- INTERACTIONS -->
   <script>
     SVGInject(document.querySelectorAll("img.injectable"));
-    // Header fade-in script
-    (function() {
-      var header = document.getElementById('sticky-header');
-      var threshold = 60; // px from top
+
+    // Sticky Header
+    (function () {
+      const header = document.getElementById('sticky-header');
+      const threshold = 60;
       function onScroll() {
-        if (window.scrollY > threshold) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
+        header.classList.toggle('scrolled', window.scrollY > threshold);
       }
       window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll(); // run on load
+      onScroll();
     })();
-    // Update footer year
-    (function() {
-      var y = new Date().getFullYear();
-      var el = document.getElementById('currentYear');
-      if (el) el.textContent = y;
-    })();
-    // Initialize Isotope for project filtering
-    (function() {
-      $(window).on('load', function() {
-        var $grid = $('.project-active-two').isotope({
-          itemSelector: '.grid-item',
-          percentPosition: true,
-          masonry: {
-            columnWidth: '.grid-sizer'
-          }
-        });
-        $('.project__menu-nav').on('click', 'button', function() {
-          var filterValue = $(this).attr('data-filter');
-          $grid.isotope({ filter: filterValue });
-          $('.project__menu-nav button').removeClass('active');
-          $(this).addClass('active');
+
+    // Update Year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile Menu
+    const mobileToggler = document.querySelector('.mobile-nav-toggler');
+    const mobileMenu = document.querySelector('.tgmobile__menu');
+    const backdrop = document.querySelector('.tgmobile__menu-backdrop');
+    const closeBtn = document.querySelector('.tgmobile__menu .close-btn');
+
+    if (mobileToggler && mobileMenu && backdrop) {
+      mobileToggler.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+        backdrop.classList.add('open');
+      });
+      [closeBtn, backdrop].forEach(el => {
+        if (el) el.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          backdrop.classList.remove('open');
         });
       });
-    })();
+    }
+
+    // Isotope Filter
+    $(window).on('load', function() {
+      var $grid = $('.project-active-two').isotope({
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        masonry: {
+          columnWidth: '.grid-sizer'
+        }
+      });
+      $('.project__menu-nav').on('click', 'button', function() {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+        $('.project__menu-nav button').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
   </script>
 </body>
 </html>

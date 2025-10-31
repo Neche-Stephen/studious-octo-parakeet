@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Favicons -->
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
 
   <!-- CSS: vendor/template -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -50,6 +50,7 @@
     header .tgmenu__nav .navigation > li > a {
       color: #111827;
       transition: color .25s ease;
+      position: relative;
     }
     header .tgmenu__nav .navigation > li > a:hover {
       color: #102693;
@@ -94,6 +95,75 @@
       height: 42px;
       width: auto;
     }
+
+    /* === 1. REMOVE LINES UNDER SLIDER HEADINGS ON MOBILE === */
+    /* === 1. NO LINES AFTER SLIDER HEADINGS – FULLY REMOVED === */
+.slider__content .sub-title::after,
+.slider__content .title::after,
+.slider__content h2::after {
+  all: unset !important;
+}
+
+    /* === 2. CARD TEXT READABILITY FIX === */
+    .blog__post-content,
+    .service-card .blog__post-content {
+      background: rgba(255, 255, 255, 0.96) !important;
+      backdrop-filter: blur(10px);
+      border-radius: 0 0 12px 12px;
+      padding: 1.25rem !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    }
+    .blog__post-content h4.title,
+    .blog__post-content .blog__post-meta span,
+    .blog__post-content .read-details-btn {
+      color: #1f2937 !important;
+      font-weight: 600;
+    }
+    .blog__post-icon {
+      color: #ea3832 !important;
+    }
+
+    /* === 3. USE #ea3832 IN NEW SLIDE === */
+    .slider__content .badge-red {
+      background-color: #ea3832 !important;
+      color: #fff;
+    }
+
+    /* === 4. ULTRA RESPONSIVE MOBILE === */
+    @media (max-width: 768px) {
+      .slider__content .title { font-size: 1.8rem !important; line-height: 1.2; }
+      .slider__content .sub-title { font-size: 0.9rem; }
+      .slider__content .btn { font-size: 0.9rem; padding: 0.6rem 1.2rem; }
+      .slider__content .badge { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+      .intro-title { font-size: 1.8rem !important; }
+      .intro-text { font-size: 1rem !important; line-height: 1.5; }
+      .intro-badges .badge { font-size: 0.8rem; padding: 0.4rem 0.8rem; }
+      .features__item { margin-bottom: 2rem; }
+      .features__content h3 { font-size: 1.3rem; }
+      .features__content p { font-size: 0.95rem; }
+      .dropdown-toggle { font-size: 0.9rem; }
+      .about__content p { font-size: 0.95rem; }
+      .about__list-box .content h4 { font-size: 1.1rem; }
+      .blog__post-thumb, .service-card .blog__post-thumb { height: 140px !important; }
+      .blog__post-content { padding: 1rem !important; }
+      .blog__post-content h4.title { font-size: 1rem !important; line-height: 1.3; }
+      .blog__post-meta { font-size: 0.75rem; }
+      .read-details-btn { font-size: 0.8rem; }
+      .blog-details { font-size: 0.9rem; padding: 1rem; }
+      .cta__content h2 { font-size: 1.6rem; }
+      .cta__btn .btn { font-size: 0.9rem; padding: 0.6rem 1.2rem; }
+      .work__content h2 { font-size: 1.6rem; }
+      .work__btn .btn { font-size: 0.9rem; padding: 0.6rem 1rem; }
+      .footer__widget h4 { font-size: 1.1rem; }
+      .footer__widget p, .footer__widget li, .footer__widget a { font-size: 0.9rem; }
+      .footer__features a { font-size: 0.85rem; padding: 0.4rem 0.8rem; }
+    }
+
+    .gutter-24 { --bs-gutter-x: 1.5rem; --bs-gutter-y: 1.5rem; }
+    @media (max-width: 576px) {
+      .gutter-24 { --bs-gutter-x: 1rem; --bs-gutter-y: 1rem; }
+    }
+
     .slider__area .slider__bg::before {
       content:"";
       position:absolute; inset:0;
@@ -103,9 +173,28 @@
     }
     .slider__content { position: relative; z-index: 1; }
     @media (max-width: 1199.98px) {
-      .tgmenu__navbar-wrap {
-        justify-content: flex-start;
-      }
+      .tgmenu__navbar-wrap { justify-content: flex-start; }
+    }
+
+    .tgmenu__nav .navigation > li.active > a {
+      color: #102693 !important;
+      font-weight: 600;
+    }
+    .tgmenu__nav .navigation > li.active > a::before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 3px;
+      background: #102693;
+      border-radius: 2px;
+    }
+
+    .tgmobile__menu .navigation > li.active > a {
+      color: #102693;
+      font-weight: 600;
     }
 
     /* Dropdown Toggle Styles */
@@ -136,35 +225,30 @@
       transform: rotate(180deg);
     }
 
-    /* Services Expand */
-    .services__item {
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border-radius: 12px;
-      padding: 20px;
+    /* Intro Section */
+    .intro__area {
+      background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+      padding: 80px 0 60px;
     }
-    .services__item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(16, 38, 147, 0.1);
+    .intro-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #102693;
+      margin-bottom: 1rem;
     }
-    .services__item-hidden {
-      display: none;
-      margin-top: 20px;
-      padding: 25px;
-      background: #f8f9ff;
-      border-radius: 12px;
-      border-left: 4px solid #102693;
+    .intro-text {
+      font-size: 1.15rem;
+      color: #4b5563;
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
     }
-    .services__item.active .services__item-hidden {
-      display: block;
-      animation: fadeIn 0.5s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .intro-badges .badge {
+      font-size: 0.9rem;
+      font-weight: 500;
     }
 
-    /* Horizontal Floating Icons (Font Awesome) */
+    /* Horizontal Floating Icons */
     .work__icons-horizontal {
       overflow: hidden;
       padding: 50px 0;
@@ -207,6 +291,9 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
     .blog__post-item:hover {
       transform: translateY(-5px);
@@ -214,7 +301,7 @@
     }
     .blog__post-thumb {
       position: relative;
-      height: 220px;
+      height: 180px;
       overflow: hidden;
     }
     .blog__post-thumb img {
@@ -229,6 +316,9 @@
     .blog__post-content {
       padding: 1.5rem;
       background: #fff;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
     .blog__post-meta {
       font-size: .85rem;
@@ -239,6 +329,7 @@
       font-size: 1.15rem;
       margin-bottom: .5rem;
       line-height: 1.4;
+      flex-grow: 1;
     }
     .blog__post-icon {
       font-size: 1.8rem;
@@ -258,6 +349,7 @@
       padding: 0;
       transition: color .25s ease;
       cursor: pointer;
+      margin-top: auto;
     }
     .read-details-btn:hover {
       color: #0a1a6e;
@@ -279,7 +371,20 @@
       display: block;
     }
 
-    /* ====================== ULTRA-MODERN FAQ SECTION ====================== */
+    .service-card .blog__post-thumb {
+      height: 180px;
+    }
+    .service-card .blog-details .btn-sm {
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+    }
+    @media (max-width: 991.98px) {
+      .blog__post-thumb, .service-card .blog__post-thumb {
+        height: 160px;
+      }
+    }
+
+    /* FAQ Section */
     .faq__area {
       padding: 120px 0 100px;
       background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
@@ -369,7 +474,85 @@
         padding: 24px;
       }
     }
-    /* ==================================================================== */
+    /* === PREVENT CARD STRETCH IN GRID === */
+.features__area .row,
+.services__area .row,
+.blog__post-area .row {
+  align-items: start !important;
+}
+
+/* Optional: Add gap between cards */
+.features__area .row,
+.services__area .row,
+.blog__post-area .row {
+  row-gap: 1.5rem;
+}
+
+/* === MOBILE MENU: HIDDEN ON DESKTOP === */
+.tgmobile__menu,
+.tgmobile__menu-backdrop {
+  display: none !important;
+}
+
+/* Show only on mobile (≤992px = Bootstrap lg breakpoint) */
+@media (max-width: 991.98px) {
+  .tgmobile__menu,
+  .tgmobile__menu-backdrop {
+    display: block !important;
+  }
+
+  .tgmobile__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+  }
+
+  .tgmobile__menu.open {
+    transform: translateX(0);
+  }
+
+  .tgmobile__menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease;
+  }
+
+  .tgmobile__menu-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Optional: Push content when menu opens */
+  .tgmobile__menu.open ~ .main-content {
+    transform: translateX(280px);
+  }
+}
+/* === HIDE "GET IN TOUCH" BUTTON ON MOBILE === */
+.tgmenu__action {
+  display: none !important;
+}
+
+/* Show only on tablet & desktop (≥768px) */
+@media (min-width: 768px) {
+  .tgmenu__action {
+    display: block !important;
+  }
+}
   </style>
 </head>
 
@@ -420,15 +603,14 @@
       <nav class="tgmobile__menu-box" role="navigation">
         <div class="close-btn" aria-label="Close mobile menu"><i class="fa-solid fa-xmark"></i></div>
         <div class="nav-logo">
-          <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd"></a>
+          <a href="index.html"><img src="assets/img/logo/logo.png" style="width: 50px !important;" alt="Pinnacle Health & Environmental Services Ltd"></a>
         </div>
         <div class="tgmobile__menu-outer"></div>
-        <div class="social-links">
-          <ul class="list-wrap">
-            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a></li>
-            <li><a href="https://twitter.com/home" target="_blank" rel="noopener"><i class="fab fa-twitter" aria-label="Twitter"></i></a></li>
-            <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
-            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a></li>
+        <li style="padding-left: 30px;"><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
+        
+         
+            
+         
           </ul>
         </div>
       </nav>
@@ -442,19 +624,20 @@
 
     <!-- slider-area -->
     <section class="slider__area">
-      <div class="swiper slider-active">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.jpg">
+      <div class="swiper slider-active" >
+        <div class="swiper-wrapper " >
+          <!-- Slide 1 -->
+          <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.png">
             <div class="container custom-container-two">
               <div class="row">
                 <div class="col-xl-7 col-lg-8">
-                  <div class="slider__content">
-                    <span class="sub-title">Creating Healthy, Sustainable Environments</span>
+                  <div class="slider__content" style="background-color: #1f2937;">
+                    <span class="">Creating Healthy, Sustainable Environments</span>
                     <h2 class="title">Facility Cleaning & Integrated Environmental Management</h2>
                     <a href="contact.html" class="btn">Request a Quote <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
                     <div class="mt-3">
                       <span class="badge text-white px-3 py-2" style="border-radius:999px; background-color: #102693;">
-                        Major Contractor to HYPREP – Federal Ministry of Environment, Nigeria
+                        Major Contractor to HYPREP <br> Federal Ministry of Environment, Nigeria
                       </span>
                     </div>
                   </div>
@@ -469,12 +652,14 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg02.jpg">
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg02.png">
             <div class="container custom-container-two">
               <div class="row">
                 <div class="col-xl-7 col-lg-8">
-                  <div class="slider__content">
-                    <span class="sub-title">Municipal & Oil & Gas Expertise</span>
+                  <div class="slider__content" style="background-color: #1f2937;">
+                    <span class="">Municipal & Oil & Gas Expertise</span>
                     <h2 class="title">Waste Management for Cities & Petroleum Operations</h2>
                     <a href="services.html" class="btn">Explore Services <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
                   </div>
@@ -482,14 +667,38 @@
               </div>
             </div>
           </div>
+
+          <!-- Slide 3 -->
           <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg03.jpg">
             <div class="container custom-container-two">
               <div class="row">
                 <div class="col-xl-7 col-lg-8">
-                  <div class="slider__content">
-                    <span class="sub-title">Consultancy & Compliance</span>
+                  <div class="slider__content" style="background-color: #1f2937;">
+                    <span class="">Consultancy & Compliance</span>
                     <h2 class="title">Environmental Impact Assessments & Remediation</h2>
                     <a href="contact.html" class="btn">Talk to an Expert <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW SLIDE WITH #ea3832 -->
+          <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg04.jpg">
+            <div class="container custom-container-two">
+              <div class="row">
+                <div class="col-xl-7 col-lg-8">
+                  <div class="slider__content" style="background-color: #1f2937;">
+                    <span class="" style="color: #ea3832;">Trusted by Government & Industry</span>
+                    <h2 class="title" style="color: #ea3832;">HYPREP Major Contractor Since 2018</h2>
+                    <a href="contact.html" class="btn" style="background: #ea3832; border-color: #ea3832; color: #fff;">
+                      Get Started <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                    </a>
+                    <div class="mt-3">
+                      <span class="badge badge-red px-3 py-2" style="border-radius:999px;">
+                        UN-Backed Ogoniland Cleanup Leader
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -499,6 +708,28 @@
       </div>
     </section>
     <!-- slider-area-end -->
+
+    <!-- intro-area -->
+    <section class="intro__area">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-10 col-lg-11">
+            <div class="intro__content text-center">
+              <h1 class="intro-title">Pinnacle Health & Environmental Services Ltd</h1>
+              <p class="intro-text lead">
+                We are a leading Nigerian environmental management company delivering <strong>facility cleaning, waste management, and consultancy services</strong> to government and industry. 
+                As a <strong>major contractor to HYPREP</strong> under the Federal Ministry of Environment, we lead the UN-backed Ogoniland cleanup and manage over <strong>60 facilities nationwide</strong>.
+              </p>
+              <div class="intro-badges mt-4">
+                <span class="badge bg-primary text-white px-4 py-2 rounded-pill me-2">ISO 9001 & 14001 Certified</span>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- intro-area-end -->
 
     <!-- features-area -->
     <section class="features__area section-pt-120 section-pb-90">
@@ -571,7 +802,7 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-6 col-md-9">
             <div class="about__img-wrap wow img-custom-anim-left animated" data-wow-duration="1.5s" data-wow-delay="0.1s">
-              <img src="assets/img/images/about_img.jpg" alt="About Pinnacle">
+              <img src="assets/img/images/cleaning (13).jpg" alt="About Pinnacle" style="height: 600px !important;">
               <div class="about__img-content">
                 <h4 class="title">Let’s build a cleaner future</h4>
                 <a href="contact.html" class="btn">Contact Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
@@ -655,109 +886,111 @@
     </section>
     <!-- counter-area-end -->
 
-    <!-- services-area -->
+    <!-- services-area (HORIZONTAL MODERN) -->
     <section class="services__area section-pt-120 section-pb-90">
       <div class="container">
-        <div class="row"><div class="col-lg-6">
-          <div class="section__title mb-60">
-            <h2 class="title">Integrated environmental services for government & industry</h2>
-            <h1 class="number">02</h1>
-          </div>
-        </div></div>
-
-        <div class="row-custom">
-          <!-- Service 1 -->
-          <div class="col-custom">
-            <div class="services__item">
-              <div class="services__arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-              <div class="services__content">
-                <h4 class="title">Facility Cleaning & Management</h4>
-                <div class="services__icon"><i class="fa-solid fa-broom text-brand" aria-hidden="true"></i></div>
-              </div>
+        <div class="row">
+          <div class="col-xl-6 col-lg-8">
+            <div class="section__title mb-70">
+              <h2 class="title">Integrated Environmental Services for Government & Industry</h2>
+              <h1 class="number">02</h1>
             </div>
-            <div class="services__item-hidden">
-              <div class="services__thumb">
+          </div>
+        </div>
+
+        <div class="row justify-content-center gutter-24">
+          <!-- Service 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="blog__post-item shine__animate-item service-card">
+              <div class="blog__post-thumb">
                 <img src="assets/img/services/services_img01.jpg" alt="Facility Cleaning & Management" loading="lazy">
               </div>
-              <div class="services__content-hidden">
-                <h2 class="title">Facility Cleaning & Management</h2>
-                <p>Commercial and industrial cleaning, disinfection, and facility upkeep that meet stringent safety and hygiene standards—tailored for offices, hospitals, plants and public facilities.</p>
-                <p><strong>Key offerings:</strong> Deep cleaning, pest control, HVAC maintenance, janitorial staffing, infection control protocols, and ISO-compliant reporting.</p>
-                <div class="services__btn">
-                  <a href="contact.html" class="btn">Get a Quote <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+              <div class="blog__post-content">
+                <i class="fa-solid fa-broom blog__post-icon"></i>
+                <div class="blog__post-meta">
+                  <span>Commercial • Industrial • Healthcare</span>
                 </div>
+                <h4 class="title">Facility Cleaning & Management</h4>
+                <button class="read-details-btn">
+                  View Details <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+              <div class="blog-details">
+                <p>ISO-compliant deep cleaning, HVAC maintenance, pest control, infection prevention, and janitorial staffing. We manage over <strong>60 facilities</strong> nationwide with real-time reporting and green-certified protocols.</p>
+                <p><strong>Key Clients:</strong> Federal Ministries, Hospitals, Corporate HQs</p>
+                <a href="contact.html" class="btn btn-sm mt-3 w-100">Get Quote</a>
               </div>
             </div>
           </div>
 
           <!-- Service 2 -->
-          <div class="col-custom">
-            <div class="services__item">
-              <div class="services__arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-              <div class="services__content">
-                <h4 class="title">Municipal Waste Management</h4>
-                <div class="services__icon"><i class="fa-solid fa-recycle text-brand" aria-hidden="true"></i></div>
-              </div>
-            </div>
-            <div class="services__item-hidden">
-              <div class="services__thumb">
+          <div class="col-lg-3 col-md-6">
+            <div class="blog__post-item shine__animate-item service-card">
+              <div class="blog__post-thumb">
                 <img src="assets/img/services/services_img02.webp" alt="Municipal Waste Management" loading="lazy">
               </div>
-              <div class="services__content-hidden">
-                <h2 class="title">Municipal Waste Management</h2>
-                <p>City and community waste services: collection & disposal, recycling programs, route optimization and waste audits—keeping public spaces clean and compliant.</p>
-                <p><strong>Includes:</strong> Door-to-door collection, transfer stations, landfill management, public education campaigns, and zero-waste initiatives.</p>
-                <div class="services__btn">
-                  <a href="contact.html" class="btn">Learn More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+              <div class="blog__post-content">
+                <i class="fa-solid fa-recycle blog__post-icon"></i>
+                <div class="blog__post-meta">
+                  <span>Collection • Recycling • Compliance</span>
                 </div>
+                <h4 class="title">Municipal Waste Management</h4>
+                <button class="read-details-btn">
+                  View Details <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+              <div class="blog-details">
+                <p>Door-to-door collection, route optimization, transfer stations, and public education. We help cities achieve <strong>zero-waste goals</strong> with data-driven systems and NESREA compliance.</p>
+                <p><strong>Impact:</strong> Reduced landfill use by 40% in pilot LGAs</p>
+                <a href="contact.html" class="btn btn-sm mt-3 w-100">Learn More</a>
               </div>
             </div>
           </div>
 
           <!-- Service 3 -->
-          <div class="col-custom">
-            <div class="services__item">
-              <div class="services__arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-              <div class="services__content">
-                <h4 class="title">Oil & Gas Waste Management</h4>
-                <div class="services__icon"><i class="fa-solid fa-oil-well text-brand" aria-hidden="true"></i></div>
-              </div>
-            </div>
-            <div class="services__item-hidden">
-              <div class="services__thumb">
+          <div class="col-lg-3 col-md-6">
+            <div class="blog__post-item shine__animate-item service-card">
+              <div class="blog__post-thumb">
                 <img src="assets/img/images/cleaning (17).png" alt="Oil & Gas Waste Management" loading="lazy">
               </div>
-              <div class="services__content-hidden">
-                <h2 class="title">Oil & Gas Waste Management</h2>
-                <p>Specialized handling of petroleum industry waste: oil spill cleanup, hydrocarbon pollution remediation, contaminated site restoration and environmental monitoring.</p>
-                <p><strong>Expertise:</strong> NORM waste, drilling muds, produced water treatment, bioremediation, and emergency response teams.</p>
-                <div class="services__btn">
-                  <a href="contact.html" class="btn">Request Support <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+              <div class="blog__post-content">
+                <i class="fa-solid fa-oil-well blog__post-icon"></i>
+                <div class="blog__post-meta">
+                  <span>Spill Response • Remediation • DPR</span>
                 </div>
+                <h4 class="title">Oil & Gas Waste Management</h4>
+                <button class="read-details-btn">
+                  View Details <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+              <div class="blog-details">
+                <p>HYPREP-certified bioremediation, NORM handling, produced water treatment, and 2-hour emergency response. Restored <strong>50+ sites</strong> in Ogoniland under UNEP guidelines.</p>
+                <p><strong>24/7 Hotline:</strong> 07033436161</p>
+                <a href="tel:07033436161" class="btn btn-sm mt-3 w-100">Emergency Call</a>
               </div>
             </div>
           </div>
 
           <!-- Service 4 -->
-          <div class="col-custom">
-            <div class="services__item">
-              <div class="services__arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-              <div class="services__content">
-                <h4 class="title">Environmental Consultancy</h4>
-                <div class="services__icon"><i class="fa-solid fa-leaf text-brand" aria-hidden="true"></i></div>
+          <div class="col-lg-3 col-md-6">
+            <div class="blog__post-item shine__animate-item service-card">
+              <div class="blog__post-thumb">
+                <img src="assets/img/images/cleaning (6).jpg" alt="Environmental Consultancy" loading="lazy">
               </div>
-            </div>
-            <div class="services__item-hidden">
-              <div class="services__thumb">
-                <img src="assets/img/images//cleaning (6).jpg" alt="Environmental Consultancy" loading="lazy">
-              </div>
-              <div class="services__content-hidden">
-                <h2 class="title">Environmental Consultancy</h2>
-                <p>Environmental Impact Assessments (EIA), compliance consulting, environmental audits, sustainability training and corporate sustainability programs.</p>
-                <p><strong>Services:</strong> ESG reporting, carbon footprint analysis, regulatory approvals, stakeholder engagement, and green certification support.</p>
-                <div class="services__btn">
-                  <a href="contact.html" class="btn">Book Consultation <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+              <div class="blog__post-content">
+                <i class="fa-solid fa-leaf blog__post-icon"></i>
+                <div class="blog__post-meta">
+                  <span>EIA • ESG • Carbon Audit</span>
                 </div>
+                <h4 class="title">Environmental Consultancy</h4>
+                <button class="read-details-btn">
+                  View Details <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </div>
+              <div class="blog-details">
+                <p>Environmental Impact Assessments, ESG reporting, carbon footprint analysis, and sustainability training. We guide clients to <strong>ISO 14001 & green certifications</strong>.</p>
+                <p><strong>Trusted by:</strong> IOCs, Government, NGOs</p>
+                <a href="contact.html" class="btn btn-sm mt-3 w-100">Book Consultation</a>
               </div>
             </div>
           </div>
@@ -791,11 +1024,11 @@
                   </ul>
                 </div>
                 <h4 class="title">Practical Steps to Keep Facilities Healthy & Eco-friendly</h4>
-                <button class="read-details-btn" data-target="blog-1">
+                <button class="read-details-btn">
                   Read Details <i class="fa-solid fa-chevron-down"></i>
                 </button>
               </div>
-              <div id="blog-1" class="blog-details">
+              <div class="blog-details">
                 <p>Eco-friendly facilities reduce operational costs by up to 30% through energy-efficient lighting, water recycling systems, and green cleaning products. Regular audits identify waste hotspots, while staff training ensures compliance with ISO 14001 standards. Simple changes like motion-sensor lights and biodegradable supplies create healthier workspaces and lower carbon footprints.</p>
                 <p><strong>Key Takeaway:</strong> Start with a facility audit — contact us for a free consultation.</p>
               </div>
@@ -804,7 +1037,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="blog__post-item shine__animate-item">
               <div class="blog__post-thumb">
-                <img src="assets/img/images//cleaning (13).jpg" alt="Waste Audits">
+                <img src="assets/img/images/cleaning (13).jpg" alt="Waste Audits" loading="lazy">
               </div>
               <div class="blog__post-content">
                 <i class="fa-solid fa-chart-pie blog__post-icon"></i>
@@ -815,11 +1048,11 @@
                   </ul>
                 </div>
                 <h4 class="title">Waste Audits 101: Reduce Costs, Improve Sustainability</h4>
-                <button class="read-details-btn" data-target="blog-2">
+                <button class="read-details-btn">
                   Read Details <i class="fa-solid fa-chevron-down"></i>
                 </button>
               </div>
-              <div id="blog-2" class="blog-details">
+              <div class="blog-details">
                 <p>A waste audit maps your organization's waste stream, identifying recyclable materials and cost-saving opportunities. Businesses using audits cut disposal fees by 25% on average. Steps include data collection, sorting, analysis, and action planning. Pinnacle's audits comply with NESREA and include employee training.</p>
                 <p><strong>Pro Tip:</strong> Schedule quarterly audits to maintain zero-waste goals.</p>
               </div>
@@ -828,7 +1061,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="blog__post-item shine__animate-item">
               <div class="blog__post-thumb">
-                <img src="assets/img/images//cleaning (18).png" alt="Oil Spill Response">
+                <img src="assets/img/images/cleaning (18).png" alt="Oil Spill Response" loading="lazy">
               </div>
               <div class="blog__post-content">
                 <i class="fa-solid fa-oil-can blog__post-icon"></i>
@@ -839,11 +1072,11 @@
                   </ul>
                 </div>
                 <h4 class="title">Oil Spill Response: What Rapid, Safe Remediation Looks Like</h4>
-                <button class="read-details-btn" data-target="blog-3">
+                <button class="read-details-btn">
                   Read Details <i class="fa-solid fa-chevron-down"></i>
                 </button>
               </div>
-              <div id="blog-3" class="blog-details">
+              <div class="blog-details">
                 <p>Rapid response within 2 hours minimizes environmental damage. Our HYPREP-certified teams use bioremediation, containment booms, and soil testing to restore sites. Case study: Restored 5 hectares in Ogoniland in 6 months. Compliance with DPR and FMEnv ensures zero fines.</p>
                 <p><strong>Emergency?</strong> Call our 24/7 hotline: 07033436161</p>
               </div>
@@ -854,7 +1087,7 @@
     </section>
     <!-- blog-post-area-end -->
 
-    <!-- ====================== ULTRA-MODERN FAQ SECTION ====================== -->
+    <!-- FAQ Section -->
     <section class="faq__area">
       <div class="container">
         <div class="row justify-content-center">
@@ -980,10 +1213,9 @@
           </div>
         </div>
 
-        <!-- Horizontal Floating Icons (Font Awesome) -->
+        <!-- Horizontal Floating Icons -->
         <div class="work__icons-horizontal mt-5">
           <div class="icons-track">
-            <!-- First Set -->
             <i class="fas fa-broom work-icon tg-motion-effects2" data-aos="fade-up" data-aos-delay="100"></i>
             <i class="fas fa-truck work-icon tg-motion-effects3" data-aos="fade-up" data-aos-delay="200"></i>
             <i class="fas fa-recycle work-icon tg-motion-effects3" data-aos="fade-up" data-aos-delay="300"></i>
@@ -991,7 +1223,6 @@
             <i class="fas fa-seedling work-icon tg-motion-effects3" data-aos="fade-up" data-aos-delay="500"></i>
             <i class="fas fa-shield-check work-icon tg-motion-effects3" data-aos="fade-up" data-aos-delay="600"></i>
 
-            <!-- Duplicate Set for Seamless Loop -->
             <i class="fas fa-broom work-icon tg-motion-effects2"></i>
             <i class="fas fa-truck work-icon tg-motion-effects3"></i>
             <i class="fas fa-recycle work-icon tg-motion-effects3"></i>
@@ -1003,24 +1234,6 @@
       </div>
     </section>
     <!-- work-area-end -->
-
-    <!-- brand-area -->
-    <!-- <div class="brand__area section-pb-120">
-      <div class="container">
-        <div class="swiper brand-active">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><div class="brand__item"><img src="assets/img/brand/brand_img01.png" alt="brand 1"></div></div>
-            <div class="swiper-slide"><div class="brand__item"><img src="assets/img/brand/brand_img02.png" alt="brand 2"></div></div>
-            <div class="swiper-slide"><div class="brand__item"><img src="assets/img/brand/brand_img03.png" alt="brand 3"></div></div>
-            <div class="swiper-slide"><div class="brand__item"><img src="assets/img/brand/brand_img04.png" alt="brand 4"></div></div>
-            <div class="swiper-slide"><div class="brand__item"><img src="assets/img/brand/brand_img05.png" alt="brand 5"></div></div>
-            <div class="swiper-slide"><div class="brand__item"><img src="assets/img/brand/brand_img06.png" alt="brand 6"></div></div>
-            <div class="swiper-slide"><div class="brand__item"><img src="assets/img/brand/brand_img03.png" alt="brand 7"></div></div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- brand-area-end -->
 
   </main>
   <!-- main-area-end -->
@@ -1040,21 +1253,22 @@
             <div class="footer__widget">
               <div class="footer__logo">
                 <a href="index.html"><img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd"></a>
+                <div class="company-name mt-2">
+                  <h5 class="mb-0">Pinnacle Health & Environmental Services Ltd</h5>
+                  <small class="">RC 661920 • Since 2006</small>
+                </div>
               </div>
               <div class="footer__content">
                 <p>Pinnacle delivers facility cleaning, waste management and environmental consultancy with quality, safety and sustainability at the core.</p>
               </div>
               <div class="footer__social">
                 <ul class="list-wrap">
-                  <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="https://twitter.com/home" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a></li>
                   <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
                 </ul>
               </div>
               <div class="mt-3">
-                <span class="badge text-white px-3 py-2" style="border-radius: 999px; background-color: #102693;">
-                  Major Contractor to HYPREP – Federal Ministry of Environment, Nigeria
+                <span class="badge text-white px-3 py-2" style="border-radius: 999px; background-color: #102693; text-align: start;">
+                  Major Contractor to HYPREP <br>Federal Ministry of Environment, Nigeria
                 </span>
               </div>
             </div>
@@ -1092,8 +1306,6 @@
               <div class="footer__widget-link">
                 <ul class="list-wrap">
                   <li><a href="about.html"><i class="fa-solid fa-arrow-right"></i><span>Our Story</span></a></li>
-                  <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Terms & Conditions</span></a></li>
-                  <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Privacy Policy</span></a></li>
                   <li><a href="project.html"><i class="fa-solid fa-arrow-right"></i><span>Project Showcase</span></a></li>
                 </ul>
               </div>
@@ -1123,8 +1335,6 @@
           <div class="col-md-5">
             <div class="footer__bottom-menu">
               <ul class="list-wrap">
-                <li><a href="contact.html">Terms and Conditions</a></li>
-                <li><a href="contact.html">Privacy Policy</a></li>
                 <li><a href="mailto:Pinnaclehealthenvirons@gmail.com">Email Us</a></li>
                 <li><a href="tel:07033436161">Call 07033436161</a></li>
               </ul>
@@ -1154,89 +1364,133 @@
   <script src="assets/js/wow.min.js"></script>
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    SVGInject(document.querySelectorAll("img.injectable"));
 
-    // Header scroll
-    (function() {
-      var header = document.getElementById('sticky-header');
-      var threshold = 60;
-      function onScroll() {
-        if (window.scrollY > threshold) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
+  <!-- FINAL FIXED INTERACTIONS -->
+ <script>
+  /* -------------------------------------------------
+   *  1. SVG inject + Header scroll + Year
+   * ------------------------------------------------- */
+  SVGInject(document.querySelectorAll("img.injectable"));
+
+  (function () {
+    const header = document.getElementById('sticky-header');
+    const threshold = 60;
+    function onScroll() {
+      header.classList.toggle('scrolled', window.scrollY > threshold);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+  /* -------------------------------------------------
+   *  2. UNIVERSAL CARD TOGGLE (SAFE + INDEPENDENT)
+   * ------------------------------------------------- */
+  document.querySelectorAll('.dropdown-toggle, .read-details-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+
+      const card = this.closest('.features__item, .blog__post-item, .service-card');
+      if (!card) return;
+
+      let content;
+      if (this.classList.contains('dropdown-toggle')) {
+        content = this.nextElementSibling; // Mission/Vision
+      } else {
+        content = card.querySelector('.blog-details'); // Service/Blog
       }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
+      if (!content) return;
 
-    // Update year
-    (function() {
-      var y = new Date().getFullYear();
-      var el = document.getElementById('currentYear');
-      if (el) el.textContent = y;
-    })();
+      const isOpen = content.classList.contains('active') || content.classList.contains('show');
 
-    // Dropdown Toggles (Mission/Vision/Values)
-    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-      toggle.addEventListener('click', function() {
-        const content = this.nextElementSibling;
-        const isActive = content.classList.contains('active');
-        
-        document.querySelectorAll('.dropdown-content').forEach(c => {
-          c.classList.remove('active');
-          c.previousElementSibling.classList.remove('active');
+      // Close all in same section
+      const section = card.closest('section');
+      if (section) {
+        section.querySelectorAll('.dropdown-content, .blog-details').forEach(c => {
+          c.classList.remove('active', 'show');
         });
+        section.querySelectorAll('.dropdown-toggle, .read-details-btn').forEach(b => {
+          b.classList.remove('active');
+          const i = b.querySelector('i');
+          if (i) i.style.transform = '';
+        });
+      }
 
-        if (!isActive) {
+      // Toggle this one
+      if (!isOpen) {
+        if (content.classList.contains('dropdown-content')) {
           content.classList.add('active');
-          this.classList.add('active');
+        } else {
+          content.classList.add('show');
         }
+        this.classList.add('active');
+        const icon = this.querySelector('i');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  /* -------------------------------------------------
+   *  3. FAQ ACCORDION
+   * ------------------------------------------------- */
+  document.querySelectorAll('.faq__question').forEach(q => {
+    q.addEventListener('click', function () {
+      const item = this.closest('.faq__item');
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('active'));
+      if (!isOpen) item.classList.add('active');
+    });
+  });
+
+  /* -------------------------------------------------
+   *  4. CLOSE ON OUTSIDE CLICK
+   * ------------------------------------------------- */
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown-content, .blog-details').forEach(c => {
+      c.classList.remove('active', 'show');
+    });
+    document.querySelectorAll('.dropdown-toggle, .read-details-btn').forEach(b => {
+      b.classList.remove('active');
+      const i = b.querySelector('i');
+      if (i) i.style.transform = '';
+    });
+  });
+
+  /* -------------------------------------------------
+   *  5. MOBILE MENU
+   * ------------------------------------------------- */
+  const mobileToggler = document.querySelector('.mobile-nav-toggler');
+  const mobileMenu = document.querySelector('.tgmobile__menu');
+  const backdrop = document.querySelector('.tgmobile__menu-backdrop');
+  const closeBtn = document.querySelector('.tgmobile__menu .close-btn');
+
+  if (mobileToggler && mobileMenu && backdrop) {
+    mobileToggler.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      backdrop.classList.add('open');
+    });
+    [closeBtn, backdrop].forEach(el => {
+      if (el) el.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        backdrop.classList.remove('open');
       });
     });
+  }
 
-    // Services Accordion
-    document.querySelectorAll('.services__item').forEach(item => {
-      item.addEventListener('click', function() {
-        const hidden = this.nextElementSibling;
-        const isActive = this.classList.contains('active');
+  /* -------------------------------------------------
+   *  6. MOBILE MENU CSS (if missing)
+   * ------------------------------------------------- */
+  const style = document.createElement('style');
+  style.textContent = `
+    .tgmobile__menu { transform: translateX(-100%); transition: .35s ease; }
+    .tgmobile__menu.open { transform: translateX(0); }
+    .tgmobile__menu-backdrop { opacity:0; visibility:hidden; transition:.35s; }
+    .tgmobile__menu-backdrop.open { opacity:1; visibility:visible; }
+  `;
+  document.head.appendChild(style);
+  
+</script>
 
-        document.querySelectorAll('.services__item').forEach(i => i.classList.remove('active'));
-        document.querySelectorAll('.services__item-hidden').forEach(h => h.style.display = 'none');
-
-        if (!isActive) {
-          this.classList.add('active');
-          hidden.style.display = 'block';
-        }
-      });
-    });
-
-    // Blog Read Details Toggle
-    document.querySelectorAll('.read-details-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const target = document.getElementById(this.dataset.target);
-        const isOpen = target.classList.toggle('show');
-        this.classList.toggle('active', isOpen);
-      });
-    });
-
-    // FAQ Accordion
-    document.querySelectorAll('.faq__question').forEach(question => {
-      question.addEventListener('click', function() {
-        const item = this.parentElement;
-        const wasActive = item.classList.contains('active');
-        
-        // Close all
-        document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('active'));
-        
-        // Open clicked if not active
-        if (!wasActive) {
-          item.classList.add('active');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
