@@ -2,7 +2,7 @@ name: Deploy to Namecheap
 
 on:
   push:
-    branches: [ review ]  # Change to your default branch if different
+    branches: [ new-review ]  # Change to your default branch if different
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
