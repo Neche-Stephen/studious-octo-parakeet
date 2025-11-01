@@ -1,0 +1,30 @@
+name: Deploy to Namecheap
+
+on:
+  push:
+    branches: [ review ]  # Change to your default branch if different
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Deploy to Namecheap via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./  # Deploy everything in root, or change to ./dist/ ./build/ etc.
+        server-dir: /pinnaclehealthenviron.com/  # This is usually the web root for Namecheap
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.env
+          **/README.md
+          **/.github/**
