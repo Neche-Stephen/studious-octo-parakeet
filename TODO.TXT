@@ -1,0 +1,4 @@
+WHY IS EMAIL US NOT WORKING when clicked by redirecting
+Add Home to Useful Links in the footer of all the pages
+update Our Projects text in project.html from black to white
+
