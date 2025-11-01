@@ -1,0 +1,103 @@
+     
+
+      <!-- ==== SLIDE 3 ==== -->
+      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg03.jpg">
+        <div class="container custom-container-two">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8">
+              <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
+          
+                <!-- Company Name -->
+                <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
+                  Pinnacle Health &<br><span style="color:#102693;">Environmental Services Ltd</span>
+                </h1>
+      
+                <!-- Tagline -->
+                <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
+                  <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
+                </p>
+      
+                <!-- Badges -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+                  <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
+                    ISO 9001 & 14001 Certified
+                  </span>
+                  <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Major HYPREP Contractor
+                  </span>
+                </div>
+      
+                <!-- CTA Buttons -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                  <a href="about.html" class="btn">
+                    Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                  </a>
+                  <a href="contact.html" class="btn" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Get in Touch
+                  </a>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-xl-10">
+              <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
+                <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== SLIDE 4 (ex-red slide – now uniform) ==== -->
+      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg04.jpg">
+        <div class="container custom-container-two">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8">
+              <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
+          
+                <!-- Company Name -->
+                <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
+                  Pinnacle Health &<br><span style="color:#102693;">Environmental Services Ltd</span>
+                </h1>
+      
+                <!-- Tagline -->
+                <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
+                  <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
+                </p>
+      
+                <!-- Badges -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+                  <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
+                    ISO 9001 & 14001 Certified
+                  </span>
+                  <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Major HYPREP Contractor
+                  </span>
+                </div>
+      
+                <!-- CTA Buttons -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                  <a href="about.html" class="btn">
+                    Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                  </a>
+                  <a href="contact.html" class="btn" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Get in Touch
+                  </a>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-xl-10">
+              <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
+                <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -55,7 +55,38 @@
     header .tgmenu__nav .navigation > li > a:hover {
       color: #102693;
     }
+    .tgmenu__action .btn.border-btn {
+      border-color: #102693;
+      color: #102693;
+    }
+    .tgmenu__action .btn.border-btn:hover {
+      background: #102693;
+      color: #fff;
+    }
     .mobile-nav-toggler i { color: #111827; }
+    
+    /* Mobile navigation positioning */
+    .mobile-nav-toggler {
+      display: none;
+      flex: 0 0 auto;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1000;
+    }
+    
+    /* Show mobile toggler only on mobile/tablet */
+    @media (max-width: 1199.98px) {
+      .mobile-nav-toggler {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 2; /* Places it on the right */
+      }
+      
+      .logo {
+        order: 1; /* Places it on the left */
+      }
+    }
     .tgmenu__wrap nav.tgmenu__nav {
       display: flex;
       align-items: center;
@@ -79,6 +110,13 @@
       padding: 0;
       display: flex;
       align-items: center;
+    }
+    .tgmenu__action {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-left: 20px;
     }
     .tgmenu__navbar-wrap ul.navigation > li {
       margin: 0 14px;
@@ -252,6 +290,16 @@
     @media (max-width: 1199.98px) {
       .tgmenu__navbar-wrap.d-none.d-xl-flex {
         display: none !important;
+      }
+      .tgmenu__action {
+        display: none !important;
+      }
+    }
+    
+    /* Show Get In Touch button only on desktop */
+    @media (min-width: 1200px) {
+      .tgmenu__action {
+        display: flex !important;
       }
     }
 
@@ -553,11 +601,216 @@
         padding: 24px;
       }
     }
+    /* === SERVICES PREVIEW SECTION === */
+    .services-preview__area {
+      background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+      padding: 60px 0 40px;
+    }
+    
+    .services__item-preview {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(16, 38, 147, 0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .services__item-preview:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 48px rgba(16, 38, 147, 0.15);
+    }
+    
+    .services__thumb-preview {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .services__thumb-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .services__item-preview:hover .services__thumb-preview img {
+      transform: scale(1.05);
+    }
+    
+    .services__icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #102693;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    }
+    
+    .services__content-preview {
+      padding: 2rem 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .services__content-preview h4.title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    
+    .services__content-preview p {
+      color: #6b7280;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .services__features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .services__features li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+    
+    .services__features li i {
+      color: #10b981;
+      margin-right: 0.75rem;
+      font-size: 0.8rem;
+    }
+    
+    .btn-outline-brand {
+      border: 2px solid #102693;
+      color: #102693;
+      background: transparent;
+      padding: 12px 32px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline-brand:hover {
+      background: #102693;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(16, 38, 147, 0.25);
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 991.98px) {
+      .services-preview__area {
+        padding: 40px 0 30px;
+      }
+      
+      .services__content-preview {
+        padding: 1.5rem 1.25rem;
+      }
+      
+      .services__thumb-preview {
+        height: 180px;
+      }
+      
+      .services__content-preview h4.title {
+        font-size: 1.1rem;
+      }
+      
+      .services__content-preview p {
+        font-size: 0.9rem;
+      }
+    }
+    
+    @media (max-width: 767.98px) {
+      .services-preview__area {
+        padding: 30px 0 20px;
+      }
+      
+      .services__item-preview {
+        margin-bottom: 1.5rem;
+      }
+      
+      .services__thumb-preview {
+        height: 160px;
+      }
+      
+      .services__content-preview {
+        padding: 1.25rem 1rem;
+      }
+      
+      .services__icon {
+        width: 40px;
+        height: 40px;
+        top: 15px;
+        right: 15px;
+        font-size: 1rem;
+      }
+      
+      .btn-outline-brand {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+      }
+      
+      .mt-40 {
+        margin-top: 1.5rem !important;
+      }
+    }
+    
+    @media (max-width: 575.98px) {
+      .services__features li {
+        font-size: 0.85rem;
+      }
+      
+      .services__content-preview h4.title {
+        font-size: 1rem;
+      }
+      
+      .services__content-preview p {
+        font-size: 0.85rem;
+      }
+      
+      .mt-40 {
+        margin-top: 1rem !important;
+      }
+      
+      .services__item-preview {
+        margin-bottom: 1rem;
+      }
+    }
+
     /* === PREVENT CARD STRETCH IN GRID === */
 .features__area .row,
 .services__area .row,
 .blog__post-area .row {
   align-items: start !important;
+}
+
+/* === EQUAL HEIGHT CARDS FOR SERVICES PREVIEW === */
+.services-preview__area .row.gutter-24 {
+  align-items: stretch;
+}
+
+.services-preview__area .row.gutter-24 > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Optional: Add gap between cards */
@@ -685,7 +938,6 @@
           <div class="col-12">
             <div class="tgmenu__wrap">
               <nav class="tgmenu__nav" aria-label="Main Navigation">
-                <div class="mobile-nav-toggler" aria-label="Open mobile menu"><i class="fa-solid fa-bars"></i></div>
                 <div class="logo">
                   <a href="index.html" aria-label="Pinnacle Health & Environmental Services Ltd">
                     <img src="assets/img/logo/logo.png" alt="Pinnacle Health & Environmental Services Ltd">
@@ -694,6 +946,7 @@
                     <span class="company-title">PINNACLE HEALTH &<br>ENVIRONMENTAL SERVICES LTD</span>
                   </div>
                 </div>
+                <div class="mobile-nav-toggler" aria-label="Open mobile menu"><i class="fa-solid fa-bars"></i></div>
                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                   <ul class="navigation">
                     <li class="active"><a href="index.html">Home</a></li>
@@ -701,6 +954,13 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="project.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="tgmenu__action">
+                  <ul class="list-wrap">
+                    <li class="header-btn">
+                      <a href="contact.html" class="btn border-btn">Get In Touch</a>
+                    </li>
                   </ul>
                 </div>
               </nav>
@@ -715,15 +975,7 @@
         <div class="nav-logo">
           <a href="index.html"><img src="assets/img/logo/logo.png" style="width: 50px !important;" alt="Pinnacle Health & Environmental Services Ltd"></a>
         </div>
-        <div class="tgmobile__menu-outer">
-          <ul class="navigation">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+        <div class="tgmobile__menu-outer"></div>
         <div class="tgmobile__menu-social">
           <ul class="list-wrap">
             <li><a href="https://www.instagram.com/pinnaclehealthandenvironment/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
@@ -754,11 +1006,56 @@
       border-color:#102693 !important;
       color:#fff !important;
     }
+    
+    /* White outline button styling */
+    .slider__content .btn[style*="background:#fff"] {
+      background:#fff !important;
+      border:2px solid #102693 !important;
+      color:#102693 !important;
+      transition: all 0.3s ease;
+    }
+    
+    .slider__content .btn[style*="background:#fff"]:hover {
+      background:#102693 !important;
+      color:#fff !important;
+    }
+    
+    .slider__content .btn:hover {
+      transform: none !important;
+    }
+    
+    /* Disable slide transition animations for buttons */
+    .slider__content .btn,
+    .slider__content .d-flex {
+      animation: none !important;
+      -webkit-animation: none !important;
+      transform: none !important;
+      -webkit-transform: none !important;
+    }
+    
+    .swiper-slide .slider__content .btn {
+      animation-delay: 0s !important;
+      animation-duration: 0s !important;
+    }
     .slider__content .badge {
       background:#102693 !important;
       color:#fff !important;
       border-radius:999px;
       padding:0.5rem 1rem;
+    }
+    
+    /* White outline badge styling for HYPREP */
+    .slider__content .badge[style*="background:#fff"] {
+      background:#fff !important;
+      border:2px solid #102693 !important;
+      color:#102693 !important;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .slider__content .badge[style*="background:#fff"]:hover {
+      background:#102693 !important;
+      color:#fff !important;
     }
     .slider__content .sub-title,
     .slider__content .title,
@@ -796,65 +1093,93 @@
 
   <div class="swiper slider-active">
     <div class="swiper-wrapper">
-<!-- ==== NEW SLIDE 0: COMPANY INTRODUCTION (ADDED FIRST) ==== -->
-<div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.png">
-  <div class="container custom-container-two">
-    <div class="row align-items-center" style="min-height: 80vh;">
-      <div class="col-xl-7 col-lg-8">
-        <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
-          
-          <!-- Company Name -->
-          <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
-            Pinnacle Health &<br><span style="color:#102693;">Environmental Services Ltd</span>
-          </h1>
-
-          <!-- Tagline -->
-          <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
-            <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
-          </p>
-
-          <!-- Badges -->
-          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
-            <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
-              ISO 9001 & 14001 Certified
-            </span>
-            <span class="badge" style="background:#102693; color:#fff;">
-              Major HYPREP Contractor
-            </span>
-          </div>
-
-          <!-- CTA Buttons -->
-          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-            <a href="about.html" class="btn">
-              Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-            </a>
-            <a href="contact.html" class="btn" style="background:transparent; border:2px solid #102693; color:#102693;">
-              Get in Touch
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      <!-- ==== SLIDE 1 ==== -->
+      <!-- ==== NEW SLIDE 0: COMPANY INTRODUCTION (ADDED FIRST) ==== -->
       <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.png">
         <div class="container custom-container-two">
           <div class="row">
             <div class="col-xl-7 col-lg-8">
-              <div class="slider__content" style="background:#1f2937;">
-                <span class="" style="text-transform: uppercase; font-weight: bold;">Creating Healthy, Sustainable Environments</span>
-                <h2 class="title">Facility Cleaning & Integrated Environmental Management</h2>
-                <a href="contact.html" class="btn">
-                  Request a Quote <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                </a>
-
-                <div class="mt-3">
-                  <span class="badge">
-                    Major Contractor to HYPREP <br> Federal Ministry of Environment, Nigeria
+              <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
+          
+                <!-- Company Name -->
+                <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
+                  Pinnacle Health &<br><span style="color:#102693;">Environmental Services Ltd</span>
+                </h1>
+      
+                <!-- Tagline -->
+                <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
+                  <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
+                </p>
+      
+                <!-- Badges -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+                  <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
+                    ISO 9001 & 14001 Certified
+                  </span>
+                  <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Major HYPREP Contractor
                   </span>
                 </div>
+      
+                <!-- CTA Buttons -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                  <a href="about.html" class="btn">
+                    Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                  </a>
+                  <a href="contact.html" class="btn" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Get in Touch
+                  </a>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-xl-10">
+              <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
+                <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ==== SLIDE 1 ==== -->
+      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg02.png">
+        <div class="container custom-container-two">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8">
+              <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
+          
+                <!-- Company Name -->
+                <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
+                  Facility Cleaning & <br><span style="color:#102693;">Environmental Services Ltd</span>
+                </h1>
+      
+                <!-- Tagline -->
+                <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
+                  <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
+                </p>
+      
+                <!-- Badges -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+                  <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
+                    ISO 9001 & 14001 Certified
+                  </span>
+                  <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Major HYPREP Contractor
+                  </span>
+                </div>
+      
+                <!-- CTA Buttons -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                  <a href="about.html" class="btn">
+                    Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                  </a>
+                  <a href="contact.html" class="btn" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Get in Touch
+                  </a>
+                </div>
+      
               </div>
             </div>
           </div>
@@ -869,60 +1194,107 @@
         </div>
       </div>
 
-      <!-- ==== SLIDE 2 ==== -->
-      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg02.png">
+       <!-- ==== SLIDE 2 ==== -->
+       <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.png">
         <div class="container custom-container-two">
           <div class="row">
             <div class="col-xl-7 col-lg-8">
-              <div class="slider__content" style="background:#1f2937;">
-                <span class="" style="text-transform: uppercase; font-weight: bold;">Municipal & Oil & Gas Expertise</span>
-                <h2 class="title">Waste Management for Cities & Petroleum Operations</h2>
-                <a href="services.html" class="btn">
-                  Explore Services <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                </a>
+              <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
+          
+                <!-- Company Name -->
+                <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
+                  Waste Management for Cities <br><span style="color:#102693;">& Petroleum Operations</span>
+                </h1>
+      
+                <!-- Tagline -->
+                <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
+                  <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
+                </p>
+      
+                <!-- Badges -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+                  <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
+                    ISO 9001 & 14001 Certified
+                  </span>
+                  <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Major HYPREP Contractor
+                  </span>
+                </div>
+      
+                <!-- CTA Buttons -->
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                  <a href="about.html" class="btn">
+                    Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                  </a>
+                  <a href="contact.html" class="btn" style="background:#fff; border:2px solid #102693; color:#102693;">
+                    Get in Touch
+                  </a>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-xl-10">
+              <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
+                <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ==== SLIDE 3 ==== -->
-      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg03.jpg">
-        <div class="container custom-container-two">
-          <div class="row">
-            <div class="col-xl-7 col-lg-8">
-              <div class="slider__content" style="background:#1f2937;">
-                <span class="" style="text-transform: uppercase; font-weight: bold;">Consultancy & Compliance</span>
-                <h2 class="title">Environmental Impact Assessments & Remediation</h2>
-                <a href="contact.html" class="btn">
-                  Talk to an Expert <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                </a>
+        <!-- ==== SLIDE 3 ==== -->
+        <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg03.jpg">
+          <div class="container custom-container-two">
+            <div class="row">
+              <div class="col-xl-7 col-lg-8">
+                <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
+            
+                  <!-- Company Name -->
+                  <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
+                    Environmental Impact <br><span style="color:#102693;">Assessments & Remediation</span>
+                  </h1>
+        
+                  <!-- Tagline -->
+                  <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
+                    <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
+                  </p>
+        
+                  <!-- Badges -->
+                  <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+                    <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
+                      ISO 9001 & 14001 Certified
+                    </span>
+                    <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
+                      Major HYPREP Contractor
+                    </span>
+                  </div>
+        
+                  <!-- CTA Buttons -->
+                  <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                    <a href="about.html" class="btn">
+                      Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                    </a>
+                    <a href="contact.html" class="btn" style="background:#fff; border:2px solid #102693; color:#102693;">
+                      Get in Touch
+                    </a>
+                  </div>
+        
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ==== SLIDE 4 (ex-red slide – now uniform) ==== -->
-      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg04.jpg">
-        <div class="container custom-container-two">
-          <div class="row">
-            <div class="col-xl-7 col-lg-8">
-              <div class="slider__content" style="background:#1f2937;">
-                <span class="" style="text-transform: uppercase; font-weight: bold;">Trusted by Government & Industry</span>
-                <h2 class="title">HYPREP Major Contractor Since 2018</h2>
-                <a href="contact.html" class="btn">
-                  Get Started <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                </a>
-
-                <div class="mt-3">
-                  <span class="badge">UN-Backed Ogoniland Cleanup Leader</span>
+  
+            <div class="row mt-4">
+              <div class="col-xl-10">
+                <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
+                  <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
     </div>
   </div>
@@ -961,6 +1333,98 @@
       </div>
     </section>
     <!-- intro-area-end -->
+
+    <!-- services-preview-area -->
+    <section class="services-preview__area section-pt-120 section-pb-90">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-8 col-lg-10">
+            <div class="section__title text-center mb-70">
+              <h2 class="title">Our Professional Services</h2>
+              <p class="lead">Comprehensive environmental solutions tailored to meet your business needs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center gutter-24">
+          <!-- Service Preview 1 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="services__item-preview">
+              <div class="services__thumb-preview">
+                <img src="assets/img/services/services_img01.jpg" alt="Facility Cleaning" loading="lazy">
+                <div class="services__icon">
+                  <i class="fa-solid fa-broom"></i>
+                </div>
+              </div>
+              <div class="services__content-preview">
+                <h4 class="title">Facility Cleaning & Management</h4>
+                <p>Professional cleaning and maintenance for offices, hospitals, and public spaces, ensuring hygiene and compliance with health standards.</p>
+                <ul class="services__features">
+                  <li><i class="fa-solid fa-check"></i> Daily, weekly, and deep cleaning</li>
+                  <li><i class="fa-solid fa-check"></i> Disinfection & fumigation</li>
+                  <li><i class="fa-solid fa-check"></i> HSE-compliant operations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Preview 2 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="services__item-preview">
+              <div class="services__thumb-preview">
+                <img src="assets/img/images/cleaning (17).png" alt="Municipal Waste Management" loading="lazy">
+                <div class="services__icon">
+                  <i class="fa-solid fa-recycle"></i>
+                </div>
+              </div>
+              <div class="services__content-preview">
+                <h4 class="title">Municipal Waste Management</h4>
+                <p>Efficient collection, disposal, and recycling of municipal waste, promoting sustainable urban environments.</p>
+                <ul class="services__features">
+                  <li><i class="fa-solid fa-check"></i> Door-to-door collection</li>
+                  <li><i class="fa-solid fa-check"></i> Waste sorting & recycling</li>
+                  <li><i class="fa-solid fa-check"></i> Compliance with AEPB & NESREA</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Service Preview 3 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="services__item-preview">
+              <div class="services__thumb-preview">
+                <img src="assets/img/images/cleaning (6).jpg" alt="Environmental Consultancy" loading="lazy">
+                <div class="services__icon">
+                  <i class="fa-solid fa-leaf"></i>
+                </div>
+              </div>
+              <div class="services__content-preview">
+                <h4 class="title">Environmental Consultancy</h4>
+                <p>Expert audits, EIAs, and sustainability strategies to support compliance and environmental stewardship.</p>
+                <ul class="services__features">
+                  <li><i class="fa-solid fa-check"></i> Environmental Impact Assessments (EIA)</li>
+                  <li><i class="fa-solid fa-check"></i> Environmental Audits</li>
+                  <li><i class="fa-solid fa-check"></i> Policy & regulatory advisory</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- See More Button -->
+        <div class="row mt-40">
+          <div class="col-12 text-center">
+            <a href="services.html" class="btn btn-outline-brand btn-lg">
+              <i class="fa-solid fa-grid-2-plus me-2"></i>
+              Explore All Services
+              <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+            <p class="mt-3 text-muted">Discover our complete range of environmental solutions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- services-preview-area-end -->
 
     <!-- features-area -->
     <section class="features__area section-pt-120 section-pb-90">
@@ -1116,119 +1580,6 @@
       </div>
     </section>
     <!-- counter-area-end -->
-
-    <!-- services-area (HORIZONTAL MODERN) -->
-    <section class="services__area section-pt-120 section-pb-90">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-6 col-lg-8">
-            <div class="section__title mb-70">
-              <h2 class="title">Integrated Environmental Services for Government & Industry</h2>
-              <h1 class="number">02</h1>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center gutter-24">
-          <!-- Service 1 -->
-          <div class="col-lg-3 col-md-6">
-            <div class="blog__post-item shine__animate-item service-card">
-              <div class="blog__post-thumb">
-                <img src="assets/img/services/services_img01.jpg" alt="Facility Cleaning & Management" loading="lazy">
-              </div>
-              <div class="blog__post-content">
-                <i class="fa-solid fa-broom blog__post-icon"></i>
-                <div class="blog__post-meta">
-                  <span>Commercial • Industrial • Healthcare</span>
-                </div>
-                <h4 class="title">Facility Cleaning & Management</h4>
-                <button class="read-details-btn">
-                  View Details <i class="fa-solid fa-chevron-down"></i>
-                </button>
-              </div>
-              <div class="blog-details">
-                <p>ISO-compliant deep cleaning, HVAC maintenance, pest control, infection prevention, and janitorial staffing. We manage over <strong>60 facilities</strong> nationwide with real-time reporting and green-certified protocols.</p>
-                <p><strong>Key Clients:</strong> Federal Ministries, Hospitals, Corporate HQs</p>
-                <a href="contact.html" class="btn btn-sm mt-3 w-100">Get Quote</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Service 2 -->
-          <div class="col-lg-3 col-md-6">
-            <div class="blog__post-item shine__animate-item service-card">
-              <div class="blog__post-thumb">
-                <img src="assets/img/services/services_img02.webp" alt="Municipal Waste Management" loading="lazy">
-              </div>
-              <div class="blog__post-content">
-                <i class="fa-solid fa-recycle blog__post-icon"></i>
-                <div class="blog__post-meta">
-                  <span>Collection • Recycling • Compliance</span>
-                </div>
-                <h4 class="title">Municipal Waste Management</h4>
-                <button class="read-details-btn">
-                  View Details <i class="fa-solid fa-chevron-down"></i>
-                </button>
-              </div>
-              <div class="blog-details">
-                <p>Door-to-door collection, route optimization, transfer stations, and public education. We help cities achieve <strong>zero-waste goals</strong> with data-driven systems and NESREA compliance.</p>
-                <p><strong>Impact:</strong> Reduced landfill use by 40% in pilot LGAs</p>
-                <a href="contact.html" class="btn btn-sm mt-3 w-100">Learn More</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Service 3 -->
-          <div class="col-lg-3 col-md-6">
-            <div class="blog__post-item shine__animate-item service-card">
-              <div class="blog__post-thumb">
-                <img src="assets/img/images/cleaning (17).png" alt="Oil & Gas Waste Management" loading="lazy">
-              </div>
-              <div class="blog__post-content">
-                <i class="fa-solid fa-oil-well blog__post-icon"></i>
-                <div class="blog__post-meta">
-                  <span>Spill Response • Remediation • DPR</span>
-                </div>
-                <h4 class="title">Oil & Gas Waste Management</h4>
-                <button class="read-details-btn">
-                  View Details <i class="fa-solid fa-chevron-down"></i>
-                </button>
-              </div>
-              <div class="blog-details">
-                <p>HYPREP-certified bioremediation, NORM handling, produced water treatment, and 2-hour emergency response. Restored <strong>50+ sites</strong> in Ogoniland under UNEP guidelines.</p>
-                <p><strong>24/7 Hotline:</strong> 07033436161</p>
-                <a href="tel:07033436161" class="btn btn-sm mt-3 w-100">Emergency Call</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Service 4 -->
-          <div class="col-lg-3 col-md-6">
-            <div class="blog__post-item shine__animate-item service-card">
-              <div class="blog__post-thumb">
-                <img src="assets/img/images/cleaning (6).jpg" alt="Environmental Consultancy" loading="lazy">
-              </div>
-              <div class="blog__post-content">
-                <i class="fa-solid fa-leaf blog__post-icon"></i>
-                <div class="blog__post-meta">
-                  <span>EIA • ESG • Carbon Audit</span>
-                </div>
-                <h4 class="title">Environmental Consultancy</h4>
-                <button class="read-details-btn">
-                  View Details <i class="fa-solid fa-chevron-down"></i>
-                </button>
-              </div>
-              <div class="blog-details">
-                <p>Environmental Impact Assessments, ESG reporting, carbon footprint analysis, and sustainability training. We guide clients to <strong>ISO 14001 & green certifications</strong>.</p>
-                <p><strong>Trusted by:</strong> IOCs, Government, NGOs</p>
-                <a href="contact.html" class="btn btn-sm mt-3 w-100">Book Consultation</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- services-area-end -->
 
     <!-- blog-post-area -->
     <section class="blog__post-area section-pt-120 section-pb-90">
@@ -1395,7 +1746,7 @@
     <!-- faq-area-end -->
 
     <!-- cta-area -->
-    <section class="cta__area fix">
+    <!-- <section class="cta__area fix">
       <div class="cta__bg" data-background="assets/img/bg/cta_bg.jpg"></div>
       <div class="container">
         <div class="row align-items-end">
@@ -1403,8 +1754,11 @@
             <div class="cta__content">
               <h2 class="title">Ready to work with our team?</h2>
               <div class="cta__btn">
-                <a href="contact.html" class="btn btn-two">Let’s build together <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
-                <a href="contact.html" class="btn transparent-btn">Contact With Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                <a href="tel:07033436161" class="btn btn-two">
+                  <i class="fa-solid fa-phone-volume me-2" aria-hidden="true"></i>
+                  Call 07033436161
+                  <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                <a href="contact.html" class="btn transparent-btn">Contact Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
               </div>
             </div>
           </div>
@@ -1418,7 +1772,7 @@
       <div class="cta__shape">
         <img src="assets/img/images/cta_shape.png" alt="shape" data-aos="fade-down-left" data-aos-delay="400">
       </div>
-    </section>
+    </section> -->
     <!-- cta-area-end -->
 
     <!-- work-area -->
@@ -1444,7 +1798,7 @@
           </div>
         </div>
 
-        <!-- Horizontal Floating Icons -->
+       
         <div class="work__icons-horizontal mt-5">
           <div class="icons-track">
             <i class="fas fa-broom work-icon tg-motion-effects2" data-aos="fade-up" data-aos-delay="100"></i>

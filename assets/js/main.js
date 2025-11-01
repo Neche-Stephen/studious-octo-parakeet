@@ -127,7 +127,7 @@ var sliderSwiper = new Swiper('.slider-active', {
     effect: "fade",
     loop: true,
     autoplay: {
-        delay: 6000,
+        delay: 4000,
     },
 });
 
