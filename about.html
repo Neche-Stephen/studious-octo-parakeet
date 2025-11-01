@@ -439,6 +439,20 @@
     .tgmobile__menu.open ~ .main-content {
       transform: translateX(280px);
     }
+
+    /* Image height optimization for all devices */
+    .about__img-wrap-two img {
+      max-height: 700px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    /* Even more compact on mobile */
+    @media (max-width: 767.98px) {
+      .about__img-wrap-two img {
+        max-height: 300px;
+      }
+    }
   </style>
 </head>
 
@@ -961,13 +975,18 @@
         <div class="row align-items-center">
           <div class="col-lg-7">
             <div class="cta__content-two">
-              <h2 class="title">Partner with Pinnacle for cleaner, safer, compliant environments.</h2>
-              <p class="mb-0"><span class="badge-brand">Major Contractor to HYPREP – Federal Ministry of Environment, Nigeria</span></p>
+              <h2 class="title mb-4">Partner with Pinnacle for cleaner, safer, compliant environments.</h2>
+              <span class="badge text-white px-3 py-2 d-none d-md-inline" style="border-radius: 999px; background-color: #102693; text-align: start;">
+                Major Contractor to HYPREP Federal Ministry of Environment, Nigeria
+              </span>
+              <span class="badge text-white px-3 py-2 d-md-none" style="border-radius: 999px; background-color: #102693; text-align: center;">
+                Major Contractor to HYPREP <br>Federal Ministry of Environment, Nigeria
+              </span>
             </div>
           </div>
           <div class="col-lg-5">
             <div class="cta__btn">
-              <a href="services.html" class="btn btn-two">View Our Services</a>
+              <a href="services.html" class="btn btn-two d-none d-md-inline">View Our Services</a>
               <a href="contact.html" class="btn transparent-btn">Request a Quote</a>
             </div>
           </div>
