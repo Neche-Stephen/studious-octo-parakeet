@@ -520,6 +520,83 @@
     .tgmobile__menu.open ~ .main-content {
       transform: translateX(280px);
     }
+
+    /* ===========================
+   FIX HERO BACKGROUND VISIBILITY (CONTACT PAGE)
+=========================== */
+.breadcrumb__area.breadcrumb__bg {
+  position: relative;
+  background: url("assets/img/bg/contact-us.jpg") center center / cover no-repeat !important;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Remove or override any default dark overlay */
+.breadcrumb__area.breadcrumb__bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.25) 0%,   /* subtle fade for readability */
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  z-index: 0;
+}
+
+/* Make text pop above overlay */
+.breadcrumb__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.breadcrumb__content .title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.breadcrumb__content .breadcrumb a {
+  color: #f0f0f0;
+}
+
+.breadcrumb__content .breadcrumb a:hover {
+  color: #d7e3ff;
+}
+
+/* ===== Mobile adjustments ===== */
+@media (max-width: 767.98px) {
+  .breadcrumb__area.breadcrumb__bg {
+    min-height: 240px;
+    background-position: center top !important;
+  }
+  .breadcrumb__area.breadcrumb__bg::before {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.09) 0%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
+  .breadcrumb__content .title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .breadcrumb__content .breadcrumb {
+    font-size: 0.9rem;
+  }
+}
+
+/* Optional: subtle parallax-like effect for large screens */
+@media (min-width: 992px) {
+  .breadcrumb__area.breadcrumb__bg {
+    background-attachment: fixed;
+  }
+}
+
   </style>
 </head>
 

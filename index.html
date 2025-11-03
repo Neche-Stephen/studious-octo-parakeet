@@ -37,6 +37,7 @@
 
   <!-- Custom Styles -->
   <style>
+    
     #sticky-header.tg-header__area {
       background: rgba(255,255,255,0.98);
       box-shadow: 0 10px 25px rgba(0,0,0,.06);
@@ -202,14 +203,7 @@
 }
 
     /* === 2. CARD TEXT READABILITY FIX === */
-    .blog__post-content,
-    .service-card .blog__post-content {
-      background: rgba(255, 255, 255, 0.96) !important;
-      backdrop-filter: blur(10px);
-      border-radius: 0 0 12px 12px;
-      padding: 1.25rem !important;
-      box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    }
+  
     .blog__post-content h4.title,
     .blog__post-content .blog__post-meta span,
     .blog__post-content .read-details-btn {
@@ -909,7 +903,42 @@
     transform: translateX(280px);
   }
 }
+/* REMOVE ALL STRIPE / SLANTED / GRADIENT BACKGROUNDS FROM CARDS */
+.blog__post-item,
+.blog__post-item::before,
+.blog__post-item::after,
+.service-card,
+.service-card::before,
+.service-card::after,
+.features__item,
+.features__item::before,
+.features__item::after {
+  background: #ffffff !important;
+  background-image: none !important;
+  transform: none !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+.blog__post-item::before,
+.blog__post-item::after,
+.service-card::before,
+.service-card::after,
+.features__item::before,
+.features__item::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+
+
   </style>
+  
+  
 </head>
 
 <body>
@@ -1078,6 +1107,8 @@
     padding: 0.5rem 1rem !important;
   }
 }
+
+
   </style>
 
   <div class="swiper slider-active">
@@ -1571,91 +1602,89 @@
     <!-- counter-area-end -->
 
     <!-- blog-post-area -->
-    <section class="blog__post-area section-pt-120 section-pb-90">
-      <div class="container">
-        <div class="row"><div class="col-xl-6 col-lg-8">
-          <div class="section__title mb-70">
-            <h2 class="title">Insights & Sustainability Tips</h2>
-            <h1 class="number">03</h1>
-          </div>
-        </div></div>
-
-        <div class="row justify-content-center gutter-24">
-          <div class="col-lg-4 col-md-6">
-            <div class="blog__post-item shine__animate-item">
-              <div class="blog__post-thumb">
-                <img src="assets/img/images/cleaning (12).jpg" alt="Eco-friendly Facilities" loading="lazy">
-              </div>
-              <div class="blog__post-content">
-                <i class="fa-solid fa-leaf blog__post-icon"></i>
-                <div class="blog__post-meta">
-                  <ul class="list-wrap">
-                    <li>By <a href="#">Pinnacle Team</a></li>
-                    <li>03 January, 2024</li>
-                  </ul>
-                </div>
-                <h4 class="title">Practical Steps to Keep Facilities Healthy & Eco-friendly</h4>
-                <button class="read-details-btn">
-                  Read Details <i class="fa-solid fa-chevron-down"></i>
-                </button>
-              </div>
-              <div class="blog-details">
-                <p>Eco-friendly facilities reduce operational costs by up to 30% through energy-efficient lighting, water recycling systems, and green cleaning products. Regular audits identify waste hotspots, while staff training ensures compliance with ISO 14001 standards. Simple changes like motion-sensor lights and biodegradable supplies create healthier workspaces and lower carbon footprints.</p>
-                <p><strong>Key Takeaway:</strong> Start with a facility audit — contact us for a free consultation.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="blog__post-item shine__animate-item">
-              <div class="blog__post-thumb">
-                <img src="assets/img/images/cleaning (13).jpg" alt="Waste Audits" loading="lazy">
-              </div>
-              <div class="blog__post-content">
-                <i class="fa-solid fa-chart-pie blog__post-icon"></i>
-                <div class="blog__post-meta">
-                  <ul class="list-wrap">
-                    <li>By <a href="#">Pinnacle Team</a></li>
-                    <li>03 January, 2024</li>
-                  </ul>
-                </div>
-                <h4 class="title">Waste Audits 101: Reduce Costs, Improve Sustainability</h4>
-                <button class="read-details-btn">
-                  Read Details <i class="fa-solid fa-chevron-down"></i>
-                </button>
-              </div>
-              <div class="blog-details">
-                <p>A waste audit maps your organization's waste stream, identifying recyclable materials and cost-saving opportunities. Businesses using audits cut disposal fees by 25% on average. Steps include data collection, sorting, analysis, and action planning. Pinnacle's audits comply with NESREA and include employee training.</p>
-                <p><strong>Pro Tip:</strong> Schedule quarterly audits to maintain zero-waste goals.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="blog__post-item shine__animate-item">
-              <div class="blog__post-thumb">
-                <img src="assets/img/images/cleaning (18).png" alt="Oil Spill Response" loading="lazy">
-              </div>
-              <div class="blog__post-content">
-                <i class="fa-solid fa-oil-can blog__post-icon"></i>
-                <div class="blog__post-meta">
-                  <ul class="list-wrap">
-                    <li>By <a href="#">Pinnacle Team</a></li>
-                    <li>03 January, 2024</li>
-                  </ul>
-                </div>
-                <h4 class="title">Oil Spill Response: What Rapid, Safe Remediation Looks Like</h4>
-                <button class="read-details-btn">
-                  Read Details <i class="fa-solid fa-chevron-down"></i>
-                </button>
-              </div>
-              <div class="blog-details">
-                <p>Rapid response within 2 hours minimizes environmental damage. Our HYPREP-certified teams use bioremediation, containment booms, and soil testing to restore sites. Case study: Restored 5 hectares in Ogoniland in 6 months. Compliance with DPR and FMEnv ensures zero fines.</p>
-                <p><strong>Emergency?</strong> Call our 24/7 hotline: 07033436161</p>
-              </div>
-            </div>
-          </div>
+   <!-- ===================================
+     CLEAN BLOG GRID WITH EXPANDABLE DETAILS
+=================================== -->
+<section class="blog__post-area section-pt-120 section-pb-90">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 col-lg-8">
+        <div class="section__title mb-70">
+          <h2 class="title">Insights & Sustainability Tips</h2>
+          <h1 class="number">03</h1>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="row justify-content-center g-4">
+
+      <!-- Blog 1 -->
+      <div class="col-lg-4 col-md-6">
+        <article class="clean-card">
+          <img src="assets/img/images/cleaning (12).jpg" alt="Eco-friendly Facilities" class="card-img">
+          <div class="card-body">
+            <i class="fa-solid fa-leaf card-icon"></i>
+            <div class="meta">By Pinnacle Team • 03 January, 2024</div>
+            <h4>Practical Steps to Keep Facilities Healthy & Eco-friendly</h4>
+            <p>Eco-friendly facilities reduce costs by 30% with green cleaning, audits, and biodegradable supplies.</p>
+            <button class="read-details-btn">
+              Read Details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="blog-details">
+            <p>Eco-friendly facilities reduce operational costs by up to 30% through energy-efficient lighting, water recycling systems, and green cleaning products. Regular audits identify waste hotspots, while staff training ensures compliance with ISO 14001 standards. Simple changes like motion-sensor lights and biodegradable supplies create healthier workspaces and lower carbon footprints.</p>
+            <p><strong>Key Takeaway:</strong> Start with a facility audit — contact us for a free consultation.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Blog 2 -->
+      <div class="col-lg-4 col-md-6">
+        <article class="clean-card">
+          <img src="assets/img/images/cleaning (13).jpg" alt="Waste Audits" class="card-img">
+          <div class="card-body">
+            <i class="fa-solid fa-chart-pie card-icon"></i>
+            <div class="meta">By Pinnacle Team • 03 January, 2024</div>
+            <h4>Waste Audits 101: Reduce Costs, Improve Sustainability</h4>
+            <p>Waste audits cut disposal fees by up to 25% while boosting recycling compliance.</p>
+            <button class="read-details-btn">
+              Read Details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="blog-details">
+            <p>A waste audit maps your organization's waste stream, identifying recyclable materials and cost-saving opportunities. Businesses using audits cut disposal fees by 25% on average. Steps include data collection, sorting, analysis, and action planning. Pinnacle's audits comply with NESREA and include employee training.</p>
+            <p><strong>Pro Tip:</strong> Schedule quarterly audits to maintain zero-waste goals.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Blog 3 -->
+      <div class="col-lg-4 col-md-6">
+        <article class="clean-card">
+          <img src="assets/img/images/cleaning (18).png" alt="Oil Spill Response" class="card-img">
+          <div class="card-body">
+            <i class="fa-solid fa-oil-can card-icon"></i>
+            <div class="meta">By Pinnacle Team • 03 January, 2024</div>
+            <h4>Oil Spill Response: What Rapid, Safe Remediation Looks Like</h4>
+            <p>Certified teams use bioremediation and soil testing for fast, compliant cleanups.</p>
+            <button class="read-details-btn">
+              Read Details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="blog-details">
+            <p>Rapid response within 2 hours minimizes environmental damage. Our HYPREP-certified teams use bioremediation, containment booms, and soil testing to restore sites. Case study: Restored 5 hectares in Ogoniland in 6 months. Compliance with DPR and FMEnv ensures zero fines.</p>
+            <p><strong>Emergency?</strong> Call our 24/7 hotline: 07033436161</p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
     <!-- blog-post-area-end -->
 
     <!-- FAQ Section -->
@@ -2066,6 +2095,49 @@
     .tgmobile__menu-backdrop.open { opacity:1; visibility:visible; }
   `;
   document.head.appendChild(style);
+
+
+
+/* Read Details / Read Less Toggle */
+document.querySelectorAll('.read-details-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const card = btn.closest('.clean-card');
+    const detail = card.querySelector('.blog-details');
+
+    // If the clicked card is already open, close it
+    const isOpen = detail.classList.contains('show');
+    if (isOpen) {
+      detail.classList.remove('show');
+      btn.classList.remove('active');
+      btn.innerHTML = 'Read Details <i class="fa-solid fa-chevron-down"></i>';
+      return;
+    }
+
+    // Otherwise close all others first
+    document.querySelectorAll('.blog-details').forEach(d => d.classList.remove('show'));
+    document.querySelectorAll('.read-details-btn').forEach(b => {
+      b.classList.remove('active');
+      b.innerHTML = 'Read Details <i class="fa-solid fa-chevron-down"></i>';
+    });
+
+    // Then open this one
+    detail.classList.add('show');
+    btn.classList.add('active');
+    btn.innerHTML = 'Read Less <i class="fa-solid fa-chevron-up"></i>';
+  });
+});
+
+// Optional: Close all when clicking outside
+document.addEventListener('click', e => {
+  if (!e.target.closest('.clean-card')) {
+    document.querySelectorAll('.blog-details').forEach(d => d.classList.remove('show'));
+    document.querySelectorAll('.read-details-btn').forEach(b => {
+      b.classList.remove('active');
+      b.innerHTML = 'Read Details <i class="fa-solid fa-chevron-down"></i>';
+    });
+  }
+});
   
 </script>
 

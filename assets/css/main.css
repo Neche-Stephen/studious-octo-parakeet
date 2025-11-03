@@ -12600,4 +12600,395 @@ textarea {
   color: var(--tg-color-white-default);
 }
 
-/*# sourceMappingURL=main.css.map */
+
+
+/* === FORCE WHITE BACKGROUND & BLACK TEXT FOR ALL CARDS === */
+.blog__post-item,
+.blog__post-content,
+.blog__post-thumb,
+.service-card,
+.service-card .blog__post-content,
+.features__item {
+  background: #ffffff !important;
+  background-image: none !important;
+  color: #111827 !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.05) !important;
+}
+
+/* Kill any diagonal overlays or gradients */
+.blog__post-item::before,
+.blog__post-item::after,
+.service-card::before,
+.service-card::after,
+.features__item::before,
+.features__item::after {
+  content: none !important;
+  background: none !important;
+  display: none !important;
+}
+
+/* Ensure inner text and titles render dark */
+.blog__post-content h4.title,
+.blog__post-content .blog__post-meta,
+.blog__post-content p,
+.blog__post-content .read-details-btn,
+.features__content h3,
+.features__content p {
+  color: #111827 !important;
+}
+
+/* Remove clipping or skew effects */
+.blog__post-item,
+.service-card,
+.features__item {
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  transform: none !important;
+}
+
+/* Optional: make icons themed blue for consistency */
+.blog__post-icon {
+  color: #102693 !important;
+}
+
+
+/* === REMOVE ALL DIAGONAL GRADIENTS / STRIPE BACKGROUNDS SITEWIDE === */
+[class*="blog__post-item"],
+[class*="service-card"],
+[class*="features__item"],
+[class*="project__item"],
+[class*="case__item"],
+[class*="card"],
+[class*="portfolio__item"] {
+  background: #ffffff !important;
+  background-image: none !important;
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  border: 1px solid #e5e7eb !important;
+  color: #111827 !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+}
+
+/* Remove theme's diagonal overlays from pseudo elements */
+[class*="blog__post-item"]::before,
+[class*="blog__post-item"]::after,
+[class*="service-card"]::before,
+[class*="service-card"]::after,
+[class*="features__item"]::before,
+[class*="features__item"]::after,
+[class*="project__item"]::before,
+[class*="project__item"]::after,
+[class*="case__item"]::before,
+[class*="case__item"]::after,
+[class*="portfolio__item"]::before,
+[class*="portfolio__item"]::after {
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  display: none !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  transform: none !important;
+}
+
+/* Ensure text and icons are visible in black or brand color */
+[class*="blog__post-content"] h4,
+[class*="blog__post-content"] p,
+[class*="blog__post-content"] span,
+[class*="features__content"] h3,
+[class*="features__content"] p {
+  color: #111827 !important;
+}
+
+[class*="blog__post-icon"],
+[class*="features__icon"] i {
+  color: #102693 !important;
+}
+
+
+
+/* ===========================
+   CLEAN GRID CARD STYLES
+=========================== */
+.clean-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.clean-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.clean-card .card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.clean-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.clean-card .card-icon {
+  font-size: 1.8rem;
+  color: #102693;
+}
+
+.clean-card .meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.clean-card h4 {
+  font-size: 1.15rem;
+  color: #1f2937;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.25rem 0;
+}
+
+.clean-card p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+.clean-card .readmore {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #102693;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.clean-card .readmore:hover {
+  color: #0a1a6e;
+}
+
+/* Remove any theme background layers globally */
+.blog__post-item, .blog__post-item::before, .blog__post-item::after {
+  background: none !important;
+  background-image: none !important;
+  clip-path: none !important;
+  transform: none !important;
+  content: none !important;
+}
+
+/* ===================================
+   CLEAN BLOG GRID STYLING
+=================================== */
+.clean-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.clean-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.clean-card .card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.clean-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.clean-card .card-icon {
+  font-size: 1.8rem;
+  color: #102693;
+}
+
+.clean-card .meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.clean-card h4 {
+  font-size: 1.15rem;
+  color: #1f2937;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.25rem 0;
+}
+
+.clean-card p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+.read-details-btn {
+  background: none;
+  border: none;
+  color: #102693;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.read-details-btn:hover {
+  color: #0a1a6e;
+}
+
+.read-details-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-details-btn.active i {
+  transform: rotate(180deg);
+}
+
+/* Expandable content */
+.blog-details {
+  background: #f8f9ff;
+  padding: 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  display: none;
+  animation: fadeIn 0.4s ease;
+  border-radius: 0 0 12px 12px;
+}
+
+.blog-details.show {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Remove any previous diagonal / gradient overlays */
+.blog__post-item, .blog__post-item::before, .blog__post-item::after {
+  background: none !important;
+  background-image: none !important;
+  clip-path: none !important;
+  transform: none !important;
+  content: none !important;
+}
+
+/* Clean, white cards */
+.service-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  transition: all .3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h4 {
+  font-size: 1.15rem;
+  color: #111;
+  margin-bottom: .5rem;
+}
+
+.card-body p {
+  color: #555;
+  font-size: .95rem;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #102693;
+  font-weight: 600;
+  font-size: .9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  cursor: pointer;
+  transition: color .3s ease;
+}
+
+.toggle-btn:hover { color: #0a1a6e; }
+
+.toggle-btn i { transition: transform .3s ease; }
+.toggle-btn.active i { transform: rotate(180deg); }
+
+/* Expandable section */
+.service-details {
+  background: #f8f9ff;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: none;
+  animation: fadeIn .4s ease;
+}
+.service-details.show { display: block; }
+
+.service-details ul {
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+.service-details ul li {
+  padding-left: 1.25rem;
+  position: relative;
+  font-size: .9rem;
+  margin-bottom: .5rem;
+  color: #444;
+}
+.service-details ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #102693;
+  font-weight: bold;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
