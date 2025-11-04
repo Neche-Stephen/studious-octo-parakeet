@@ -1111,213 +1111,260 @@
 
   </style>
 
-  <div class="swiper slider-active">
+<!-- ============================== HERO SLIDER ============================== -->
+<section class="pinnacle-hero-area">
+  <style>
+    /* ---- Clean reset for Pinnacle Hero ---- */
+    .pinnacle-hero-area {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pinnacle-slide {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 90vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .pinnacle-slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 100%);
+      z-index: 1;
+    }
+
+    .pinnacle-content {
+      position: relative;
+      z-index: 2;
+      background: rgba(31,41,55,0.95);
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      max-width: 700px;
+      color: #fff;
+    }
+
+    .pinnacle-content h1 span {
+      color: #102693;
+    }
+
+    .pinnacle-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .pinnacle-badges .badge {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .badge-blue {
+      background: #102693;
+      color: #fff;
+    }
+
+    .badge-outline {
+      background: #fff;
+      border: 2px solid #102693;
+      color: #102693;
+    }
+
+    .pinnacle-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 1.5rem;
+    }
+
+    .pinnacle-btn {
+      background: #102693;
+      color: #fff;
+      border: 2px solid #102693;
+      padding: 0.75rem 1.75rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .pinnacle-btn:hover {
+      background: #0a1a6e;
+    }
+
+    .pinnacle-btn-outline {
+      background: #fff;
+      color: #102693;
+    }
+
+    .pinnacle-btn-outline:hover {
+      background: #102693;
+      color: #fff;
+    }
+
+    .pinnacle-infobox {
+      background: #fff;
+      color: #111;
+      border-left: 4px solid #102693;
+      border-radius: 12px;
+      padding: 0.9rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .pinnacle-content {
+        padding: 1.75rem !important;
+      }
+      .pinnacle-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+      }
+      .pinnacle-infobox {
+        font-size: 0.85rem;
+      }
+    }
+    @media (max-width: 768px) {
+  .pinnacle-content {
+    padding: 1.75rem !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .pinnacle-content h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  .pinnacle-infobox {
+    font-size: 0.85rem;
+  }
+}
+
+  </style>
+
+  <div class="swiper pinnacle-slider">
     <div class="swiper-wrapper">
-      <!-- ==== NEW SLIDE 0: COMPANY INTRODUCTION (ADDED FIRST) ==== -->
-      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.png">
-        <div class="container custom-container-two">
-          <div class="row">
-            <div class="col-xl-7 col-lg-8">
-              <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
-          
-                <!-- Company Name -->
-                <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
-                  Pinnacle Health &<br><span style="color:#102693;">Environmental Services Ltd</span>
-                </h1>
-      
-                <!-- Tagline -->
-                <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
-                  <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
-                </p>
-      
-                <!-- Badges -->
-                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
-                  <span class="badge bg-primary text-white px-3 py-2 rounded-pill d-none d-md-inline">
-                    ISO 9001 & 14001 Certified
-                  </span>
-                  <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
-                    Major HYPREP Contractor
-                  </span>
-                </div>
-      
-                <!-- CTA Buttons -->
-                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                  <a href="about.html" class="btn">
-                    Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                  </a>
-                  <a href="contact.html" class="btn d-none d-md-inline-block" style="background:#fff; border:2px solid #102693; color:#102693;">
-                    Get in Touch
-                  </a>
-                </div>
-      
-              </div>
-            </div>
-          </div>
 
-          <div class="row mt-4">
-            <div class="col-xl-10">
-              <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
-                <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ==== SLIDE 1 ==== -->
-      <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg02.png">
-        <div class="container custom-container-two">
-          <div class="row">
-            <div class="col-xl-7 col-lg-8">
-              <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
-          
-                <!-- Company Name -->
-                <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
-                  Facility Cleaning & <br><span style="color:#102693;">Environmental Services Ltd</span>
-                </h1>
-      
-                <!-- Tagline -->
-                <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
-                  <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
-                </p>
-      
-                <!-- Badges -->
-                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
-                  <span class="badge bg-primary text-white px-3 py-2 rounded-pill d-none d-md-inline">
-                    ISO 9001 & 14001 Certified
-                  </span>
-                  <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
-                    Major HYPREP Contractor
-                  </span>
-                </div>
-      
-                <!-- CTA Buttons -->
-                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                  <a href="about.html" class="btn">
-                    Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                  </a>
-                  <a href="contact.html" class="btn d-none d-md-inline-block" style="background:#fff; border:2px solid #102693; color:#102693;">
-                    Get in Touch
-                  </a>
-                </div>
-      
-              </div>
-            </div>
-          </div>
+      <!-- Slide 1 -->
+      <div class="swiper-slide pinnacle-slide" style="background-image:url('assets/img/slider/slider_bg01.png')">
+        <div class="container">
+          <div class="pinnacle-content">
+            <h1 class="fw-bold mb-3 text-white">Pinnacle Health &<br><span class="text-white">Environmental Services Ltd</span></h1>
+            <p class="lead mb-4 text-white">A <strong>government-trusted</strong> leader in <strong>facility cleaning, waste management</strong>, and <strong>environmental remediation</strong> across Nigeria.</p>
 
-          <div class="row mt-4">
-            <div class="col-xl-10">
-              <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
-                <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
-              </div>
+            <div class="pinnacle-badges">
+              <span class="badge badge-blue">ISO 9001 & 14001 Certified</span>
+              <span class="badge badge-outline">Major HYPREP Contractor</span>
+            </div>
+
+            <div class="pinnacle-buttons">
+              <a href="about.html" class="pinnacle-btn text-white">Learn About Us</a>
+              <a href="contact.html" class="pinnacle-btn pinnacle-btn-outline">Get in Touch</a>
+            </div>
+
+            <div class="pinnacle-infobox">
+              <strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).
             </div>
           </div>
         </div>
       </div>
 
-       <!-- ==== SLIDE 2 ==== -->
-       <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg01.png">
-        <div class="container custom-container-two">
-          <div class="row">
-            <div class="col-xl-7 col-lg-8">
-              <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
-          
-                <!-- Company Name -->
-                <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
-                  Waste Management for Cities <br><span style="color:#102693;">& Petroleum Operations</span>
-                </h1>
-      
-                <!-- Tagline -->
-                <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
-                  <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
-                </p>
-      
-                <!-- Badges -->
-                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
-                  <span class="badge bg-primary text-white px-3 py-2 rounded-pill d-none d-md-inline">
-                    ISO 9001 & 14001 Certified
-                  </span>
-                  <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
-                    Major HYPREP Contractor
-                  </span>
-                </div>
-      
-                <!-- CTA Buttons -->
-                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                  <a href="about.html" class="btn">
-                    Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                  </a>
-                  <a href="contact.html" class="btn d-none d-md-inline-block" style="background:#fff; border:2px solid #102693; color:#102693;">
-                    Get in Touch
-                  </a>
-                </div>
-      
-              </div>
-            </div>
-          </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide pinnacle-slide" style="background-image:url('assets/img/slider/slider_bg02.png')">
+        <div class="container">
+          <div class="pinnacle-content">
+            <h1 class="fw-bold mb-3 text-white">Facility Cleaning &<br><span class="text-white">Environmental Management Experts</span></h1>
+            <p class="lead mb-4 text-white">We deliver nationwide <strong>facility cleaning, waste solutions,</strong> and <strong>environmental consultancy</strong> with excellence.</p>
 
-          <div class="row mt-4">
-            <div class="col-xl-10">
-              <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
-                <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
-              </div>
+            <div class="pinnacle-badges">
+              <span class="badge badge-blue">ISO 9001 & 14001 Certified</span>
+              <span class="badge badge-outline">HSE-Compliant Operations</span>
+            </div>
+
+            <div class="pinnacle-buttons">
+              <a href="services.html" class="pinnacle-btn text-white">Our Services</a>
+              <a href="contact.html" class="pinnacle-btn pinnacle-btn-outline">Get a Quote</a>
+            </div>
+
+            <div class="pinnacle-infobox">
+              <strong>Trusted by:</strong> INEC, hospitals, and corporate clients nationwide — delivering consistency and excellence.
             </div>
           </div>
         </div>
       </div>
 
-        <!-- ==== SLIDE 3 ==== -->
-        <div class="swiper-slide slider__bg" data-background="assets/img/slider/slider_bg02.jpg">
-          <div class="container custom-container-two">
-            <div class="row">
-              <div class="col-xl-7 col-lg-8">
-                <div class="slider__content text-center text-lg-start" style="background:#1f2937; padding: 3rem 2.5rem; border-radius: 16px;">
-            
-                  <!-- Company Name -->
-                  <h1 class="display-4 fw-bold mb-3" style="color:#fff; line-height: 1.1;">
-                    Environmental Impact <br><span style="color:#102693;">Assessments & Remediation</span>
-                  </h1>
-        
-                  <!-- Tagline -->
-                  <p class="lead fs-5 mb-4" style="color:#e2e8f0;">
-                    <strong>Government-trusted</strong> leader in <strong>facility cleaning, waste management,</strong> and <strong>environmental remediation</strong> across Nigeria.
-                  </p>
-        
-                  <!-- Badges -->
-                  <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
-                    <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
-                      ISO 9001 & 14001 Certified
-                    </span>
-                    <span class="badge" style="background:#fff; border:2px solid #102693; color:#102693;">
-                      Major HYPREP Contractor
-                    </span>
-                  </div>
-        
-                  <!-- CTA Buttons -->
-                  <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                    <a href="about.html" class="btn">
-                      Learn About Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
-                    </a>
-                    <a href="contact.html" class="btn" style="background:#fff; border:2px solid #102693; color:#102693;">
-                      Get in Touch
-                    </a>
-                  </div>
-        
-                </div>
-              </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide pinnacle-slide" style="background-image:url('assets/img/slider/slider_bg01.png')">
+        <div class="container">
+          <div class="pinnacle-content">
+            <h1 class="fw-bold mb-3 text-white">Waste Management for Cities<br><span class="text-white">& Petroleum Operations</span></h1>
+            <p class="lead mb-4 text-white">We manage <strong>municipal and oil & gas waste</strong> efficiently and sustainably — safeguarding communities and ecosystems.</p>
+
+            <div class="pinnacle-badges">
+              <span class="badge badge-blue">Sustainable Waste Systems</span>
+              <span class="badge badge-outline">DPR & NESREA Certified</span>
             </div>
-  
-            <div class="row mt-4">
-              <div class="col-xl-10">
-                <div class="p-3 bg-white" style="border-left:4px solid #102693; border-radius:12px;">
-                  <p class="mb-0"><strong>Government-trusted:</strong> Delivering environmental services on UN-backed Ogoniland cleanup under the Hydrocarbon Pollution Remediation Project (HYPREP).</p>
-                </div>
-              </div>
+
+            <div class="pinnacle-buttons">
+              <a href="services.html" class="pinnacle-btn text-white">Explore Waste Solutions</a>
+              <a href="contact.html" class="pinnacle-btn pinnacle-btn-outline">Work With Us</a>
+            </div>
+
+            <div class="pinnacle-infobox ">
+              <strong class="">Environmental stewardship:</strong> Driving circular economy through waste audits, recycling, and remediation.
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide pinnacle-slide" style="background-image:url('assets/img/slider/slider_bg01.png')">
+        <div class="container">
+          <div class="pinnacle-content">
+            <h1 class="fw-bold mb-3 text-white">Environmental Impact<br><span class="text-white">Assessments & Remediation</span></h1>
+            <p class="lead mb-4 text-white">Certified consultants providing EIAs, audits, and remediation services aligned with UNEP and FMEnv standards.</p>
+
+            <div class="pinnacle-badges">
+              <span class="badge badge-blue">World Bank & AfDB Compliant</span>
+              <span class="badge badge-outline">FMEnv Accredited</span>
+            </div>
+
+            <div class="pinnacle-buttons">
+              <a href="about.html" class="pinnacle-btn text-white">Learn More</a>
+              <a href="contact.html" class="pinnacle-btn pinnacle-btn-outline">Contact Us</a>
+            </div>
+
+            <div class="pinnacle-infobox">
+              <strong>Global Standards:</strong> Proven record in HYPREP remediation and international environmental consultancy.
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
+
+  <!-- Initialize Swiper -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.pinnacle-slider', {
+        loop: true,
+        autoplay: { delay: 7000 },
+        effect: 'fade',
+        fadeEffect: { crossFade: true },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      });
+    });
+  </script>
+</section>
+<!-- ============================== END HERO SLIDER ============================== -->
+
 
   <!-- tiny JS safety-net (removes any line that might be added after Swiper init) -->
   <script>
@@ -1413,7 +1460,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="services__item-preview">
               <div class="services__thumb-preview">
-                <img src="assets/img/images/cleaning (6).jpg" alt="Environmental Consultancy" loading="lazy">
+                <img src="assets/img/images/cleaning (16).png" alt="Environmental Consultancy" loading="lazy">
                 <div class="services__icon">
                   <i class="fa-solid fa-leaf"></i>
                 </div>
