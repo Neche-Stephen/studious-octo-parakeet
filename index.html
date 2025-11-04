@@ -1134,18 +1134,29 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 100%);
       z-index: 1;
     }
 
     .pinnacle-content {
       position: relative;
       z-index: 2;
-      background: rgba(31,41,55,0.95);
+      /* ✅ Slight transparent gradient overlay for softer blending */
+      background: linear-gradient(
+        135deg,
+        rgba(31, 41, 55, 0.95) 0%,
+        rgba(31, 41, 55, 0.9) 50%,
+        rgba(31, 41, 55, 0.85) 100%
+      );
       padding: 3rem 2.5rem;
       border-radius: 16px;
       max-width: 700px;
       color: #fff;
+      margin-top: 1.75rem;    /* ✅ breathing space on desktop */
+      margin-bottom: 1.75rem; /* ✅ breathing space on desktop */
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(3px);
+      transition: all 0.3s ease;
     }
 
     .pinnacle-content h1 span {
@@ -1218,33 +1229,29 @@
       font-size: 0.9rem;
     }
 
+    /* --- Responsive adjustments --- */
     @media (max-width: 768px) {
       .pinnacle-content {
         padding: 1.75rem !important;
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+        border-radius: 18px;
+        background: linear-gradient(
+          135deg,
+          rgba(31, 41, 55, 0.9) 0%,
+          rgba(31, 41, 55, 0.8) 100%
+        );
       }
+
       .pinnacle-content h1 {
         font-size: 1.8rem;
         line-height: 1.2;
       }
+
       .pinnacle-infobox {
         font-size: 0.85rem;
       }
     }
-    @media (max-width: 768px) {
-  .pinnacle-content {
-    padding: 1.75rem !important;
-    margin-top: 1.25rem !important;
-    margin-bottom: 1.25rem !important;
-  }
-  .pinnacle-content h1 {
-    font-size: 1.8rem;
-    line-height: 1.2;
-  }
-  .pinnacle-infobox {
-    font-size: 0.85rem;
-  }
-}
-
   </style>
 
   <div class="swiper pinnacle-slider">
@@ -1315,8 +1322,8 @@
               <a href="contact.html" class="pinnacle-btn pinnacle-btn-outline">Work With Us</a>
             </div>
 
-            <div class="pinnacle-infobox ">
-              <strong class="">Environmental stewardship:</strong> Driving circular economy through waste audits, recycling, and remediation.
+            <div class="pinnacle-infobox">
+              <strong>Environmental stewardship:</strong> Driving circular economy through waste audits, recycling, and remediation.
             </div>
           </div>
         </div>
@@ -1363,6 +1370,7 @@
     });
   </script>
 </section>
+
 <!-- ============================== END HERO SLIDER ============================== -->
 
 
