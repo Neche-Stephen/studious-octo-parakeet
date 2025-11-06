@@ -453,6 +453,201 @@
         max-height: 300px;
       }
     }
+    /* === CERTIFICATION GRID ALIGNMENT FIX === */
+.certifications__area .row.gutter-24 {
+  row-gap: 24px; /* ensures vertical spacing between rows */
+}
+
+/* Force all certification items to equal height */
+.certifications__area .col-lg-4,
+.certifications__area .col-md-6 {
+  display: flex;
+}
+
+.cert__item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.cert__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .12);
+}
+
+/* Fixed thumbnail height */
+.cert__thumb {
+  flex: 0 0 220px; /* keep uniform image height */
+  overflow: hidden;
+}
+
+.cert__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.cert__item:hover .cert__thumb img {
+  transform: scale(1.05);
+}
+
+/* Content alignment */
+.cert__content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.25rem 1.5rem;
+}
+
+.cert__content h4.title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  min-height: 2.5rem; /* ensures title block height uniformity */
+}
+
+.cert__content p {
+  flex: 1 1 auto;
+  font-size: .9rem;
+  color: #4b5563;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* clamp to 4 lines */
+  max-height: calc(1.5em * 4);
+  min-height: calc(1.5em * 4);
+}
+
+/* Smooth responsive adjustments */
+@media (max-width: 767.98px) {
+  .cert__thumb {
+    flex: 0 0 180px;
+  }
+  .cert__content {
+    padding: 1rem;
+  }
+  .cert__content h4.title {
+    font-size: 1rem;
+    min-height: auto;
+  }
+  .cert__content p {
+    -webkit-line-clamp: 5;
+  }
+}
+/* === TEAM GRID EQUAL HEIGHT & ALIGNMENT === */
+.team__area-two .row.gutter-24 {
+  row-gap: 24px; /* vertical spacing between rows */
+}
+
+.team__area-two .col-xl-3,
+.team__area-two .col-lg-4,
+.team__area-two .col-md-6,
+.team__area-two .col-sm-6 {
+  display: flex;
+}
+
+/* Make the entire card equal height */
+.team__item-two {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  transition: transform .3s ease, box-shadow .3s ease;
+  overflow: hidden;
+}
+
+.team__item-two:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .12);
+}
+
+/* Ensure image area uniform */
+.team__thumb-two {
+  flex: 0 0 260px;
+  overflow: hidden;
+}
+
+.team__thumb-two img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.team__item-two:hover .team__thumb-two img {
+  transform: scale(1.05);
+}
+
+/* Card body layout */
+.team__content-two {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  background: #fff;
+}
+
+.team__content-two .title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.35rem;
+  min-height: 2.4rem; /* equal title block space */
+}
+
+.team__content-two span {
+  font-size: .9rem;
+  color: var(--brand-primary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: .3rem;
+  min-height: 2rem; /* keep uniform across cards */
+}
+
+.team__content-two p {
+  flex: 1 1 auto;
+  font-size: .85rem;
+  color: #555;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* clamp to 4 lines */
+  max-height: calc(1.5em * 4);
+  min-height: calc(1.5em * 4);
+}
+
+/* Responsive tuning */
+@media (max-width: 767.98px) {
+  .team__thumb-two {
+    flex: 0 0 220px;
+  }
+  .team__content-two {
+    padding: 1rem;
+  }
+  .team__content-two .title {
+    font-size: 1rem;
+  }
+  .team__content-two p {
+    -webkit-line-clamp: 5;
+  }
+}
+
   </style>
 </head>
 

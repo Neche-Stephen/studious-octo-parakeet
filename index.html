@@ -934,6 +934,200 @@
 }
 
 
+/* === EQUAL HEIGHT CARDS & CONSISTENT LAYOUT === */
+.features__area .row,
+.services-preview__area .row,
+.blog__post-area .row {
+  align-items: stretch !important;
+}
+
+/* Ensure cards stretch fully to equal height */
+.features__item,
+.services__item-preview,
+.clean-card,
+.blog__post-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+/* Maintain image sizing consistency */
+.features__item img,
+.services__thumb-preview img,
+.clean-card img {
+  object-fit: cover;
+  width: 100%;
+  height: 220px;
+  border-radius: 0;
+}
+
+/* Keep dropdown / read more section at bottom */
+.features__item .dropdown-content,
+.blog__post-item .blog-details,
+.clean-card .blog-details {
+  margin-top: auto;
+  order: 99; /* ensures last position */
+}
+
+/* Minor polish: smooth transition and tidy borders */
+.features__item,
+.services__item-preview,
+.clean-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.features__item:hover,
+.services__item-preview:hover,
+.clean-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 767.98px) {
+  .features__item img,
+  .services__thumb-preview img,
+  .clean-card img {
+    height: 160px;
+  }
+}
+
+.blog__post-area .row,
+.features__area .row {
+  align-items: flex-start !important;
+}
+.clean-card,
+.blog__post-item,
+.features__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 520px; /* baseline height for visual balance */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.clean-card:hover,
+.blog__post-item:hover,
+.features__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.blog-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+.blog-details.show {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.dropdown-content {
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-5px);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.dropdown-content.active {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* --- Insights Cards Layout --- */
+.blog__post-area .row {
+  align-items: flex-start !important;
+  row-gap: 1.5rem;
+}
+
+/* Equal height baseline */
+.clean-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 530px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.clean-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Image consistency */
+.clean-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* --- Details above toggle --- */
+.blog-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+  background: #f8f9ff;
+  border-top: 1px solid #e5e7eb;
+  padding: 0 1rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+}
+.blog-details.show {
+  max-height: 350px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 1.5rem 1rem;
+}
+
+/* --- Toggle Button --- */
+.read-details-btn {
+  margin-bottom: 100px !important;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #102693;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+.read-details-btn:hover {
+  color: #0a1a6e;
+}
+.read-details-btn i {
+  transition: transform 0.3s ease;
+}
+.read-details-btn.active i {
+  transform: rotate(180deg);
+}
+
+/* Make button and dropdown stack in a controllable order */
+.clean-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Show dropdown ABOVE the button visually */
+.clean-card .blog-details { order: 1; }
+.clean-card .read-details-btn { order: 2; align-self: flex-start; margin-top: .5rem; }
 
 
   </style>
@@ -1252,6 +1446,103 @@
         font-size: 0.85rem;
       }
     }
+    .features__item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features__item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.features__icon {
+  font-size: 2.8rem;
+  margin-bottom: 0.3rem !important; /* tighter gap */
+  color: var(--brand-primary);
+}
+
+.features__item .title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.features__item p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--brand-primary);
+  transition: color 0.25s ease;
+}
+
+.dropdown-toggle:hover {
+  color: var(--brand-primary-600);
+}
+/* 🌍 RESPONSIVE FIX for Mission / Vision / Values cards */
+@media (max-width: 991.98px) {
+  .features__item {
+    min-height: auto !important; /* remove fixed height */
+    padding: 1.5rem 1rem !important;
+  }
+
+  .features__content {
+    margin-bottom: 2rem !important; /* less vertical spacing */
+    padding: 0 5px !important;
+  }
+
+  .features__icon {
+    font-size: 2.2rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .features__item .title {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.75rem;
+  }
+
+  .features__item p {
+    font-size: 0.95rem !important;
+    line-height: 1.5;
+  }
+
+  .dropdown-toggle {
+    margin-top: 1rem !important;
+  }
+}
+
+/* 📱 Even tighter for very small screens */
+@media (max-width: 575.98px) {
+  .features__item {
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  .features__content {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .features__icon {
+    font-size: 2rem !important;
+  }
+
+  .features__item .title {
+    font-size: 1rem !important;
+  }
+
+  .dropdown-toggle {
+    font-size: 0.9rem !important;
+  }
+}
+
   </style>
 
   <div class="swiper pinnacle-slider">
@@ -1372,7 +1663,7 @@
 </section>
 
 <!-- ============================== END HERO SLIDER ============================== -->
-
+0 
 
   <!-- tiny JS safety-net (removes any line that might be added after Swiper init) -->
   <script>
@@ -1503,67 +1794,112 @@
 
     <!-- features-area -->
     <section class="features__area section-pt-120 section-pb-90">
-      <div class="container">
-        <div class="row justify-content-center gutter-24">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="features__item">
-              <div class="features__icon"><i class="fa-solid fa-bullseye text-brand" aria-hidden="true"></i></div>
-              <div class="features__content">
-                <h3 class="title">Our Mission</h3>
-                <p>To provide advisory and implementation services in Facility Management, Environmental Management and Environmental Health. Create a culture of consistent service delivery through trainings. Ensure exceptional client satisfaction.</p>
-                <div class="dropdown-toggle mt-3">
-                  Read Full Mission <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="dropdown-content">
-                  <hr>
-                  <p>Our mission is rooted in transforming environments into safe, clean, and sustainable spaces. We achieve this through expert-led training programs, innovative cleaning protocols, and strict adherence to global hygiene standards. Every project is executed with precision, transparency, and a commitment to long-term client partnerships.</p>
-                </div>
-              </div>
-            </div>
+  <div class="container">
+    <!-- Section Intro -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-60" data-aos="fade-up">
+        <div class="section__title section__title-three">
+          <span class="sub-title text-brand">Who We Are</span>
+          <h2 class="title">Our Mission, Vision & Core Values</h2>
+          <p class="mt-3 text-gray-700" style="font-size: 1rem; max-width: 720px; margin: 0 auto;">
+            We exist to promote a cleaner, healthier, and more sustainable Africa —
+            empowering organizations with smart environmental management,
+            professional facility services, and a people-first commitment.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission / Vision / Values Cards -->
+    <div class="row justify-content-center gutter-24">
+      <!-- Mission -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="features__item text-center">
+          <div class="features__icon">
+            <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
           </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="features__item">
-              <div class="features__icon"><i class="fa-solid fa-eye text-brand" aria-hidden="true"></i></div>
-              <div class="features__content">
-                <h3 class="title">Our Vision</h3>
-                <p>To be Africa’s Best Environment Management Service Provider by creating a sustainable, safe, conducive working environment through cutting edge innovation, technology and quality.</p>
-                <div class="dropdown-toggle mt-3">
-                  Read Full Vision <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="dropdown-content">
-                  <hr>
-                  <p>We envision a future where every facility in Africa operates at peak environmental efficiency. By integrating IoT monitoring, green chemistry, and data-driven waste systems, we aim to set the benchmark for sustainability and operational excellence across the continent.</p>
-                </div>
-              </div>
+          <div class="features__content " style="padding: 0px 10px !important; text-align: start; margin-bottom: 160px;">
+            <h3 class="title">Our Mission</h3>
+            <p style="width: 100%;">
+              To provide advisory and implementation services in Facility Management,
+              Environmental Management, and Environmental Health. To build a culture of
+              consistent service delivery through training and ensure client satisfaction.
+            </p>
+            <div class="dropdown-content">
+              
+              <p>
+                Our mission is to transform environments into safe, clean, and sustainable spaces.
+                We achieve this through expert-led training programs, innovative cleaning protocols,
+                and strict adherence to global hygiene standards.
+              </p>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="features__item">
-              <div class="features__icon"><i class="fa-solid fa-handshake-angle text-brand" aria-hidden="true"></i></div>
-              <div class="features__content">
-                <h3 class="title">Core Values</h3>
-                <p>R.I.T.C.H (Respect, Integrity, Trust, Commitment and Honesty), Team work, Professionalism, Client Satisfaction, Quality In, Quality Out (QIQO).</p>
-                <div class="dropdown-toggle mt-3">
-                  See All Values <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="dropdown-content">
-                  <hr>
-                  <ul>
-                    <li><strong>Respect:</strong> For people, communities, and the environment.</li>
-                    <li><strong>Integrity:</strong> Transparent operations, always.</li>
-                    <li><strong>Trust:</strong> Built through consistent delivery.</li>
-                    <li><strong>Commitment:</strong> To safety, quality, and results.</li>
-                    <li><strong>Honesty:</strong> Open communication at all levels.</li>
-                    <li><strong>Teamwork & Professionalism:</strong> Collaborative excellence.</li>
-                    <li><strong>QIQO:</strong> Quality In, Quality Out — our mantra.</li>
-                  </ul>
-                </div>
-              </div>
+            <div class="dropdown-toggle mt-3">
+              Read Full Mission <i class="fa-solid fa-chevron-down"></i>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Vision -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="features__item text-center">
+          <div class="features__icon">
+            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+          </div>
+          <div class="features__content" style="text-align: start; margin-bottom: 100px;">
+            <h3 class="title">Our Vision</h3>
+            <p>
+              To be Africa’s leading Environmental Management Service Provider —
+              creating safe, sustainable workplaces through innovation and technology.
+            </p>
+            <div class="dropdown-content">
+              
+              <p>
+                We envision a future where every African facility operates with
+                peak environmental efficiency, guided by innovation, sustainability,
+                and community responsibility.
+              </p>
+            </div>
+            <div class="dropdown-toggle mt-3">
+              Read Full Vision <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Values -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="features__item text-center">
+          <div class="features__icon">
+            <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
+          </div>
+          <div class="features__content" style="text-align: start; margin-bottom: 100px;">
+            <h3 class="title">Core Values</h3>
+            <p>
+              R.I.T.C.H — Respect, Integrity, Trust, Commitment, and Honesty.
+              We uphold teamwork, professionalism, and quality in every service.
+            </p>
+            <div class="dropdown-content">
+              
+              <ul style="text-align: start;">
+                <li><strong>Respect:</strong> For people, communities, and the environment.</li>
+                <li><strong>Integrity:</strong> Transparency in all dealings.</li>
+                <li><strong>Trust:</strong> Built through consistent delivery.</li>
+                <li><strong>Commitment:</strong> To safety and results.</li>
+                <li><strong>Honesty:</strong> Open communication at all levels.</li>
+                <li><strong>QIQO:</strong> Quality In, Quality Out — our mantra.</li>
+              </ul>
+            </div>
+            <div class="dropdown-toggle mt-3">
+              See All Values <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     </section>
+
     <!-- features-area-end -->
 
     <!-- about-area -->
@@ -1657,7 +1993,7 @@
     <!-- counter-area-end -->
 
     <!-- blog-post-area -->
-   <!-- ===================================
+ <!-- ===================================
      CLEAN BLOG GRID WITH EXPANDABLE DETAILS
 =================================== -->
 <section class="blog__post-area section-pt-120 section-pb-90">
@@ -1678,18 +2014,20 @@
         <article class="clean-card">
           <img src="assets/img/images/cleaning (12).jpg" alt="Eco-friendly Facilities" class="card-img">
           <div class="card-body">
-            <i class="fa-solid fa-leaf card-icon"></i>
+            <i class="fa-solid fa-leaf card-icon" style="border: none !important;"></i>
             <div class="meta">By Pinnacle Team • 03 January, 2024</div>
             <h4>Practical Steps to Keep Facilities Healthy & Eco-friendly</h4>
             <p>Eco-friendly facilities reduce costs by 30% with green cleaning, audits, and biodegradable supplies.</p>
+
+            <!-- Dropdown comes BEFORE toggle -->
+            <div class="blog-details border-4" style="margin-top: -20px; padding: 12px;">
+              <p>Eco-friendly facilities reduce operational costs by up to 30% through energy-efficient lighting, water recycling systems, and green cleaning products. Regular audits identify waste hotspots, while staff training ensures compliance with ISO 14001 standards. Simple changes like motion-sensor lights and biodegradable supplies create healthier workspaces and lower carbon footprints.</p>
+              <p><strong>Key Takeaway:</strong> Start with a facility audit — contact us for a free consultation.</p>
+            </div>
+
             <button class="read-details-btn">
               Read Details <i class="fa-solid fa-chevron-down"></i>
             </button>
-          </div>
-
-          <div class="blog-details">
-            <p>Eco-friendly facilities reduce operational costs by up to 30% through energy-efficient lighting, water recycling systems, and green cleaning products. Regular audits identify waste hotspots, while staff training ensures compliance with ISO 14001 standards. Simple changes like motion-sensor lights and biodegradable supplies create healthier workspaces and lower carbon footprints.</p>
-            <p><strong>Key Takeaway:</strong> Start with a facility audit — contact us for a free consultation.</p>
           </div>
         </article>
       </div>
@@ -1699,18 +2037,20 @@
         <article class="clean-card">
           <img src="assets/img/images/cleaning (13).jpg" alt="Waste Audits" class="card-img">
           <div class="card-body">
-            <i class="fa-solid fa-chart-pie card-icon"></i>
+            <i class="fa-solid fa-chart-pie card-icon" style="border: none !important;"></i>
             <div class="meta">By Pinnacle Team • 03 January, 2024</div>
             <h4>Waste Audits 101: Reduce Costs, Improve Sustainability</h4>
             <p>Waste audits cut disposal fees by up to 25% while boosting recycling compliance.</p>
+
+            <!-- Dropdown comes BEFORE toggle -->
+            <div class="blog-details border-4" style="margin-top: -20px; padding: 12px;">
+              <p>A waste audit maps your organization's waste stream, identifying recyclable materials and cost-saving opportunities. Businesses using audits cut disposal fees by 25% on average. Steps include data collection, sorting, analysis, and action planning. Pinnacle's audits comply with NESREA and include employee training.</p>
+              <p><strong>Pro Tip:</strong> Schedule quarterly audits to maintain zero-waste goals.</p>
+            </div>
+
             <button class="read-details-btn">
               Read Details <i class="fa-solid fa-chevron-down"></i>
             </button>
-          </div>
-
-          <div class="blog-details">
-            <p>A waste audit maps your organization's waste stream, identifying recyclable materials and cost-saving opportunities. Businesses using audits cut disposal fees by 25% on average. Steps include data collection, sorting, analysis, and action planning. Pinnacle's audits comply with NESREA and include employee training.</p>
-            <p><strong>Pro Tip:</strong> Schedule quarterly audits to maintain zero-waste goals.</p>
           </div>
         </article>
       </div>
@@ -1720,18 +2060,20 @@
         <article class="clean-card">
           <img src="assets/img/images/cleaning (18).png" alt="Oil Spill Response" class="card-img">
           <div class="card-body">
-            <i class="fa-solid fa-oil-can card-icon"></i>
+            <i class="fa-solid fa-oil-can card-icon" style="border: none !important;"></i>
             <div class="meta">By Pinnacle Team • 03 January, 2024</div>
             <h4>Oil Spill Response: What Rapid, Safe Remediation Looks Like</h4>
             <p>Certified teams use bioremediation and soil testing for fast, compliant cleanups.</p>
+
+            <!-- Dropdown comes BEFORE toggle -->
+            <div class="blog-details border-4" style="margin-top: -20px; padding: 12px;">
+              <p>Rapid response within 2 hours minimizes environmental damage. Our HYPREP-certified teams use bioremediation, containment booms, and soil testing to restore sites. Case study: Restored 5 hectares in Ogoniland in 6 months. Compliance with DPR and FMEnv ensures zero fines.</p>
+              <p><strong>Emergency?</strong> Call our 24/7 hotline: 07033436161</p>
+            </div>
+
             <button class="read-details-btn">
               Read Details <i class="fa-solid fa-chevron-down"></i>
             </button>
-          </div>
-
-          <div class="blog-details">
-            <p>Rapid response within 2 hours minimizes environmental damage. Our HYPREP-certified teams use bioremediation, containment booms, and soil testing to restore sites. Case study: Restored 5 hectares in Ogoniland in 6 months. Compliance with DPR and FMEnv ensures zero fines.</p>
-            <p><strong>Emergency?</strong> Call our 24/7 hotline: 07033436161</p>
           </div>
         </article>
       </div>
@@ -1739,6 +2081,7 @@
     </div>
   </div>
 </section>
+
 
     <!-- blog-post-area-end -->
 
@@ -2056,11 +2399,12 @@
       if (!card) return;
 
       let content;
-      if (this.classList.contains('dropdown-toggle')) {
-        content = this.nextElementSibling; // Mission/Vision
-      } else {
-        content = card.querySelector('.blog-details'); // Service/Blog
-      }
+     if (this.classList.contains('dropdown-toggle')) {
+  content = this.previousElementSibling; // dropdown now comes before toggle
+} else {
+  content = card.querySelector('.blog-details'); // Service/Blog
+}
+
       if (!content) return;
 
       const isOpen = content.classList.contains('active') || content.classList.contains('show');
@@ -2157,29 +2501,25 @@
 document.querySelectorAll('.read-details-btn').forEach(btn => {
   btn.addEventListener('click', e => {
     e.stopPropagation();
+
     const card = btn.closest('.clean-card');
-    const detail = card.querySelector('.blog-details');
+const details = btn.closest('.card-body').querySelector('.blog-details');
 
-    // If the clicked card is already open, close it
     const isOpen = detail.classList.contains('show');
-    if (isOpen) {
-      detail.classList.remove('show');
-      btn.classList.remove('active');
-      btn.innerHTML = 'Read Details <i class="fa-solid fa-chevron-down"></i>';
-      return;
-    }
 
-    // Otherwise close all others first
+    // Close others
     document.querySelectorAll('.blog-details').forEach(d => d.classList.remove('show'));
     document.querySelectorAll('.read-details-btn').forEach(b => {
       b.classList.remove('active');
       b.innerHTML = 'Read Details <i class="fa-solid fa-chevron-down"></i>';
     });
 
-    // Then open this one
-    detail.classList.add('show');
-    btn.classList.add('active');
-    btn.innerHTML = 'Read Less <i class="fa-solid fa-chevron-up"></i>';
+    // Toggle this one
+    if (!isOpen) {
+      detail.classList.add('show');
+      btn.classList.add('active');
+      btn.innerHTML = 'Read Less <i class="fa-solid fa-chevron-up"></i>';
+    }
   });
 });
 
@@ -2193,6 +2533,49 @@ document.addEventListener('click', e => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Blog "Read Details" Toggle (Dropdown above button)
+  const readButtons = document.querySelectorAll(".read-details-btn");
+
+  readButtons.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+
+      // Target the dropdown directly above this button
+      const details = btn.previousElementSibling;
+      if (!details) return;
+
+      const isOpen = details.classList.contains("show");
+
+      // Close all dropdowns first
+      document.querySelectorAll(".blog-details").forEach((d) => d.classList.remove("show"));
+      document.querySelectorAll(".read-details-btn").forEach((b) => {
+        b.classList.remove("active");
+        b.innerHTML = 'Read Details <i class="fa-solid fa-chevron-down"></i>';
+      });
+
+      // Open the one that was clicked
+      if (!isOpen) {
+        details.classList.add("show");
+        btn.classList.add("active");
+        btn.innerHTML = 'Read Less <i class="fa-solid fa-chevron-up"></i>';
+      }
+    });
+  });
+
+  // Optional: Click outside to close
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".clean-card")) {
+      document.querySelectorAll(".blog-details").forEach((d) => d.classList.remove("show"));
+      document.querySelectorAll(".read-details-btn").forEach((b) => {
+        b.classList.remove("active");
+        b.innerHTML = 'Read Details <i class="fa-solid fa-chevron-down"></i>';
+      });
+    }
+  });
+});
+
   
 </script>
 

@@ -587,6 +587,310 @@
     .tgmobile__menu.open ~ .main-content {
       transform: translateX(280px);
     }
+
+    /* === PROJECT GRID FIXES === */
+
+/* Add uniform spacing between cards */
+.row.gutter-24 {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+
+/* Make all project cards equal height */
+.project__item-two {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project__item-two figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project__item-two img {
+  width: 100%;
+  height: 220px; /* consistent image height */
+  object-fit: cover;
+}
+
+.project__item-two figcaption {
+  flex-grow: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project__item-two figcaption h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111;
+  line-height: 1.3;
+}
+
+.project__item-two figcaption .date {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.project__item-two figcaption p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* Add hover lift */
+.project__item-two:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+/* === UNIFORM PROJECT CARD HEIGHTS === */
+
+/* Make each row flex for equal height columns */
+.row.gutter-24 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* already your gutter spacing */
+}
+
+/* Make Bootstrap columns fill equal height */
+.row.gutter-24 > [class*="col-"] {
+  display: flex;
+}
+
+/* Make the card stretch to fill the column */
+.project__item-two {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Ensure figure & content fill space equally */
+.project__item-two figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project__item-two figcaption {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Fix image heights for consistency */
+.project__item-two img {
+  height: 220px; /* uniform image height */
+  object-fit: cover;
+  width: 100%;
+}
+/* === FINAL EQUAL HEIGHT FIX FOR PROJECT CARDS === */
+
+/* 1️⃣ Make rows flex to equalize column heights */
+.row.gutter-24 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* consistent horizontal + vertical spacing */
+  align-items: stretch; /* ensures all columns are same height */
+}
+
+/* 2️⃣ Ensure each Bootstrap column participates in equal height */
+.row.gutter-24 > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3️⃣ Force cards to stretch within their column */
+.project__item-two {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 4️⃣ Uniform image height */
+.project__item-two img {
+  width: 100%;
+  height: 220px; /* exact same for all */
+  object-fit: cover;
+}
+
+/* 5️⃣ Ensure content fills the remaining height evenly */
+.project__item-two figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project__item-two figcaption {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+/* 6️⃣ Limit paragraph height to balance text (still flexible) */
+.project__item-two figcaption p {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+/* Optional hover polish */
+.project__item-two:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+/* === PERFECTLY EQUAL HEIGHT PROJECT CARDS === */
+
+/* Flex equalization for every row */
+.row.gutter-24.project-active-two {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Each column takes equal height */
+.row.gutter-24.project-active-two > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Each card fills its column */
+.project__item-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image: same height everywhere */
+.project__item-two img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Content area fills the rest */
+.project__item-two figcaption {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+/* Description area fixed to same visual size */
+.project__item-two figcaption p {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;    /* exactly 3 lines visible */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Consistent shadow + hover polish */
+.project__item-two:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+/* Make every column stretch and the card fill it */
+.project-active-two > [class*="col-"] {
+  display: flex;
+}
+.project__item-two {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Fixed image band for consistency */
+.project__item-two img {
+  height: 220px;        /* adjust if you prefer 200/240 */
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Content area uses flex so the button zone can sit at bottom if needed */
+.project__item-two figcaption {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+/* Title: clamp to 2 lines and reserve the space so heights match */
+.project__item-two figcaption h2 {
+  margin: 0 0 .5rem 0;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* cross-browser visual fallback */
+  max-height: calc(1.35em * 2);
+  min-height: calc(1.35em * 2);
+}
+
+/* Date: single line reserve */
+.project__item-two figcaption .date {
+  color: #6b7280;
+  font-size: .9rem;
+  margin-bottom: .75rem;
+  line-height: 1.2;
+  min-height: 1.2em;
+}
+
+/* Description: clamp to 3 lines and reserve height */
+.project__item-two figcaption p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* ✅ WORKS across Chrome, Safari, Edge, Opera */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+  /* ⚙️ Cross-browser fallback (for Firefox & legacy) */
+  max-height: calc(1.6em * 3);
+  min-height: calc(1.6em * 3);
+}
+
+
   </style>
 </head>
 
@@ -701,111 +1005,114 @@
             </div>
           </div>
         </div>
-        <div class="row gutter-24 project-active-two">
+     <div class="row gutter-24 project-active-two">
 
-          <!-- Project 1 -->
-          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-cleaning">
-            <article class="project__item-two">
-              <figure>
-                <a href="">
-                  <img src="assets/img/images/cleaning (12).jpg" alt="Corporate Office Cleaning in Lagos" loading="lazy">
-                </a>
-                <figcaption>
-                  <h2><a href="">Corporate Office Cleaning, Lagos</a></h2>
-                  <span class="date">January 2024 - Ongoing</span>
-                  <p>Comprehensive cleaning and maintenance for a multinational’s Lagos office, ensuring hygiene and compliance.</p>
-                  
-                </figcaption>
-              </figure>
-            </article>
-          </div>
+  <!-- Project 1 -->
+  <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-cleaning">
+    <article class="project__item-two">
+      <figure>
+        <a href="#">
+          <img src="assets/img/images/cleaning (12).jpg" alt="Corporate Office Cleaning in Lagos" loading="lazy">
+        </a>
+        <figcaption>
+          <h2><a href="#">Corporate Office Cleaning, Lagos</a></h2>
+          <span class="date">January 2024 - Ongoing</span>
+          <p>Comprehensive cleaning and maintenance for a multinational office, ensuring hygiene, safety, and compliance across all floors.</p>
+        
+          <p><strong>Scope:</strong> Daily janitorial services, deep cleaning, fumigation, and facility audits.</p>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
 
-          <!-- Project 2 -->
-          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-waste">
-            <article class="project__item-two">
-              <figure>
-                <a href="">
-                  <img src="assets/img/images/cleaning (11).jpg" alt="Abuja Municipal Waste Management" loading="lazy">
-                </a>
-                <figcaption>
-                  <h2><a href="">Abuja Municipal Waste Management</a></h2>
-                  <span class="date">June 2023 - December 2024</span>
-                  <p>Efficient waste collection and recycling for Abuja communities, reducing landfill impact.</p>
-                  
-                </figcaption>
-              </figure>
-            </article>
-          </div>
+  <!-- Project 2 -->
+  <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-waste">
+    <article class="project__item-two">
+      <figure>
+        <a href="#">
+          <img src="assets/img/images/cleaning (11).jpg" alt="Abuja Municipal Waste Management" loading="lazy">
+        </a>
+        <figcaption>
+          <h2><a href="#">Abuja Municipal Waste Management</a></h2>
+          <span class="date">June 2023 - December 2024</span>
+          <p>Waste collection and recycling program across Abuja districts, focused on sustainable disposal and reduced landfill use.</p>
+          <p><strong>Scope:</strong> Route optimization, recyclable recovery, landfill control, and NESREA compliance.</p>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
 
-          <!-- Project 3 -->
-          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-remediation">
-            <article class="project__item-two">
-              <figure>
-                <a href="">
-                  <img src="assets/img/images/cleaning (17).png" alt="Ogoni Land Remediation Project" loading="lazy">
-                </a>
-                <figcaption>
-                  <h2><a href="">Ogoni Land Remediation</a></h2>
-                  <span class="date">March 2022 - Present</span>
-                  <p>HYPREP-supported cleanup of oil-contaminated sites in Ogoni, restoring ecosystems.</p>
-                  
-                </figcaption>
-              </figure>
-            </article>
-          </div>
+  <!-- Project 3 -->
+  <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-remediation">
+    <article class="project__item-two">
+      <figure>
+        <a href="#">
+          <img src="assets/img/images/cleaning (17).png" alt="Ogoni Land Remediation Project" loading="lazy">
+        </a>
+        <figcaption>
+          <h2><a href="#">Ogoni Land Remediation</a></h2>
+          <span class="date">March 2022 - Present</span>
+          <p>Hydrocarbon remediation under HYPREP, restoring oil-contaminated farmlands and water sources through bioremediation.</p>
+          <p><strong>Scope:</strong> Soil cleanup, environmental testing, community engagement, and sustainability audits.</p>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
 
-          <!-- Project 4 -->
-          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-consultancy">
-            <article class="project__item-two">
-              <figure>
-                <a href="">
-                  <img src="assets/img/images/cleaning (4).jpg" alt="Environmental Impact Assessment in Port Harcourt" loading="lazy">
-                </a>
-                <figcaption>
-                  <h2><a href="">Environmental Impact Assessment, Port Harcourt</a></h2>
-                  <span class="date">September 2023 - February 2024</span>
-                  <p>Conducted EIA for a major oil and gas facility, ensuring regulatory compliance.</p>
-                  
-                </figcaption>
-              </figure>
-            </article>
-          </div>
+  <!-- Project 4 -->
+  <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-consultancy">
+    <article class="project__item-two">
+      <figure>
+        <a href="#">
+          <img src="assets/img/images/cleaning (4).jpg" alt="Environmental Impact Assessment in Port Harcourt" loading="lazy">
+        </a>
+        <figcaption>
+          <h2><a href="#">Environmental Impact Assessment, Port Harcourt</a></h2>
+          <span class="date">September 2023 - February 2024</span>
+          <p>Comprehensive EIA conducted for a major oil and gas installation, ensuring operational and environmental compliance.</p>
+          
+          <p><strong>Scope:</strong> Data collection, stakeholder consultation, risk mitigation, and FMEnv documentation.</p>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
 
-          <!-- Project 5 -->
-          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-cleaning cat-waste">
-            <article class="project__item-two">
-              <figure>
-                <a href="">
-                  <img src="assets/img/images/cleaning (5).jpg" alt="Hospital Cleaning and Waste Management in Abuja" loading="lazy">
-                </a>
-                <figcaption>
-                  <h2><a href="">Hospital Waste & Cleaning, Abuja</a></h2>
-                  <span class="date">April 2024 - Ongoing</span>
-                  <p>Medical waste management and sanitation for a leading Abuja hospital.</p>
-                  
-                </figcaption>
-              </figure>
-            </article>
-          </div>
+  <!-- Project 5 -->
+  <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-cleaning cat-waste">
+    <article class="project__item-two">
+      <figure>
+        <a href="#">
+          <img src="assets/img/images/cleaning (5).jpg" alt="Hospital Cleaning and Waste Management in Abuja" loading="lazy">
+        </a>
+        <figcaption>
+          <h2><a href="#">Hospital Waste & Cleaning, Abuja</a></h2>
+          <span class="date">April 2024 - Ongoing</span>
+          <p>Medical waste management and cleaning support for tertiary healthcare institutions with infection control standards.</p>
+          <p><strong>Scope:</strong> Segregation, incineration, biohazard containment, and staff hygiene training.</p>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
 
-          <!-- Project 6 -->
-          <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-remediation cat-consultancy">
-            <article class="project__item-two">
-              <figure>
-                <a href="">
-                  <img src="assets/img/images/cleaning (9).jpg" alt="Coastal Cleanup Initiative in Lagos" loading="lazy">
-                </a>
-                <figcaption>
-                  <h2><a href="">Coastal Cleanup Initiative, Lagos</a></h2>
-                  <span class="date">November 2023 - January 2024</span>
-                  <p>Community-driven cleanup and consultancy for Lagos coastal areas.</p>
-                  
-                </figcaption>
-              </figure>
-            </article>
-          </div>
+  <!-- Project 6 -->
+  <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-remediation cat-consultancy">
+    <article class="project__item-two">
+      <figure>
+        <a href="#">
+          <img src="assets/img/images/cleaning (9).jpg" alt="Coastal Cleanup Initiative in Lagos" loading="lazy">
+        </a>
+        <figcaption>
+          <h2><a href="#">Coastal Cleanup Initiative, Lagos</a></h2>
+          <span class="date">November 2023 - January 2024</span>
+          <p>Beach and lagoon restoration campaign promoting marine ecosystem recovery and sustainable waste practices.</p>
+          <p><strong>Scope:</strong> Debris removal, environmental consultancy, community sensitization, and data reporting.</p>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
 
-        </div>
+</div>
+
       </div>
     </section>
     <!-- project-area-end -->
@@ -1048,21 +1355,26 @@
     }
 
     // Isotope Filter
-    $(window).on('load', function() {
-      var $grid = $('.project-active-two').isotope({
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        masonry: {
-          columnWidth: '.grid-sizer'
-        }
-      });
-      $('.project__menu-nav').on('click', 'button', function() {
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-        $('.project__menu-nav button').removeClass('active');
-        $(this).addClass('active');
-      });
-    });
+$(window).on('load', function() {
+  var $grid = $('.project-active-two').isotope({
+    itemSelector: '.grid-item',
+    layoutMode: 'fitRows',   // 👈 switch from masonry to fitRows
+    transitionDuration: 0
+  });
+
+  // Re-layout after images load (safety)
+  $grid.imagesLoaded().progress(function () {
+    $grid.isotope('layout');
+  });
+
+  $('.project__menu-nav').on('click', 'button', function() {
+    var filterValue = $(this).attr('data-filter');
+    $grid.isotope({ filter: filterValue });
+    $('.project__menu-nav button').removeClass('active');
+    $(this).addClass('active');
+  });
+});
+   
   </script>
 </body>
 </html>

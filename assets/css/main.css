@@ -12992,3 +12992,93 @@ textarea {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===========================================================
+   INSIGHTS & SUSTAINABILITY TIPS — STABLE GRID + SMOOTH TOGGLE
+   =========================================================== */
+
+/* 1️⃣ Keep row flexible but aligned neatly */
+.blog__post-area .row {
+  align-items: flex-start !important;
+  row-gap: 1.5rem;
+}
+
+/* 2️⃣ Equal-height clean cards */
+.blog__post-area .clean-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 530px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog__post-area .clean-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 3️⃣ Consistent image height */
+.blog__post-area .clean-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* 4️⃣ Blog details appear ABOVE toggle */
+.blog__post-area .clean-card .blog-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+  background: #f8f9ff;
+  border-top: 1px solid #e5e7eb;
+  padding: 0 1rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+}
+.blog__post-area .clean-card .blog-details.show {
+  max-height: 350px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 1.5rem 1rem;
+}
+
+/* 5️⃣ Read Details button */
+.blog__post-area .read-details-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #102693;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+.blog__post-area .read-details-btn:hover {
+  color: #0a1a6e;
+}
+.blog__post-area .read-details-btn i {
+  transition: transform 0.3s ease;
+}
+.blog__post-area .read-details-btn.active i {
+  transform: rotate(180deg);
+}
+
+/* 6️⃣ Responsive polish */
+@media (max-width: 991.98px) {
+  .blog__post-area .clean-card {
+    min-height: auto;
+  }
+  .blog__post-area .clean-card img {
+    height: 160px;
+  }
+}
