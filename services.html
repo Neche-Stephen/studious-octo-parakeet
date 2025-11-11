@@ -49,117 +49,168 @@
     .about__content-two .sub-title, .about__content-three .sub-title { color: var(--brand-primary); }
 
     /* Service Card Styles */
-    .services__item-two {
+    .service-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       background: #fff;
       border-radius: 12px;
-      overflow: hidden;
+      overflow: visible; /* Changed from hidden */
       box-shadow: 0 4px 12px rgba(0,0,0,.08);
       transition: transform .3s ease, box-shadow .3s ease;
+      min-height: 380px;
     }
-    .services__item-two:hover {
-      transform: translateY(-8px);
+    .service-card:hover {
+      transform: translateY(-4px);
       box-shadow: 0 12px 25px rgba(0,0,0,.12);
     }
-    .services__thumb-two {
-      position: relative;
+    .card-thumb {
       height: 220px;
       overflow: hidden;
     }
-    .services__thumb-two img {
+    .card-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .4s ease;
+      transition: transform .3s ease;
     }
-    .services__item-two:hover .services__thumb-two img {
+    .service-card:hover .card-thumb img {
       transform: scale(1.05);
     }
-    .services__content-two {
-      padding: 1.5rem;
-      background-color: white;
-      color: black;
-    }
-    .services__content-two h4.title {
-      font-size: 1.15rem;
-      margin-bottom: .5rem;
-      color: #111;
-    }
-    .services__content-two p {
-      font-size: .95rem;
-      color: #555;
-      margin-bottom: 1rem;
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+      flex: 1;
+      position: relative; /* Added for positioning context */
     }
 
-    /* View More Button */
-    .view-more-btn {
+    .card-body h4,
+    .card-body p {
+      margin-bottom: 0.75rem;
+    }
+
+    .toggle-btn {
+      margin-top: auto;
+      align-self: flex-start;
+      background: none;
+      border: none;
+      color: var(--brand-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+    }
+
+    /* Toggle Button (View More) */
+    .toggle-btn {
       background: transparent;
       border: none;
       color: var(--brand-primary);
       font-weight: 600;
-      font-size: .9rem;
+      font-size: 0.9rem;
       display: flex;
       align-items: center;
-      gap: .35rem;
-      transition: color .25s ease;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      margin-top: auto;
+      align-self: flex-start;
     }
-    .view-more-btn:hover {
+    .toggle-btn:hover {
       color: var(--brand-primary-600);
     }
-    .view-more-btn i {
-      transition: transform .25s ease;
-    }
-    .view-more-btn.active i {
-      transform: rotate(180deg);
+    .toggle-btn i {
+      transition: transform 0.25s ease;
     }
 
-    /* Dropdown Details */
+    /* Dropdown Container - FIXED POSITIONING */
     .service-details {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
       background: var(--brand-muted);
-      padding: 1.5rem;
-      border-top: 1px solid #e5e7eb;
-      display: none;
-      animation: fadeIn .4s ease;
+      border-radius: 0 0 12px 12px;
+      padding: 0 1.25rem;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      z-index: 10;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border: 1px solid #e5e7eb;
+      border-top: none;
+      transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
     }
     .service-details.show {
-      display: block;
+      padding: 1.25rem;
+      max-height: 350px;
+      opacity: 1;
     }
-    .service-details ul {
+
+    /* Dropdown Content */
+    .details-content ul {
       list-style: none;
-      padding-left: 0;
-      margin: 0 0 1rem 0;
+      padding: 0;
+      margin-bottom: 0.5rem;
     }
-    .service-details ul li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: .5rem;
-      font-size: .9rem;
+    .details-content ul li {
+      font-size: 0.88rem;
       color: #444;
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.35rem;
     }
-    .service-details ul li::before {
+    .details-content ul li::before {
       content: "✓";
       position: absolute;
       left: 0;
       color: var(--brand-primary);
       font-weight: bold;
     }
-    .service-details p {
-      font-size: .9rem;
-      color: #555;
-      margin-bottom: 0;
+    .details-content p {
+      font-size: 0.88rem;
+      color: #444;
+      margin-bottom: 1rem;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* View Less Button Inside Dropdown */
+    .close-btn {
+      background: transparent;
+      border: none;
+      color: var(--brand-primary);
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .close-btn:hover {
+      color: var(--brand-primary-600);
     }
 
-    /* CTA Badge */
-    .cta__content-two .badge-brand {
-      font-size: .85rem;
-      padding: .4rem .8rem;
+    /* Ensure cards in the same row maintain equal height */
+    .row.gutter-24 > [class*="col-"] {
+      display: flex;
     }
 
-    /* Navigation Styles from Index */
+    /* Responsive */
+    @media (max-width: 991.98px) {
+      .card-thumb { height: 200px; }
+      .service-card { min-height: 360px; }
+    }
+    @media (max-width: 575.98px) {
+      .card-thumb { height: 180px; }
+      .service-card { min-height: 340px; }
+    }
+
+    /* Navigation & Other Styles (unchanged) */
     #sticky-header.tg-header__area {
       background: rgba(255,255,255,0.98);
       box-shadow: 0 10px 25px rgba(0,0,0,.06);
@@ -187,8 +238,6 @@
       color: #fff;
     }
     .mobile-nav-toggler i { color: #111827; }
-    
-    /* Mobile navigation positioning */
     .mobile-nav-toggler {
       display: none;
       flex: 0 0 auto;
@@ -196,19 +245,9 @@
       padding: 10px;
       z-index: 1000;
     }
-    
-    /* Show mobile toggler only on mobile/tablet */
     @media (max-width: 1199.98px) {
-      .mobile-nav-toggler {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        order: 2; /* Places it on the right */
-      }
-      
-      .logo {
-        order: 1; /* Places it on the left */
-      }
+      .mobile-nav-toggler { display: flex; align-items: center; justify-content: center; order: 2; }
+      .logo { order: 1; }
     }
     .tgmenu__wrap nav.tgmenu__nav {
       display: flex;
@@ -249,14 +288,11 @@
       height: 42px;
       width: auto;
     }
-    
-    /* Company Name Navigation Styles */
     .company-name-nav {
       margin-left: 15px;
       display: flex;
       align-items: center;
     }
-    
     .company-title {
       font-size: 14px;
       font-weight: 700;
@@ -265,68 +301,35 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    
-    /* Mobile responsive for company name */
     @media (max-width: 1199.98px) {
-      .company-name-nav {
-        margin-left: 10px;
-      }
-      .company-title {
-        font-size: 12px;
-        line-height: 1.1;
-      }
+      .company-name-nav { margin-left: 10px; }
+      .company-title { font-size: 12px; line-height: 1.1; }
     }
-    
     @media (max-width: 991.98px) {
-      .company-name-nav {
-        margin-left: 8px;
-      }
-      .company-title {
-        font-size: 11px;
-        line-height: 1.1;
-      }
+      .company-name-nav { margin-left: 8px; }
+      .company-title { font-size: 11px; line-height: 1.1; }
     }
-    
     @media (max-width: 767.98px) {
-      .company-name-nav {
-        margin-left: 6px;
-      }
-      .company-title {
-        font-size: 10px;
-        line-height: 1.0;
-        letter-spacing: 0.3px;
-      }
+      .company-name-nav { margin-left: 6px; }
+      .company-title { font-size: 10px; line-height: 1.0; letter-spacing: 0.3px; }
     }
-    
     @media (max-width: 575.98px) {
-      .company-name-nav {
-        margin-left: 5px;
-      }
-      .company-title {
-        font-size: 9px;
-        line-height: 1.0;
-        letter-spacing: 0.2px;
-      }
+      .company-name-nav { margin-left: 5px; }
+      .company-title { font-size: 9px; line-height: 1.0; letter-spacing: 0.2px; }
     }
-    
-    /* Ensure logo and company name stay together */
     .tgmenu__nav .logo {
       display: flex;
       align-items: center;
       flex-wrap: nowrap;
     }
-
     .tgmenu__nav .navigation > li.active > a {
       color: #102693 !important;
       font-weight: 600;
     }
-
     .tgmobile__menu .navigation > li.active > a {
       color: #102693;
       font-weight: 600;
     }
-
-    /* Desktop navigation positioning */
     @media (min-width: 1200px) {
       .tgmenu__navbar-wrap.d-none.d-xl-flex {
         display: flex !important;
@@ -335,25 +338,13 @@
         margin-left: auto;
       }
     }
-    
-    /* Hide desktop navigation on mobile and tablet */
     @media (max-width: 1199.98px) {
-      .tgmenu__navbar-wrap.d-none.d-xl-flex {
-        display: none !important;
-      }
-      .tgmenu__action {
-        display: none !important;
-      }
+      .tgmenu__navbar-wrap.d-none.d-xl-flex { display: none !important; }
+      .tgmenu__action { display: none !important; }
     }
-    
-    /* Show Get In Touch button only on desktop */
     @media (min-width: 1200px) {
-      .tgmenu__action {
-        display: flex !important;
-      }
+      .tgmenu__action { display: flex !important; }
     }
-
-    /* Mobile Menu Styles from Index */
     .tgmobile__menu {
       position: fixed;
       top: 0;
@@ -367,11 +358,7 @@
       transform: translateX(-100%);
       transition: transform 0.35s ease;
     }
-
-    .tgmobile__menu.open {
-      transform: translateX(0);
-    }
-
+    .tgmobile__menu.open { transform: translateX(0); }
     .tgmobile__menu-backdrop {
       position: fixed;
       top: 0;
@@ -384,27 +371,13 @@
       visibility: hidden;
       transition: opacity 0.35s ease;
     }
-
     .tgmobile__menu-backdrop.open {
       opacity: 1;
       visibility: visible;
     }
-
-    /* Mobile menu styling */
-    .tgmobile__menu-outer {
-      padding: 20px 0;
-    }
-    
-    .tgmobile__menu .navigation {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .tgmobile__menu .navigation li {
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
+    .tgmobile__menu-outer { padding: 20px 0; }
+    .tgmobile__menu .navigation { list-style: none; padding: 0; margin: 0; }
+    .tgmobile__menu .navigation li { border-bottom: 1px solid #e5e7eb; }
     .tgmobile__menu .navigation li a {
       display: block;
       padding: 15px 30px;
@@ -413,208 +386,28 @@
       font-weight: 500;
       transition: all 0.3s ease;
     }
-    
     .tgmobile__menu .navigation li a:hover,
     .tgmobile__menu .navigation li.active a {
       color: #102693;
       background: #f8f9ff;
     }
-    
-    .tgmobile__menu-social {
-      padding: 20px 30px;
-      border-top: 1px solid #e5e7eb;
-    }
-    
-    .tgmobile__menu-social ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .tgmobile__menu-social a {
-      color: #102693;
-      font-size: 1.2rem;
-    }
-
-    /* Optional: Push content when menu opens */
-    .tgmobile__menu.open ~ .main-content {
-      transform: translateX(280px);
-    }
-
- /* Card grid spacing */
-.row.gutter-24 {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 1.5rem;
-}
-
-/* Card structure */
-.service-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-}
-
-.card-thumb {
-  height: 220px;
-  overflow: hidden;
-}
-
-.card-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover .card-thumb img {
-  transform: scale(1.05);
-}
-
-.card-body {
-  padding: 1.25rem;
-  position: relative;
-}
-
-.card-body h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #111;
-}
-
-.card-body p {
-  font-size: 0.93rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-/* Toggle button */
-.toggle-btn {
-  background: transparent;
-  border: none;
-  color: #102693;
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.toggle-btn:hover {
-  color: #0a1a6e;
-}
-
-.toggle-btn i {
-  transition: transform 0.25s ease;
-}
-
-.toggle-btn.active i {
-  transform: rotate(180deg);
-}
-
-/* Responsive height + spacing */
-@media (max-width: 991.98px) {
-  .card-thumb { height: 200px; }
-}
-
-@media (max-width: 575.98px) {
-  .card-thumb { height: 180px; }
-}
-/* === Service Details (Independent Sliding Dropdown) === */
-.service-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.service-details {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #f8f9ff;
-  border-top: 1px solid #e5e7eb;
-  border-radius: 0 0 12px 12px;
-  padding: 0 1.25rem;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
-  z-index: 10;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.service-details.show {
-  padding: 1.25rem;
-  max-height: 250px; /* Adjust if your details are longer */
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Dropdown text */
-.service-details ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0.5rem;
-}
-
-.service-details ul li {
-  font-size: 0.88rem;
-  color: #444;
-  padding-left: 1.2rem;
-  position: relative;
-  margin-bottom: 0.35rem;
-}
-
-.service-details ul li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #102693;
-  font-weight: bold;
-}
-
-.service-details p {
-  font-size: 0.88rem;
-  color: #444;
-  margin-bottom: 0;
-}
-
-/* Prevent layout jump */
-.service-card {
-  min-height: 100%;
-}
-
+    .tgmobile__menu-social { padding: 20px 30px; border-top: 1px solid #e5e7eb; }
+    .tgmobile__menu-social ul { list-style: none; padding: 0; margin: 0; }
+    .tgmobile__menu-social a { color: #102693; font-size: 1.2rem; }
+    .row.gutter-24 { --bs-gutter-x: 1.5rem; --bs-gutter-y: 1.5rem; }
   </style>
 </head>
 
 <body>
-  
-
   <!-- Scroll-top -->
   <button class="scroll__top scroll-to-target" data-target="html" aria-label="Scroll to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
-  <!-- Scroll-top-end -->
 
   <!-- header-area -->
   <header>
     <div id="header-fixed-height"></div>
-    <div id="sticky-header" class="tg-header__area">
+    <div id="sticky-header" class="tgheader__area">
       <div class="container custom-container">
         <div class="row">
           <div class="col-12">
@@ -631,7 +424,7 @@
                 <div class="mobile-nav-toggler" aria-label="Open mobile menu"><i class="fa-solid fa-bars"></i></div>
                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                   <ul class="navigation">
-                    <li ><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li class="active"><a href="services.html">Services</a></li>
                     <li><a href="project.html">Projects</a></li>
@@ -693,43 +486,41 @@
     <!-- breadcrumb-area-end -->
 
     <!-- services-area -->
-    <!-- ===============================
-<!-- ===============================
-     SERVICES AREA (Clean + Responsive + Fixed Height)
-=============================== -->
 <section class="services__area-two section-pt-120 section-pb-95">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-7">
         <div class="section__title section__title-three text-center mb-60">
           <span class="sub-title text-brand">Our Expertise</span>
-          <h2 class="title">Comprehensive Environmental & Facility Solutions</h2>
+          <h2 class="title">Comprehensive Environmental &amp; Facility Solutions</h2>
         </div>
       </div>
     </div>
 
     <div class="row gutter-24 justify-content-center">
 
-      <!-- === SERVICE CARD TEMPLATE === -->
+      <!-- ==== CARD 1 ==== -->
       <div class="col-lg-4 col-md-6">
         <article class="service-card">
           <div class="card-thumb">
             <img src="assets/img/services/services_img01.jpg" alt="Facility Cleaning">
           </div>
           <div class="card-body">
-            <h4>Facility Cleaning & Management</h4>
+            <h4>Facility Cleaning &amp; Management</h4>
             <p>Professional cleaning and maintenance for offices, hospitals, and public spaces, ensuring hygiene and compliance with health standards.</p>
 
-            <!-- Dropdown now comes BEFORE the toggle -->
+            <!-- hidden details – placed BEFORE the button -->
             <div class="service-details">
-              <ul>
-                <li>Daily, weekly, and deep cleaning</li>
-                <li>Disinfection & fumigation</li>
-                <li>Janitorial staff training</li>
-                <li>Facility audits & compliance checks</li>
-                <li>HSE-compliant operations</li>
-              </ul>
-              <p>Serving INEC, hospitals, and corporate clients nationwide.</p>
+              <div class="details-content">
+                <ul>
+                  <li>Daily, weekly, and deep cleaning</li>
+                  <li>Disinfection &amp; fumigation</li>
+                  <li>Janitorial staff training</li>
+                  <li>Facility audits &amp; compliance checks</li>
+                  <li>HSE-compliant operations</li>
+                </ul>
+                <p>Serving INEC, hospitals, and corporate clients nationwide.</p>
+              </div>
             </div>
 
             <button class="toggle-btn">View More <i class="fa-solid fa-chevron-down"></i></button>
@@ -737,6 +528,7 @@
         </article>
       </div>
 
+      <!-- ==== CARD 2 ==== -->
       <div class="col-lg-4 col-md-6">
         <article class="service-card">
           <div class="card-thumb">
@@ -747,14 +539,16 @@
             <p>Efficient collection, disposal, and recycling of municipal waste, promoting sustainable urban environments.</p>
 
             <div class="service-details">
-              <ul>
-                <li>Door-to-door collection</li>
-                <li>Waste sorting & recycling</li>
-                <li>Landfill management</li>
-                <li>Public awareness campaigns</li>
-                <li>Compliance with AEPB & NESREA</li>
-              </ul>
-              <p>Partnered with local governments for cleaner, greener cities.</p>
+              <div class="details-content">
+                <ul>
+                  <li>Door-to-door collection</li>
+                  <li>Waste sorting &amp; recycling</li>
+                  <li>Landfill management</li>
+                  <li>Public awareness campaigns</li>
+                  <li>Compliance with AEPB &amp; NESREA</li>
+                </ul>
+                <p>Partnered with local governments for cleaner, greener cities.</p>
+              </div>
             </div>
 
             <button class="toggle-btn">View More <i class="fa-solid fa-chevron-down"></i></button>
@@ -762,24 +556,27 @@
         </article>
       </div>
 
+      <!-- ==== CARD 3 ==== -->
       <div class="col-lg-4 col-md-6">
         <article class="service-card">
           <div class="card-thumb">
             <img src="assets/img/images/cleaning (8).jpg" alt="Oil & Gas Waste Management">
           </div>
           <div class="card-body">
-            <h4>Oil & Gas Waste Management</h4>
+            <h4>Oil &amp; Gas Waste Management</h4>
             <p>Specialized handling and remediation of oil and gas waste, ensuring environmental safety and regulatory compliance.</p>
 
             <div class="service-details">
-              <ul>
-                <li>Hazardous waste containment</li>
-                <li>Oil spill cleanup & bioremediation</li>
-                <li>Drilling waste disposal</li>
-                <li>Site restoration</li>
-                <li>DPR & FMEnv compliance</li>
-              </ul>
-              <p>Major contractor to HYPREP for Ogoniland cleanup.</p>
+              <div class="details-content">
+                <ul>
+                  <li>Hazardous waste containment</li>
+                  <li>Oil spill cleanup &amp; bioremediation</li>
+                  <li>Drilling waste disposal</li>
+                  <li>Site restoration</li>
+                  <li>DPR &amp; FMEnv compliance</li>
+                </ul>
+                <p>Major contractor to HYPREP for Ogoniland cleanup.</p>
+              </div>
             </div>
 
             <button class="toggle-btn">View More <i class="fa-solid fa-chevron-down"></i></button>
@@ -787,6 +584,7 @@
         </article>
       </div>
 
+      <!-- ==== CARD 4 ==== -->
       <div class="col-lg-4 col-md-6">
         <article class="service-card">
           <div class="card-thumb">
@@ -797,14 +595,16 @@
             <p>Expert audits, EIAs, and sustainability strategies to support compliance and environmental stewardship.</p>
 
             <div class="service-details">
-              <ul>
-                <li>Environmental Impact Assessments (EIA)</li>
-                <li>Environmental Audits</li>
-                <li>ESMP & ARAP development</li>
-                <li>Policy & regulatory advisory</li>
-                <li>Stakeholder engagement</li>
-              </ul>
-              <p>Accredited by FMEnv. Trusted by World Bank, AfDB, and HYPREP.</p>
+              <div class="details-content">
+                <ul>
+                  <li>Environmental Impact Assessments (EIA)</li>
+                  <li>Environmental Audits</li>
+                  <li>ESMP &amp; ARAP development</li>
+                  <li>Policy &amp; regulatory advisory</li>
+                  <li>Stakeholder engagement</li>
+                </ul>
+                <p>Accredited by FMEnv. Trusted by World Bank, AfDB, and HYPREP.</p>
+              </div>
             </div>
 
             <button class="toggle-btn">View More <i class="fa-solid fa-chevron-down"></i></button>
@@ -812,24 +612,27 @@
         </article>
       </div>
 
+      <!-- ==== CARD 5 ==== -->
       <div class="col-lg-4 col-md-6">
         <article class="service-card">
           <div class="card-thumb">
             <img src="assets/img/images/cleaning (18).png" alt="Waste Audits & Compliance">
           </div>
           <div class="card-body">
-            <h4>Waste Audits & Compliance</h4>
+            <h4>Waste Audits &amp; Compliance</h4>
             <p>Comprehensive waste audits to optimize processes, reduce costs, and ensure regulatory adherence.</p>
 
             <div class="service-details">
-              <ul>
-                <li>Waste stream analysis</li>
-                <li>Cost reduction strategies</li>
-                <li>Compliance reporting</li>
-                <li>Training & documentation</li>
-                <li>Continuous improvement plans</li>
-              </ul>
-              <p>Helping clients save up to 30% on waste management costs.</p>
+              <div class="details-content">
+                <ul>
+                  <li>Waste stream analysis</li>
+                  <li>Cost reduction strategies</li>
+                  <li>Compliance reporting</li>
+                  <li>Training &amp; documentation</li>
+                  <li>Continuous improvement plans</li>
+                </ul>
+                <p>Helping clients save up to 30% on waste management costs.</p>
+              </div>
             </div>
 
             <button class="toggle-btn">View More <i class="fa-solid fa-chevron-down"></i></button>
@@ -837,6 +640,7 @@
         </article>
       </div>
 
+      <!-- ==== CARD 6 ==== -->
       <div class="col-lg-4 col-md-6">
         <article class="service-card">
           <div class="card-thumb">
@@ -847,14 +651,16 @@
             <p>Promoting eco-friendly practices and community education for sustainable environmental impact.</p>
 
             <div class="service-details">
-              <ul>
-                <li>Community training programs</li>
-                <li>School environmental clubs</li>
-                <li>Mangrove restoration (HYPREP)</li>
-                <li>Corporate sustainability workshops</li>
-                <li>Public awareness campaigns</li>
-              </ul>
-              <p>Planted over 50,000 mangroves in Ogoniland.</p>
+              <div class="details-content">
+                <ul>
+                  <li>Community training programs</li>
+                  <li>School environmental clubs</li>
+                  <li>Mangrove restoration (HYPREP)</li>
+                  <li>Corporate sustainability workshops</li>
+                  <li>Public awareness campaigns</li>
+                </ul>
+                <p>Planted over 50,000 mangroves in Ogoniland.</p>
+              </div>
             </div>
 
             <button class="toggle-btn">View More <i class="fa-solid fa-chevron-down"></i></button>
@@ -865,8 +671,6 @@
     </div>
   </div>
 </section>
-
-
     <!-- services-area-end -->
 
     <!-- cta-area -->
@@ -898,7 +702,6 @@
       </div>
     </section>
     <!-- cta-area-end -->
-
   </main>
   <!-- main-area-end -->
 
@@ -974,8 +777,6 @@
               <div class="footer__widget-link">
                 <ul class="list-wrap">
                   <li><a href="about.html"><i class="fa-solid fa-arrow-right"></i><span>Our Story</span></a></li>
-                  <!-- <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Terms & Conditions</span></a></li> -->
-                  <!-- <li><a href="contact.html"><i class="fa-solid fa-arrow-right"></i><span>Privacy Policy</span></a></li> -->
                   <li><a href="project.html"><i class="fa-solid fa-arrow-right"></i><span>Project Showcase</span></a></li>
                 </ul>
               </div>
@@ -1005,8 +806,6 @@
           <div class="col-md-5">
             <div class="footer__bottom-menu">
               <ul class="list-wrap">
-                <!-- <li><a href="contact.html">Terms and Conditions</a></li> -->
-                <!-- <li><a href="contact.html">Privacy Policy</a></li> -->
                 <li><a href="mailto:Pinnaclehealthenvirons@gmail.com">Email Us</a></li>
                 <li><a href="tel:07033436161">Call 07033436161</a></li>
               </ul>
@@ -1027,132 +826,48 @@
   <script src="assets/js/jquery.appear.js"></script>
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    // Auto-year
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
 
-    // AOS
-    AOS.init({ duration: 1000, once: true });
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
 
-    // Magnific Popup
-    $('.popup-image').magnificPopup({ type: 'image', gallery: { enabled: true } });
+        const card    = this.closest('.service-card');
+        const details = card.querySelector('.service-details');
+        const isOpen  = details.classList.contains('show');
 
-    // View More Toggle
-    document.querySelectorAll('.view-more-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        const targetId = this.getAttribute('data-target');
-        const details = document.getElementById(targetId);
-        const isActive = details.classList.toggle('show');
-        this.classList.toggle('active', isActive);
-        this.querySelector('i').style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
+        // ---- close every dropdown ----
+        document.querySelectorAll('.service-details').forEach(d => d.classList.remove('show'));
+        document.querySelectorAll('.toggle-btn').forEach(b => {
+          b.classList.remove('active');
+          b.innerHTML = 'View More <i class="fa-solid fa-chevron-down"></i>';
+        });
+
+        // ---- open the clicked one (if it wasn't open) ----
+        if (!isOpen) {
+          details.classList.add('show');
+          this.classList.add('active');
+          this.innerHTML = 'View Less <i class="fa-solid fa-chevron-up"></i>';
+        }
       });
     });
 
-
-    
-document.querySelectorAll('.toggle-btn').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.stopPropagation();
-    const card = btn.closest('.service-card');
-    const details = card.querySelector('.service-details');
-    const isOpen = details.classList.contains('show');
-
-    // close all others first
-    document.querySelectorAll('.service-details').forEach(d => d.classList.remove('show'));
-    document.querySelectorAll('.toggle-btn').forEach(b => {
-      b.classList.remove('active');
-      b.innerHTML = 'View More <i class="fa-solid fa-chevron-down"></i>';
+    // ---- click outside → close all ----
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.service-details').forEach(d => d.classList.remove('show'));
+      document.querySelectorAll('.toggle-btn').forEach(b => {
+        b.classList.remove('active');
+        b.innerHTML = 'View More <i class="fa-solid fa-chevron-down"></i>';
+      });
     });
 
-    // toggle current
-    if (!isOpen) {
-      details.classList.add('show');
-      btn.classList.add('active');
-      btn.innerHTML = 'View Less <i class="fa-solid fa-chevron-up"></i>';
-    }
+    // ---- stop propagation inside the card (so outside-click still works) ----
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('click', e => e.stopPropagation());
+    });
   });
-});
-
-// optional: click outside to close
-document.addEventListener('click', e => {
-  if (!e.target.closest('.service-card')) {
-    document.querySelectorAll('.service-details').forEach(d => d.classList.remove('show'));
-    document.querySelectorAll('.toggle-btn').forEach(b => {
-      b.classList.remove('active');
-      b.innerHTML = 'View More <i class="fa-solid fa-chevron-down"></i>';
-    });
-  }
-});
-
-document.querySelectorAll('.toggle-btn').forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-
-    // Find the card and its dropdown
-    const card = btn.closest('.service-card');
-    const dropdown = card.querySelector('.service-details');
-    const isActive = dropdown.classList.contains('show');
-
-    // Close all other dropdowns first
-    document.querySelectorAll('.service-details').forEach((d) => d.classList.remove('show'));
-    document.querySelectorAll('.toggle-btn').forEach((b) => {
-      b.classList.remove('active');
-      b.innerHTML = 'View More <i class="fa-solid fa-chevron-down"></i>';
-    });
-
-    // Open only the clicked one
-    if (!isActive) {
-      dropdown.classList.add('show');
-      btn.classList.add('active');
-      btn.innerHTML = 'View Less <i class="fa-solid fa-chevron-up"></i>';
-    }
-  });
-});
-
-// Optional: click outside to close all
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.service-card')) {
-    document.querySelectorAll('.service-details').forEach((d) => d.classList.remove('show'));
-    document.querySelectorAll('.toggle-btn').forEach((b) => {
-      b.classList.remove('active');
-      b.innerHTML = 'View More <i class="fa-solid fa-chevron-down"></i>';
-    });
-  }
-});
-
-document.querySelectorAll('.toggle-btn').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.stopPropagation();
-    const card = btn.closest('.service-card');
-    const dropdown = card.querySelector('.service-details');
-    const isActive = dropdown.classList.contains('show');
-
-    // Close all dropdowns first
-    document.querySelectorAll('.service-details').forEach(d => d.classList.remove('show'));
-    document.querySelectorAll('.toggle-btn').forEach(b => {
-      b.classList.remove('active');
-      b.innerHTML = 'View More <i class="fa-solid fa-chevron-down"></i>';
-    });
-
-    // Then toggle current card only
-    if (!isActive) {
-      dropdown.classList.add('show');
-      btn.classList.add('active');
-      btn.innerHTML = 'View Less <i class="fa-solid fa-chevron-up"></i>';
-    }
-  });
-});
-
-// Close when clicking outside
-document.addEventListener('click', e => {
-  if (!e.target.closest('.service-card')) {
-    document.querySelectorAll('.service-details').forEach(d => d.classList.remove('show'));
-    document.querySelectorAll('.toggle-btn').forEach(b => {
-      b.classList.remove('active');
-      b.innerHTML = 'View More <i class="fa-solid fa-chevron-down"></i>';
-    });
-  }
-});
 </script>
 
 </body>
