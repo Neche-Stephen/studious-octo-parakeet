@@ -1663,7 +1663,6 @@
 </section>
 
 <!-- ============================== END HERO SLIDER ============================== -->
-0 
 
   <!-- tiny JS safety-net (removes any line that might be added after Swiper init) -->
   <script>
@@ -2149,7 +2148,7 @@
                 </div>
                 <div class="faq__answer">
                   <div class="faq__answer-inner">
-                    We are a <strong>major contractor</strong> to the Hydrocarbon Pollution Remediation Project (HYPREP) under the Federal Ministry of Environment. Since 2018, we've remediated over 50 contaminated sites in Ogoniland as part of the UN-backed cleanup initiative.
+                    We are a <strong>major contractor</strong> to the Hydrocarbon Pollution Remediation Project (HYPREP) under the Federal Ministry of Environment. Since 2018, we've remediated over 50 contaminated sites in Ogoniland as part of the UN-backed cleanup initiative. We are currently delivering Phase 2 mangrove restoration for HYPREP in Bodo, Gokana LGA (Lot MRP 029).
                   </div>
                 </div>
               </div>
@@ -2495,43 +2494,6 @@
   document.head.appendChild(style);
 
 
-
-/* Read Details / Read Less Toggle */
-document.querySelectorAll('.read-details-btn').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.stopPropagation();
-
-    const card = btn.closest('.clean-card');
-const details = btn.closest('.card-body').querySelector('.blog-details');
-
-    const isOpen = detail.classList.contains('show');
-
-    // Close others
-    document.querySelectorAll('.blog-details').forEach(d => d.classList.remove('show'));
-    document.querySelectorAll('.read-details-btn').forEach(b => {
-      b.classList.remove('active');
-      b.innerHTML = 'Read Details <i class="fa-solid fa-chevron-down"></i>';
-    });
-
-    // Toggle this one
-    if (!isOpen) {
-      detail.classList.add('show');
-      btn.classList.add('active');
-      btn.innerHTML = 'Read Less <i class="fa-solid fa-chevron-up"></i>';
-    }
-  });
-});
-
-// Optional: Close all when clicking outside
-document.addEventListener('click', e => {
-  if (!e.target.closest('.clean-card')) {
-    document.querySelectorAll('.blog-details').forEach(d => d.classList.remove('show'));
-    document.querySelectorAll('.read-details-btn').forEach(b => {
-      b.classList.remove('active');
-      b.innerHTML = 'Read Details <i class="fa-solid fa-chevron-down"></i>';
-    });
-  }
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   // Blog "Read Details" Toggle (Dropdown above button)
